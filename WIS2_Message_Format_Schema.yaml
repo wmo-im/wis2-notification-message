@@ -1,0 +1,115 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://schemas.wmo.int/wis2/broker/message/0.9.0/schema.yml
+# RGiraud: That link doesn't exists. 
+title: WMO WIS 2.0 broker message schema
+description: WMO WIS 2.0 broker message schema
+
+type: object
+allOf:
+  - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/featureGeoJSON.yaml
+
+properties:
+  id: 
+    type: uuid
+    description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period 
+  version:
+    type: string
+    description: Version of message specification
+    const: v04
+  geometry:
+    oneOf:
+    # RGiraud: I have added "null" as it is one accepted option. Couldn't find a $ref for null. geometry is required but can be null. Is this allowed ?
+      - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
+      - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/polygonGeoJSON.yaml
+      - null
+  properties:
+    type: object
+    properties:
+    # RGiraud: I have removed the camel case of pubTime, for consistency.
+      pubtime:
+        type: string
+        format: date-time
+        description: |
+          Identifies the date/time of when the file was posted/published, in RFC3339 format.
+          The publication date/time is critical for subscribers to prevent message loss by knowing
+          their lag (how far behind the publisher they are).
+      data_id: 
+        type: string
+        description: |
+          Uniquely identifies the data. It is formed of two parts:
+          1. MQTT topic hierarchy where this message will be published as defined in https://github.com/wmo-im/wis2-topic-hierarchy without leading channel/version
+          2. a unique identifier of the data. It could be the filename used by the originating center or a unique UUID (RFC4122) or anything chosen 
+          by the originating center as long as it is unique over a 1 week period.
+      datetime:
+        type: string
+        format: date-time
+        description: Identifies the date/time of the data being published, in RFC3339 format.
+      start_datetime:
+        type: string
+        format: date-time
+        description: Identifies the start date/time date of the data being published, in RFC3339 format.
+      end_datetime:
+        type: string
+        format: date-time
+        description: Identifies the end date/time date of the data being published, in RFC3339 format.
+      integrity:
+        type: object
+        description: Specifies a checksum to be applied to the data to ensure that the download is accurate.
+        properties:
+          method:
+            type: string
+            description: |
+                A specific set of methods for calculating the checksum algorithms:
+                * ``sha512``: the Secure Hash Algorithm 512 bits, value is base64 encoded.
+                * ``arbitrary``: an arbitrary string is used to identify the value.
+                * ``md5``: the Message Digest 5 hash (obsolete, perhaps will be rejected)
+            #RGiraud: Not sure about the "arbitrary" value. What is it?
+            enum:
+              - sha512
+              - arbitrary
+              - md5
+          value:
+            type: string
+            description: checksum value.
+        required:
+          - method
+          - value
+      content:
+        type: object
+        description: Used to embed small products inline within the message.
+        properties:
+          encoding:
+            type: string
+            description: encoding of content
+            enum:
+              - utf-8
+              - base64
+          size:
+            type: integer
+            description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
+            # RGiraud: Can we limit the size of the embedded data here?
+          value:
+            type: string
+            description: the inline content of the file.
+        required:
+          - encoding
+          - size
+    required:
+      - pubtime
+      - data_id
+    # RGiraud: How do we say that it either nothing, datetime or start_datetime and end_datetime
+      # - datetime | [ start_datetime, end_datetime ]
+      # - content
+      # - integrity
+  links:
+    type: array
+    items:
+      $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/link.yaml
+    # RGiraud: How do we restrict links to be preferably HTTPS and SFTP and possibly HTTP and FTP, nothing else.
+required:
+  - id
+  - version
+  - type
+  - geometry
+  - properties
+  - links

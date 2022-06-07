@@ -1,0 +1,16 @@
+{
+"//Example 3": "This example is the Minimal Viable Message compliant with WIS2 spec",
+"id": "31e9d66a-cd83-4174-9429-b932f1abcdef",
+"version": "v04",
+"type": "Feature",
+"geometry": null,
+"properties": {
+    "data_id": "wis2/XYZ/nmhs_xyz/data/core/weather/abcdefab-abcd-1234-5678-0123456789ab"
+},
+"links": [
+    {
+        "href": "https://somedata.com/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
+        "rel": "canonical"
+    }
+]
+}

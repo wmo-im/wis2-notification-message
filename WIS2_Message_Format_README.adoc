@@ -142,13 +142,14 @@ It must be noted that the *geometry* key is mandatory in geoJson but can be of t
 "geometry": {
     "type": "Polygon",
     "coordinates": [
-        [
-            [-10.0, -10.0],
-            [10.0, -10.0],
-            [10.0, 10.0],
-            [-10.0, -10.0]
-        ]
+    [
+      [-7.75,40.43],
+      [-7.75,78.46],
+      [71.91,78.46],
+      [71.91,40.43],
+      [-7.75,40.43]
     ]
+  ]
 }
 ----
 

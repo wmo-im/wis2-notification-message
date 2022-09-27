@@ -1,17 +1,19 @@
 {
-"//Example2": "This example is for a NWP product including Polygon geometry, start_datetime and end_datetime",
+"//Example2": "This example is for a NWP product including Polygon geometry, start_datetime and end_datetime. The polygon is an array with 5 elements."
+"//The first (and last) one being the most southwestern point of the rectangle using lon,lat and followed by other coordinnates clockwise"
 "id": "31e9d66a-cd83-4174-9429-b932f1abe1be",
 "version": "v04",
 "type": "Feature",
 "geometry": {
     "type": "Polygon",
     "coordinates": [
-        [
-            [-10.0, -10.0],
-            [10.0, -10.0],
-            [10.0, 10.0],
-            [-10.0, -10.0]
-        ]
+       [
+         [-7.75,40.43],
+         [-7.75,78.46],
+         [71.91,78.46],
+         [71.91,40.43],
+         [-7.75,40.43]
+       ]
     ]
 },
 "properties": {

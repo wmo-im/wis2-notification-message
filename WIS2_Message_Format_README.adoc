@@ -2,19 +2,19 @@
 :hardbreaks:
 = WIS2 Notification Message Format
 
-As explained in https://github.com/wmo-im/wis2-topic-hierarchy:
+As explained in https://community.wmo.int/wis2-topic-hierarchy:
 -----
 WIS 2.0 real-time data sharing is based on a message queuing protocol (MQP) supporting a publication/subscription mechanism. A user can subscribe to an MQP broker to receive real-time notifications that some data can be downloaded. The notification message received from the MQP broker contains a URL to download the data. In addition, the MQP broker offers a range of topics organised in a hierarchy. The users can select their topics of interest and subscribe to them to receive notifications and download data relevant to their work.
 -----
 
-Alongside with the topic hierarchy, a standard notification message format has been defined. Using such a format will allow the entire WIS2 ecosystem: Data publisher, Data User, Global Services to ensure robustness, effectiveness of WIS2 as a unified Weather, Climate, Water data exchange platform.
+Alongside with the topic hierarchy, a standard notification message format has been defined. Using such a format will allow the entire WIS2 ecosystem: Data publisher, Data User, Global Services to ensure robustness, effectiveness of WIS2 as a unified weather, climate, water data exchange platform.
 
 [id=geojson]
-. Use of geoJson
+. Use of GeoJSON
 +
 
 Based on the extended experience of Environnement Canada in using Message Queueing Protocols for effective rea-time data exchange (see https://metpx.github.io/sarracenia/), it has been decided to enhanced the message format used in Sarracenia to use the geoJSON standard (RFC 7946). 
-Having message in geoJSON format will, for example, allow the use of standard validators such as link:https://geojson.io/#map=2/20.0/0.0[geojson.io] or link:https://www.itb.ec.europa.eu/json/geojson/upload[europa.eu] to check the correctness of the format.
+Having message in GeoJSON format will, for example, allow the use of standard validators such as link:https://geojson.io/#map=2/20.0/0.0[geojson.io] or link:https://www.itb.ec.europa.eu/json/geojson/upload[europa.eu] to check the correctness of the format.
 
 . A complete example
 +

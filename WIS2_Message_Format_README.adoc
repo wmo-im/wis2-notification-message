@@ -7,7 +7,7 @@ As explained in https://community.wmo.int/wis2-topic-hierarchy:
 WIS 2.0 real-time data sharing is based on a message queuing protocol (MQP) supporting a publication/subscription mechanism. A user can subscribe to an MQP broker to receive real-time notifications that some data can be downloaded. The notification message received from the MQP broker contains a URL to download the data. In addition, the MQP broker offers a range of topics organised in a hierarchy. The users can select their topics of interest and subscribe to them to receive notifications and download data relevant to their work.
 -----
 
-Alongside with the topic hierarchy, a standard notification message format has been defined. Using such a format will allow the entire WIS2 ecosystem: Data publisher, Data User, Global Services to ensure robustness, effectiveness of WIS2 as a unified weather, climate, water data exchange platform.
+The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
 
 [id=geojson]
 . Use of GeoJSON
@@ -272,7 +272,7 @@ The _links_ array includes one or more URLs to give access to data.
 .Detail of the *links* array
 [cols="1,1,1,1,2"]
 |===
-| Key | Value(s) | Example | Status | Deßscription
+| Key | Value(s) | Example | Status | Description
 
 |*href*
 |URL

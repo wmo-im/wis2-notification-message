@@ -17,11 +17,11 @@ properties:
     description: Version of message specification
     const: v04
   geometry:
+    nullable: true
     oneOf:
     # RGiraud: I have added "null" as it is one accepted option. Couldn't find a $ref for null. geometry is required but can be null. Is this allowed ?
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/polygonGeoJSON.yaml
-      - null
   properties:
     type: object
     properties:

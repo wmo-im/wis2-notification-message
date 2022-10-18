@@ -134,7 +134,22 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
 }
 ----
 
-* _Example 2: Polygon_
+* _Example 2: Point_ with elevation
++
+
+[indent=10]
+----
+"geometry": {
+    "type": "Point",
+    "coordinates": [
+        6.146255135536194,
+        46.223296618227444,
+        392
+    ]
+}
+----
+
+* _Example 3: Polygon_
 +
 [indent=10]
 ----

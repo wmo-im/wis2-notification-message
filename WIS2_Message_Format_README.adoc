@@ -32,8 +32,8 @@ Having message in GeoJSON format will, for example, allow the use of standard va
     ]
 },
 "properties": {
-    "pubtime": "20220320T045018.314854383Z",
-    "datetime": "20220320T044500Z",
+    "pubtime": "2022-03-20T04:50:18.314854383Z",
+    "datetime": "2022-03-20T04:45:00Z",
     "integrity": {
         "method": "sha512",
         "value": "A2KNxvks...S8qfSCw=="
@@ -90,8 +90,8 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
 |*properties*
 |Array
 |`{
-    "pubtime": "20220320T045018.314854383Z",
-    "datetime": "20220320T044500Z",
+    "pubtime": "2022-03-20T04:50:18.314854383Z",
+    "datetime": "2022-03-20T04:45:00Z",
     "integrity": {
         "method": "sha512",
         "value": "A2KNxvks...S8qfSCw=="
@@ -156,13 +156,11 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
 "geometry": {
     "type": "Polygon",
     "coordinates": [
-    [
       [-7.75,40.43],
       [-7.75,78.46],
       [71.91,78.46],
       [71.91,40.43],
       [-7.75,40.43]
-    ]
   ]
 }
 ----
@@ -184,10 +182,10 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
 | Key | Value(s) | Example | Status | Description
 
 |*pubtime*
-|Date/Time in RFC 3339 format 
-|`20220320T045018.314854383Z`
+|Date/Time in RFC 3339 format. 
+|`2022-03-20T04:50:18.314854383Z`
 |Mandatory
-|Identifies the date/time of when the file was posted/published, in RFC3339 format. The publication date/time is critical for subscribers to prevent message loss by knowing their lag (how far behind the publisher they are).
+|Identifies the date/time of when the file was posted/published, in RFC3339 format. The publication date/time is critical for subscribers to prevent message loss by knowing their lag (how far behind the publisher they are). Only Z time zone is accepted.
 |*data_id*
 |element of the topic tree and unique identifier
 |`wis2/CAN/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4`
@@ -198,21 +196,21 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
 by the originating center as long as it is unique over a 1 week period.
 |*datetime*
 |Date/Time in RFC 3339 format 
-|`20220320T045018`
+|`2022-03-20T04:50:18Z`
 |Optional (and exclusive of start_ and end_datetime)
-|Identifies the date/time of the data being published, in RFC3339 format. E.g. for observation data, date of measurement.
+|Identifies the date/time of the data being published, in RFC3339 format. E.g. for observation data, date of measurement. Only Z time zone is accepted.
 |*start_datetime*
 |Date/Time in RFC 3339 format 
-|`20220320T045018`
+|`2022-03-20T04:50:18Z`
 |Optional (and exclusive of datetime). +
 Mandatory if end_datetime is included.
-|Identifies the start date/time of the data being published, in RFC3339 format. E.g., for NWP product, start of the forecasting period.
+|Identifies the start date/time of the data being published, in RFC3339 format. E.g., for NWP product, start of the forecasting period. Only Z time zone is accepted.
 |*end_datetime*
 |Date/Time in RFC 3339 format 
-|`20220320T045018`
+|`2022-03-20T04:50:18Z`
 |Optional (and exclusive of datetime). +
 Mandatory if start_datetime is included.
-|Identifies the end date/time of the data being published, in RFC3339 format. E.g., for NWP product, end of the forecasting period.
+|Identifies the end date/time of the data being published, in RFC3339 format. E.g., for NWP product, end of the forecasting period. Only Z time zone is accepted.
 |*integrity*
 |Array
 |`{

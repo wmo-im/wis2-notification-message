@@ -17,9 +17,9 @@
     ]
 },
 "properties": {
-    "pubtime": "20220320T045018.314854383Z",
-    "start_datetime": "20220320T000600Z",
-    "end_datetime": "20220320T001200Z",
+    "pubtime": "2022-0-320T04:50:18.314854383Z",
+    "start_datetime": "2022-03-20T00:06:00Z",
+    "end_datetime": "2022-03-20T00:12:00Z",
     "integrity": {
         "method": "sha512",
         "value": "A2KNxvks...S8qfSCw=="

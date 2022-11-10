@@ -42,7 +42,7 @@ Having message in GeoJSON format will, for example, allow the use of standard va
     "content": {
         "encoding": "utf-8",
         "value": "encoded bytes from the file",
-        "length": 457
+        "size": 457
     }
 },
 "links": [
@@ -100,7 +100,7 @@ It must be noted that the *geometry* key is mandatory in GeoJSON but can be of t
     "content": {
         "encoding": "utf-8",
         "value": "encoded bytes from the file",
-        "length": 457
+        "size": 457
     }
 }`
 |Mandatory
@@ -226,7 +226,7 @@ Mandatory if start_datetime is included.
 |`{
         "encoding": "utf-8",
         "value": "encoded bytes from the file",
-        "length": 457
+        "size": 457
     }`
 |Optional
 |
@@ -273,11 +273,11 @@ It is _possible_ (but not mandatory) to include in the message the data. For sma
 |`encoded bytes from the file`
 |Mandatory
 |The UTF-8 version of the data. 
-|*length*
-|Int (*MUST* be below 2048)
+|*size*
+|integer (*MUST* be below 2048)
 |`1056`
 |Mandatory
-|The length of the data encoded in UTF-8. The value MUST be below 2048. Global Brokers might discard messages with *length* above 2048 bytes.
+|The size of the data encoded in UTF-8. The value MUST be below 2048. Global Brokers might discard messages with *size* above 2048 bytes.
 |===
 
 [id=links]
@@ -304,5 +304,10 @@ The _links_ array includes one or more URLs to give access to data.
 |`application/x-grib`
 |Mandatory
 |The MIME type of the data.
+|*length*
+|integer
+|`8804`
+|Optional
+|The length (in bytes) indicating the size of the data in the response when downloading the link.
 |===
 

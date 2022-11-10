@@ -156,6 +156,7 @@ properties:
         required:
           - encoding
           - length
+          - value
     required:
       - pubtime
       - data_id

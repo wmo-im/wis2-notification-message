@@ -85,7 +85,7 @@ properties:
             enum:
               - utf-8
               - base64
-          size:
+          length:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
             # RGiraud: Can we limit the size of the embedded data here?
@@ -94,7 +94,7 @@ properties:
             description: the inline content of the file.
         required:
           - encoding
-          - size
+          - length
     required:
       - pubtime
       - data_id

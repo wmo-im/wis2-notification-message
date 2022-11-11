@@ -6,6 +6,7 @@ description: WMO WIS 2.0 broker message schema
 definitions:
   schemas:
     link:
+      # from https://github.com/opengeospatial/ogcapi-features/blob/master/core/openapi/schemas/link.yaml
       type: object
       required:
         - href

@@ -243,10 +243,10 @@ It is _suggested_ (but not mandatory) to include in the message properties integ
 | Key | Value(s) | Example | Status | Description
 
 |*method*
-|sha512 \| md5 
+|`sha256` \| `sha512` \| `md5`
 |`sha512`
 |Mandatory
-|A format of the hashing method used to enable integrity check of the data. sha512 is the preferred option. md5 can be used as a fallback.
+|A format of the hashing method used to enable integrity check of the data. Acceptable values are `md5`, `sha256` and `sha512`. `sha512` is preferred.
 |*value*
 |String 
 |`3bb12eda3c298db5de25597f54d924f2e17e78a26ad89...b0124ecb8a`
@@ -297,13 +297,13 @@ The _links_ array includes one or more URLs to give access to data.
 |*rel*
 |canonical 
 |`canonical`
-|Optional
-|The UTF-8 version of the data. 
-|*type*
-|Mime-Type (RFC 6838)
-|`application/x-grib`
 |Mandatory
-|The MIME type of the data.
+|The link relation describing the relationship between the link and the message. See https://www.iana.org/assignments/link-relations/link-relations.xhtml for the official list of IANA link relations.
+|*type*
+|Media type (RFC 6838)
+|`application/x-grib`
+|Optional
+|The media type of the data.
 |*length*
 |integer
 |`8804`

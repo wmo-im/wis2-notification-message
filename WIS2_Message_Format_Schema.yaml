@@ -16,6 +16,10 @@ definitions:
           example: http://data.example.com/buildings/123
         rel:
           type: string
+          description: |
+            the link relation describing the relationship between the link and the message.
+            See https://www.iana.org/assignments/link-relations/link-relations.xhtml for the
+            official list of IANA link relations.
           example: canonical
         type:
           type: string
@@ -28,6 +32,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
+          description: for file links optional length provides the number of bytes in the file
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -122,11 +127,12 @@ properties:
             type: string
             description: |
                 A specific set of methods for calculating the checksum algorithms:
+                * ``sha256``: the Secure Hash Algorithm 256 bits, value is base64 encoded.
                 * ``sha512``: the Secure Hash Algorithm 512 bits, value is base64 encoded.
                 * ``arbitrary``: an arbitrary string is used to identify the value.
                 * ``md5``: the Message Digest 5 hash (obsolete, perhaps will be rejected)
-            #RGiraud: Not sure about the "arbitrary" value. What is it?
             enum:
+              - sha256
               - sha512
               - arbitrary
               - md5
@@ -146,16 +152,15 @@ properties:
             enum:
               - utf-8
               - base64
-          length:
+          size:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
-            # RGiraud: Can we limit the size of the embedded data here?
           value:
             type: string
             description: the inline content of the file.
         required:
           - encoding
-          - length
+          - size
           - value
     required:
       - pubtime

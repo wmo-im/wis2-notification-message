@@ -28,7 +28,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
-          # For file links optional length provides the number of bytes in the file
+          description: for file links optional length provides the number of bytes in the file
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -123,11 +123,12 @@ properties:
             type: string
             description: |
                 A specific set of methods for calculating the checksum algorithms:
+                * ``sha256``: the Secure Hash Algorithm 256 bits, value is base64 encoded.
                 * ``sha512``: the Secure Hash Algorithm 512 bits, value is base64 encoded.
                 * ``arbitrary``: an arbitrary string is used to identify the value.
                 * ``md5``: the Message Digest 5 hash (obsolete, perhaps will be rejected)
-            #RGiraud: Not sure about the "arbitrary" value. What is it?
             enum:
+              - sha256
               - sha512
               - arbitrary
               - md5
@@ -150,8 +151,6 @@ properties:
           size:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
-            # RGiraud: Can we limit the size of the embedded data here?
-            # Using size to avoir confusion with length in links array
           value:
             type: string
             description: the inline content of the file.

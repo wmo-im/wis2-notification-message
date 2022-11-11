@@ -16,6 +16,10 @@ definitions:
           example: http://data.example.com/buildings/123
         rel:
           type: string
+          description: |
+            the link relation describing the relationship between the link and the message.
+            See https://www.iana.org/assignments/link-relations/link-relations.xhtml for the
+            official list of IANA link relations.
           example: canonical
         type:
           type: string
@@ -87,7 +91,7 @@ properties:
       - $ref: '#/definitions/schemas/pointGeoJSON'
       - $ref: '#/definitions/schemas/polygonGeoJSON'
   properties:
-    type: object
+      type: object
     properties:
       pubtime:
         type: string

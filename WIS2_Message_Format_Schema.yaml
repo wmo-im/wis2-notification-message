@@ -28,6 +28,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
+          # For file links optional length provides the number of bytes in the file
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -146,16 +147,17 @@ properties:
             enum:
               - utf-8
               - base64
-          length:
+          size:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
             # RGiraud: Can we limit the size of the embedded data here?
+            # Using size to avoir confusion with length in links array
           value:
             type: string
             description: the inline content of the file.
         required:
           - encoding
-          - length
+          - size
           - value
     required:
       - pubtime

@@ -91,7 +91,7 @@ properties:
       - $ref: '#/definitions/schemas/pointGeoJSON'
       - $ref: '#/definitions/schemas/polygonGeoJSON'
   properties:
-      type: object
+    type: object
     properties:
       pubtime:
         type: string

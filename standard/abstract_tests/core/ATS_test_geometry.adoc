@@ -1,0 +1,37 @@
+[[ats_core_geometry]]
+====
+[%metadata]
+label:: /conf/core/geometry
+subject:: /req/core/geometry
+test-purpose:: Validate that a WNM provides a valid geometry property.
+
+[.component,class=test method]
+=====
+
+[.component,class=step]
+--
+Check for the existence of one `+geometry+` property in the WNM.
+--
+
+[.component,class=step]
+--
+Check that all `+geometry.coordinates+` value data types are integers or floats.
+--
+
+[.component,class=step]
+--
+Check that `+geometry.coordinates+` longitudinal values are between -180 and 180.
+--
+
+[.component,class=step]
+--
+Check that `+geometry.coordinates+` latitudinal values are between -90 and 90.
+--
+
+[.component,class=step]
+--
+Check that `+geometry+` property is a valid GeoJSON geometry.
+--
+
+=====
+====

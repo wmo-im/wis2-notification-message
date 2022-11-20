@@ -1,0 +1,27 @@
+[[ats_core_temporal]]
+====
+[%metadata]
+label:: /conf/core/temporal
+subject:: /req/core/temporal
+test-purpose:: Validate that a WNM provides a valid temporal description.
+
+[.component,class=test method]
+=====
+
+[.component,class=step]
+--
+Check for the existence of one `+properties.datetime+` or both `+properties.start_datetime+` and `+properties.end_datetime+`.
+--
+
+[.component,class=step]
+--
+Check that the any of the `+properties.datetime+` or both `+properties.start_datetime+` and `+properties.end_datetime+` properties are in RFC3339 format.
+--
+
+[.component,class=step]
+--
+Check that the any of the `+properties.datetime+` or both `+properties.start_datetime+` and `+properties.end_datetime+` properties are in the UTC timezone.
+--
+
+=====
+====

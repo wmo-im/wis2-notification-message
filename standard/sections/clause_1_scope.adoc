@@ -1,0 +1,12 @@
+== Scope
+
+This document defines the content, structure, and encoding of a notification message discovery published
+as part of a WIS2 Global Broker or a Replay API service.
+
+The WIS2 Notification Message Encoding standard defined herein is an extension of the International Standard _GeoJSON_.
+
+WIS2 Notification Message documents shall be encoded as GeoJSON as defined in _OGC API - Features - Part 1: Core_.
+
+The primary purpose of WIS2 Notification Messages are to notify subscribers or clients of new data being published.
+
+This specification defines the conformance requirements for the WIS2 Notification Message Encoding.  Annex A defines the abstract test suite.

@@ -1,0 +1,6 @@
+[[rec_core_links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/links*
+^|A |A WNM SHOULD provide links using secure protocols such as HTTPS and SFTP, with HTTPS being the preferred option.
+|===

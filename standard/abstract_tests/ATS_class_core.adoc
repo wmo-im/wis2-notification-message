@@ -1,0 +1,43 @@
+[[ats_core]]
+====
+[%metadata]
+label:: http://www.wmo.int/spec/wnm/1.0/conf/core
+subject:: Requirements Class "core"
+classification:: Target Type:Discovery Metadata
+====
+
+==== Validation
+
+include::./core/ATS_test_validation.adoc[]
+
+==== Identifier
+
+include::./core/ATS_test_id.adoc[]
+
+==== Version
+
+include::./core/ATS_test_version.adoc[]
+
+==== Type
+
+include::./core/ATS_test_type.adoc[]
+
+==== Geometry
+
+include::./core/ATS_test_geometry.adoc[]
+
+==== Properties / Publication Time
+
+include::./core/ATS_test_pubtime.adoc[]
+
+==== Properties / Data Identification
+
+include::./core/ATS_test_data_id.adoc[]
+
+==== Properties / Temporal description
+
+include::./core/ATS_test_temporal.adoc[]
+
+=== Links
+
+include::./core/ATS_test_links.adoc[]

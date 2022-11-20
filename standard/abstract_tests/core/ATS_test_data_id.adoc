@@ -1,0 +1,22 @@
+[[ats_core_data_id]]
+====
+[%metadata]
+label:: /conf/core/data_id
+subject:: /req/core/data_id
+test-purpose:: Validate that a WNM has a valid data_id.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check for the existence of an `+data_id+` property.
+--
+
+[.component,class=step]
+--
+Check that the `+data_id+` property starts with a valid WIS2 topic with the channel and version removed.
+--
+
+=====
+====
+

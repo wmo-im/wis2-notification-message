@@ -1,0 +1,16 @@
+== Conformance
+
+Conformance with this standard shall be checked using the tests specified in Annex A (normative) of this document.
+
+_GeoJSON_ provides an encoding for encoding geographic features (geometry, attributes).  This standard is an extension of _GeoJSON_.
+
+Data providers are required to comply with all conformance classes of this specification in support
+of providing MQP services.
+
+WMO shall publish guidance material to assist data providers in constructing WIS2 Notification Messages.
+
+This standard identifies one Conformance Class which defines the functional requirements.
+
+The mandatory Conformance Class for this specification is:
+
+* "WIS2 Notification Message Encoding Core"

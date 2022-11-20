@@ -1,0 +1,8 @@
+[[req_core_identifier]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/identifier*
+^|A |A WNM SHALL have an identifier via the `+id+` property.
+^|B |A WNM identifier SHALL be provided as a Universally Unique Identifier (UUID).
+|===
+

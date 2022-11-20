@@ -1,0 +1,37 @@
+[big]*i.     Abstract*
+
+WIS2 real-time data sharing is based on a message queuing protocol (MQP) supporting a
+publication/subscription (PubSub) mechanism.  A user can subscribe to an MQP broker to receive
+real-time notifications of the existence of new data.  The notification message received from
+the MQP broker contains a URL to download the data.  In addition, the MQP broker offers a
+range of topics organised in a hierarchy. The users can select their topics of interest and
+subscribe to them to receive notifications and download data relevant to their work.
+
+The standard notification message format ensures that the WIS2 ecosystem (data publisher, data
+user, and global services) is a robust, effective, and unified exchange platform for weather,
+climate, and water data.
+
+This document defines the content, structure, and encoding for the WIS2 Notification Message
+Encoding.  This standard is an extension of the OGC API - Features standard footnote:[https://ogcapi.ogc.org/features].
+WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, Global Broker services, as well
+as Replay API services (optional OGC API - Features services for data notifications).
+
+WIS2 Notification Message documents shall be encoded in GeoJSON (RFC7946 footnote:[https://datatracker.ietf.org/doc/html/rfc7946]) as
+defined in this specification and shall be made available as MQP payloads or via API provisioning as defined
+by OGC API - Features.
+
+Weather/climate/water data is by nature geospatial and temporal.  The W3C Data on the Web Best
+Practices footnote:[https://www.w3.org/TR/dwbp] and Spatial Data on the Web Best Practices footnote:[https://www.w3.org/TR/sdw-bp] publications
+provide guidelines on how to best enable spatiotemporal data to lower the barrier for users, search engine optimization, and linked data.  This also aligns with the FAIR data principles (Findable, Accessible, Interoperable, Reusable) footnote:[https://en.wikipedia.org/wiki/FAIR_data].
+
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+wmo, wis 2.0, weather, climate, water, metadata, pubsub, mqp, message queuing protocol, GeoJSON
+
+[big]*iii.    Security Considerations*
+
+Based on the WMO Unified Data Policy for the International Exchange of Earth System Data (Resolution 1 (Cg-Ext(2021) footnote:[https://library.wmo.int/doc_num.php?explnum_id=11113#page=9], exchanged data are classified as `+core+` or `+recommended+`.  Core data is considered fully open and unrestricted with no security considerations.  Recommended data may have access control defined.
+
+No security considerations have been made for this standard.

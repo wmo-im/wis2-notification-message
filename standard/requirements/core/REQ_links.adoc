@@ -6,6 +6,6 @@
 ^|B |A WNM's `+links+` array property SHALL contain at least one link with at least the required `+href+` and `+rel+` properties.
 ^|C |A WNM's link object's `+rel+` property SHALL use one of valid IANA link relations footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml].
 ^|D |A WNM's `+links+` array property SHALL contain exactly one link with a link relation of `canonical` to clearly identify the preferred link from which to access data.
-^|E |A WNM's `+links+` array property SHALL contain links which are require no further action in order to download a given data granule.
+^|E |A WNM's `+links+` array property SHALL contain links which, for core data, require no further action in order to download a given data granule.
 ^|F |A WNM SHALL provide links using using HTTP, HTTPS, FTP or SFTP.
 |===

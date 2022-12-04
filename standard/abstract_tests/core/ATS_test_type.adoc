@@ -9,7 +9,7 @@ test-purpose:: Validate that a WNM provides a valid type.
 =====
 [.component,class=step]
 --
-Check for the existence of a `+.type+` property in the WNM
+Check for the existence of a `+type+` property in the WNM
 --
 
 [.component,class=step]

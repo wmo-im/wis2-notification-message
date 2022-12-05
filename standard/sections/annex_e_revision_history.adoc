@@ -5,5 +5,5 @@
 [cols="12,18,12,12,46",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
-|2022-11-15 | Template | Tom Kralidis |all | initial template
+|2022-12-05 | Template | Tom Kralidis |all | update from TT-Protocols/ET-W2AT
 |===

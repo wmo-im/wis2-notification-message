@@ -16,8 +16,8 @@ development of this specification:
 ==== Publish, Subscribe, Download
 
 Event driven (PubSub) workflow involves a client connecting to a MQP broker, subscribing to one or more
-topics and receiving relevant notifications.  Notifications provide information to ensure data integrity,
-authoritative data retrieval source(s), and spatiotemporal extents of a data granule.
+topics and receiving relevant notifications.  Notifications provide information to ensure data integrity
+and spatiotemporal extents of a data granule.
 
 ==== Replay API workflow
 

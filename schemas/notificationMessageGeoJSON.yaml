@@ -153,6 +153,7 @@ properties:
             enum:
               - utf-8
               - base64
+              - gzip
           size:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.

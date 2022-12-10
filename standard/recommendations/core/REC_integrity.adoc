@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/integrity*
-^|A |A WNM SHOULD provide an `+integrity+` property, consisting of a `+method+` property identifying the hashing method (``md5``, ``sha256``, ``sha512``) and a `+value+` property of the hashing result.
+^|A |A WNM SHOULD provide an `+integrity+` property, consisting of a `+method+` property identifying the hashing method (``md5``, ``sha256``, ``sha512``) and a `+value+` property of the hashing result, when it can be easily derived.
 |===

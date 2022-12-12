@@ -1,5 +1,4 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-# test
 $id: https://schemas.wmo.int/wis2/broker/message/0.9.0/schema.yml
 title: WMO WIS 2.0 broker message schema
 description: WMO WIS 2.0 broker message schema

@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v3
       - name: build documentation
         run: |
-          && cd standard \
+          cd standard \
           && asciidoctor --trace -o /tmp/wis2-notification-message/standard/${FILE_BASENAME}.html index.adoc \
           && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/standard/${FILE_BASENAME}.docx \
           && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/standard/${FILE_BASENAME}.pdf index.adoc \

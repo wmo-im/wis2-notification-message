@@ -1,0 +1,24 @@
+[[examples]]
+[appendix]
+:appendix-caption: Annex
+== Examples (Informative)
+
+=== WIS2 Notification Message Examples
+
+.Example: single observation including meaningful geometry, observation datetime and content
+[source,json]
+----
+include::../../examples/example1.json[]
+----
+
+.Example: NWP product including polygon ``geometry``, ``start_datetime`` and ``end_datetime``.  The polygon is an array with 5 elements.  The first (and last) elements are most southwestern point of the rectangle using longitude and latitude and followed by other coordinates in a clockwise direction.
+[source,json]
+----
+include::../../examples/example1.json[]
+----
+
+.Example: minimal viable message compliant to the specification
+[source,json]
+----
+include::../../examples/example1.json[]
+----

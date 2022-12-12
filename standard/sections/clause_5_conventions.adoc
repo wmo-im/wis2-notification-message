@@ -1,0 +1,36 @@
+== Conventions
+This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of JSON schema, or special notes regarding how to read the document.
+
+=== Identifiers
+The normative provisions in this Standard are denoted by the URI:
+
+http://wis.wmo.int/spec/wnm/1.0
+
+All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+
+=== Examples
+
+Examples provided in this specification are encoded as GeoJSON.
+
+Complete examples can be found at https://schemas.wmo.int/wnm/1.0/examples
+
+=== Schemas
+
+The WIS2 Notification Message schema can be found at https://schemas.wmo.int/wnm/1.0/notificationMessageGeoJSON.yaml 
+
+=== Schema representation
+
+JSON Schema footnote:[https://json-schema.org] objects are used throughout this standard to define the structure
+of metadata records. These schema objects are also typically represented using YAML footnote:[https://en.wikipedia.org/wiki/YAML].
+YAML is a superset of JSON, and in this standard are regarded as equivalent.
+
+Metadata record instances are always defined as JSON.
+
+==== Properties
+
+A JSON **property** represents a key-value pair, where the key is the name of the property and the value is a standard JSON data type.
+
+[source,json]
+----
+"myPropertyName": "test123"
+----

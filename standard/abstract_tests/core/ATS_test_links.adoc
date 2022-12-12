@@ -1,0 +1,31 @@
+[[ats_core_links]]
+====
+[%metadata]
+label:: /conf/core/links
+subject:: /req/core/links
+test-purpose:: Validate that a WNM provides a link array property.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check for the existence of a single `+links+` array property in the WNM.
+--
+
+[.component,class=step]
+--
+Check that the `+links+` array property provides a minimum of one link object.
+--
+
+[.component,class=step]
+--
+For each link object, check that the `+rel+` property contains a valid IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml].
+--
+
+[.component,class=step]
+--
+Check that the `+links+` array property contains one link object with a ``rel`` property with value ``canonical`` as well as an ``href`` property.
+--
+
+=====
+====

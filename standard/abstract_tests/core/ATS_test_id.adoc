@@ -1,0 +1,15 @@
+[[ats_core_id]]
+====
+[%metadata]
+label:: /conf/core/identifier
+subject:: /req/core/identifier
+test-purpose:: Validate that a WNM has a valid identifier.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check for the existence of an `+id+` property in the WNM.
+--
+=====
+====

@@ -1,0 +1,27 @@
+== Introduction
+
+=== Motivation
+
+MQP brokers provide "push" based services, supporting event-driven workflows, maximizing efficient
+use of network, bandwidth, and rapid response to time-sensitive events (e.g. severe weather events).
+However, MQP brokers do not specify a payload encoding.  Using GeoJSON as a baseline for this specification
+provides broad interoperability, lowering the barrier and extending the reach of data in the WIS2
+ecosystem and beyond.
+
+=== Scenarios
+
+The following scenarios are useful in understanding the drivers and principles that were used in the
+development of this specification:
+
+==== Publish, Subscribe, Download
+
+Event driven (PubSub) workflow involves a client connecting to a MQP broker, subscribing to one or more
+topics and receiving relevant notifications.  Notifications provide information to ensure data integrity
+and spatiotemporal extents of a data granule.
+
+==== Replay API workflow
+
+API workflow involves a client connecting to an OGC API - Features services in order to query for messages
+in the past using spatial, temporal, or attribute predicates.  A Replay API workflow is valuable in
+situations where connections to MQP brokers may drop, thereby allowing a given subscriber to gather past
+messages.

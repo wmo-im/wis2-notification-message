@@ -1,0 +1,12 @@
+[[rc_core]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.wmo.int/spec/wnm/1.0/req/core
+|Target type |Notification Metadata
+|Dependency |<<rfc8259,IETF RFC8259: The JavaScript Object Notation (JSON) Data Interchange Format>>
+|Dependency |<<json-schema, JSON Schema>>
+|Dependency |<<rfc7946,GeoJSON>>
+|Pre-conditions |
+The record conforms to GeoJSON (RFC7946)
+|===

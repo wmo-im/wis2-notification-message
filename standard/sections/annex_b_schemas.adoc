@@ -1,0 +1,13 @@
+[[schemas]]
+[appendix]
+:appendix-caption: Annex
+== Schemas (Normative)
+
+NOTE: The schema document will only be published on `schemas.wmo.int` once the standard has been approved.
+
+=== WIS2 Notification Message Schema
+
+[source,yaml]
+----
+include::../../schemas/notificationMessageGeoJSON.yaml[]
+----

@@ -1,0 +1,27 @@
+[[ats_core_pubtime]]
+====
+[%metadata]
+label:: /conf/core/pubtime
+subject:: /req/core/pubtime
+test-purpose:: Validate that a WNM has a valid pubtime.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check for the existence of an `+properties.pubtime+` property.
+--
+
+[.component,class=step]
+--
+Check that the `+properties.pubtime+` property is in RFC3339 format.
+--
+
+[.component,class=step]
+--
+Check that the `+properties.pubtime+` property is in the UTC timezone.
+--
+
+=====
+====
+

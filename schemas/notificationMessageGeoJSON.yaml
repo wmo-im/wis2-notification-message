@@ -14,7 +14,7 @@ definitions:
       properties:
         href:
           type: string
-          example: http://data.example.com/buildings/123
+          example: https://example.com/data/obs/123
         rel:
           type: string
           description: |
@@ -153,6 +153,7 @@ properties:
             enum:
               - utf-8
               - base64
+              - gzip
           size:
             type: integer
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
@@ -166,10 +167,15 @@ properties:
     required:
       - pubtime
       - data_id
-    # RGiraud: How do we say that it either nothing, datetime or start_datetime and end_datetime
-      # - datetime | [ start_datetime, end_datetime ]
-      # - content
-      # - integrity
+    oneOf:
+      - allOf:
+        - required:
+          - start_datetime
+          - end_datetime
+      - allOf:
+        - required:
+          - datetime
+
   links:
     type: array
     minItems: 1

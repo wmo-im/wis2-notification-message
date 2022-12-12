@@ -1,0 +1,4 @@
+click
+flake8
+jsonschema
+pyyaml

@@ -37,7 +37,8 @@
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/FRA/meteo-france/data/core/weather/global-analysis-prediction/abcdef-abcd-abcd-abcd-abcdefabcd"
+        "data_id": "wis2/fra/meteo-france/data/core/weather/global-analysis-prediction/abcdef-abcd-abcd-abcd-abcdefabcd",
+        "metadata_id": "urn:x-wmo:md:fra:meteo-france:gap123"
     },
     "links": [
         {

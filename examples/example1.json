@@ -16,7 +16,8 @@
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/CAN/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
             "value": "encoded bytes from the file",

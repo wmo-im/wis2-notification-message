@@ -108,6 +108,9 @@ properties:
           1. MQTT topic hierarchy where this message will be published as defined in https://github.com/wmo-im/wis2-topic-hierarchy without leading channel/version
           2. a unique identifier of the data. It could be the filename used by the originating center or a unique UUID (RFC4122) or anything chosen 
           by the originating center as long as it is unique over a 1 week period.
+      metadata_id:
+        type: string
+        description: identifier for associated discovery metadata record to which the notification applies to
       datetime:
         type: string
         format: date-time

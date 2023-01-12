@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/metadata_id*
-^|A |A WNM SHOULD provide a `+properties.metadata_id+` property, consisting of a `+method+` property identifying the hashing method (``md5``, ``sha256``, ``sha512``) and a `+value+` property of the hashing result, when it can be easily derived.
+^|A |A WNM SHOULD provide a `+properties.metadata_id+` property, identifying the associated discovery metadata record to which the notification applies to.
 |===

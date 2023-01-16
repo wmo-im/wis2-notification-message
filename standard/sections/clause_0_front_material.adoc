@@ -17,7 +17,7 @@ WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, 
 as Replay API services (optional OGC API - Features services for data notifications).
 
 WIS2 Notification Message documents shall be encoded in GeoJSON (RFC7946 footnote:[https://datatracker.ietf.org/doc/html/rfc7946]) as
-defined in this specification and shall be made available as MQP payloadsi.  Additionally, they can be provisioned as defined
+defined in this specification and shall be made available as MQP payloads.  Additionally, they can be provisioned as defined
 by OGC API - Features.
 
 Weather/climate/water data is by nature geospatial and temporal.  The W3C Data on the Web Best

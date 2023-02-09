@@ -189,4 +189,4 @@ required:
   - properties
   - links
 example:
-  $ref: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/WIS2_Message_Format_Example_1.json
+  $ref: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/examples/example1.json

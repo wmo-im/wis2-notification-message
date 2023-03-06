@@ -38,6 +38,6 @@ include::./core/ATS_test_data_id.adoc[]
 
 include::./core/ATS_test_temporal.adoc[]
 
-=== Links
+==== Links
 
 include::./core/ATS_test_links.adoc[]

@@ -1661,11 +1661,26 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </tbody>
 </table>
 <div class="listingblock">
+<div class="title">Example: Canonical link</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"links": [{
   "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
   "rel": "canonical",
   "type": "application/x-bufr"
+}]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: Multiple links</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
+  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+  "rel": "canonical",
+  "type": "application/x-bufr"
+}, {
+  "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
+  "rel": "item",
+  "type": "application/json"
 }]</code></pre>
 </div>
 </div>
@@ -2359,6 +2374,11 @@ example:
             "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
             "rel": "canonical",
             "type": "application/x-bufr"
+        },
+        {
+            "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
+            "rel": "item",
+            "type": "application/json"
         }
     ]
 }</code></pre>
@@ -2397,6 +2417,11 @@ example:
             "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
             "rel": "canonical",
             "type": "application/x-bufr"
+        },
+        {
+            "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
+            "rel": "item",
+            "type": "application/json"
         }
     ]
 }</code></pre>
@@ -2435,6 +2460,11 @@ example:
             "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
             "rel": "canonical",
             "type": "application/x-bufr"
+        },
+        {
+            "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
+            "rel": "item",
+            "type": "application/json"
         }
     ]
 }</code></pre>
@@ -2562,7 +2592,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-06 11:40:30 UTC
+Last updated 2023-03-06 13:08:54 UTC
 </div>
 </div>
 </body>

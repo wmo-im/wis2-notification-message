@@ -1376,10 +1376,13 @@ by the originating center as long as it is unique over a 1 week period</p>
 <div class="sect4">
 <h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.7.4. Temporal description (datetime, start_datetime, end_datetime)</h5>
 <div class="paragraph">
-<p>The <code>datetime</code> property identifies the date and time of the data being published (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
+<p>The <code>datetime</code> property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
 <p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (e.g. start/end times for an NWP forecasting period), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
+</div>
+<div class="paragraph">
+<p>A <code>null</code> value can also be used if no temporal description of the data can be derived as part of generating the message.</p>
 </div>
 <table id="req_core_temporal" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1411,6 +1414,12 @@ by the originating center as long as it is unique over a 1 week period</p>
 <p>A WNM&#8217;s temporal description SHALL be provided in the UTC timezone.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM&#8217;s temporal description SHALL be set to <code>null</code> (using only <code>properties.datetime</code>) when a temporal description cannot be derived.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <div class="listingblock">
@@ -1430,6 +1439,15 @@ by the originating center as long as it is unique over a 1 week period</p>
   ...
   "start_datetime": "2022-03-20T04:45:00Z",
   "end_datetime": "2022-03-22T04:45:00Z"
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: No temporal description</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  "datetime": null,
   ...
 }</code></pre>
 </div>
@@ -2634,7 +2652,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-09 11:38:52 UTC
+Last updated 2023-03-09 12:22:42 UTC
 </div>
 </div>
 </body>

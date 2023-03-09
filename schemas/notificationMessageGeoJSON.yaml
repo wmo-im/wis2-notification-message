@@ -33,7 +33,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
-          description: for file links optional length provides the number of bytes in the file
+          description: for file links optional length provides the number of bytes in the file.
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -77,10 +77,10 @@ properties:
   id: 
     type: string
     format: uuid
-    description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period 
+    description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period.
   version:
     type: string
-    description: Version of message specification
+    description: Version of message specification.
     const: v04
   type:
     type: string
@@ -110,7 +110,7 @@ properties:
           by the originating center as long as it is unique over a 1 week period.
       metadata_id:
         type: string
-        description: identifier for associated discovery metadata record to which the notification applies to
+        description: identifier for associated discovery metadata record to which the notification applies to.
       datetime:
         type: string
         format: date-time

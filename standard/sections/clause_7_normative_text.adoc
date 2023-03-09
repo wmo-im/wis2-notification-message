@@ -176,9 +176,11 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 
 ===== Temporal description (datetime, start_datetime, end_datetime)
 
-The ``datetime`` property identifies the date and time of the data being published (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (``Z``).
+The ``datetime`` property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (``Z``).
 
 The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (e.g. start/end times for an NWP forecasting period), in RFC3339 format, in the UTC timezone (``Z``). 
+
+A ``null`` value can also be used if no temporal description of the data can be derived as part of generating the message.
 
 include::../requirements/core/REQ_temporal.adoc[]
 
@@ -199,6 +201,15 @@ include::../requirements/core/REQ_temporal.adoc[]
   ...
   "start_datetime": "2022-03-20T04:45:00Z",
   "end_datetime": "2022-03-22T04:45:00Z"
+  ...
+}
+----
+
+.Example: No temporal description
+[source,json]
+----
+"properties": {
+  "datetime": null,
   ...
 }
 ----

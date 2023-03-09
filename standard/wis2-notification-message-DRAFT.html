@@ -458,10 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-03-06</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-03-09</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-03-06</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-03-09</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -1338,7 +1338,43 @@ by the originating center as long as it is unique over a 1 week period</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.7.3. Temporal description (datetime, start_datetime, end_datetime)</h5>
+<h5 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.7.3. metadata_id</h5>
+<div class="paragraph">
+<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset.</p>
+</div>
+<table id="rec_core_metadata_id" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/core/metadata_id</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property, identifying the associated discovery metadata record to which the notification applies to.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
+
+  ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.7.4. Temporal description (datetime, start_datetime, end_datetime)</h5>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data being published (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
 </div>
@@ -1400,7 +1436,7 @@ by the originating center as long as it is unique over a 1 week period</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_integrity"><a class="anchor" href="#_integrity"></a>7.1.7.4. Integrity</h5>
+<h5 id="_integrity"><a class="anchor" href="#_integrity"></a>7.1.7.5. Integrity</h5>
 <div class="paragraph">
 <p>For data verification, it is suggested (but not mandatory) to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1419,7 +1455,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 1</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 2</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/integrity</strong></p>
 </div></div></td>
@@ -1427,7 +1463,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide an <code>integrity</code> property, consisting of a <code>method</code> property identifying the hashing method (<code>md5</code>, <code>sha256</code>, <code>sha512</code>) and a <code>value</code> property of the hashing result, when it can be easily derived.</p>
+<p>A WNM SHOULD provide a <code>properties.integrity</code> property, consisting of a <code>method</code> property identifying the hashing method (<code>md5</code>, <code>sha256</code>, <code>sha512</code>) and a <code>value</code> property of the hashing result, when it can be easily derived.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1446,7 +1482,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </div>
 </div>
 <div class="sect4">
-<h5 id="_content"><a class="anchor" href="#_content"></a>7.1.7.5. Content</h5>
+<h5 id="_content"><a class="anchor" href="#_content"></a>7.1.7.6. Content</h5>
 <div class="paragraph">
 <p>For data granules with sizes smaller than 2048 bytes, the <code>content</code> property allows for including the data in the message. The <code>content</code> property provides an additional inline data access capability, in addition to a canonical link of the message.</p>
 </div>
@@ -1466,7 +1502,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 2</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 3</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/content</strong></p>
 </div></div></td>
@@ -1494,7 +1530,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </div>
 </div>
 <div class="sect4">
-<h5 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.7.6. Additional properties</h5>
+<h5 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.7.7. Additional properties</h5>
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.</p>
 </div>
@@ -1621,7 +1657,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 3</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 4</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/links</strong></p>
 </div></div></td>
@@ -1655,7 +1691,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM links array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).</p>
+<p>A WNM <code>links</code> array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2174,7 +2210,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
-          description: for file links optional length provides the number of bytes in the file
+          description: for file links optional length provides the number of bytes in the file.
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -2218,10 +2254,10 @@ properties:
   id: 
     type: string
     format: uuid
-    description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period 
+    description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period.
   version:
     type: string
-    description: Version of message specification
+    description: Version of message specification.
     const: v04
   type:
     type: string
@@ -2249,6 +2285,9 @@ properties:
           1. MQTT topic hierarchy where this message will be published as defined in https://github.com/wmo-im/wis2-topic-hierarchy without leading channel/version
           2. a unique identifier of the data. It could be the filename used by the originating center or a unique UUID (RFC4122) or anything chosen 
           by the originating center as long as it is unique over a 1 week period.
+      metadata_id:
+        type: string
+        description: identifier for associated discovery metadata record to which the notification applies to.
       datetime:
         type: string
         format: date-time
@@ -2362,7 +2401,8 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/CAN/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
             "value": "encoded bytes from the file",
@@ -2405,7 +2445,8 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/CAN/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
             "value": "encoded bytes from the file",
@@ -2448,7 +2489,8 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/CAN/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
             "value": "encoded bytes from the file",
@@ -2592,7 +2634,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-06 13:08:54 UTC
+Last updated 2023-03-09 11:38:52 UTC
 </div>
 </div>
 </body>

@@ -1,0 +1,6 @@
+[[rec_core_metadata_id]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/metadata_id*
+^|A |A WNM SHOULD provide a `+properties.metadata_id+` property, identifying the associated discovery metadata record to which the notification applies to.
+|===

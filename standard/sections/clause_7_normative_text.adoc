@@ -157,6 +157,23 @@ include::../requirements/core/REQ_data_id.adoc[]
 }
 ----
 
+[[metadata_id]]
+===== metadata_id
+
+The ``metadata_id`` property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset.
+
+include::../recommendations/core/REC_metadata_id.adoc[]
+
+[source,json]
+----
+"properties": {
+  ...
+  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
+
+  ...
+}
+----
+
 ===== Temporal description (datetime, start_datetime, end_datetime)
 
 The ``datetime`` property identifies the date and time of the data being published (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (``Z``).

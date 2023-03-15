@@ -220,9 +220,9 @@ For data verification, it is suggested (but not mandatory) to include data integ
 that a given data granule has not been corrupted during download.
 
 The ``method`` property provides a format of the hashing method used to enable integrity check of the data. Acceptable values
-are ``md5``, ``sha256`` and ``sha512``.  ``sha512`` is preferred.
+are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.  ``sha512`` is preferred.
 
-The ``value`` property provides the result of the hashing method.
+The ``value`` property provides the result of the hashing method, base64 or hexadecimally encoded.
 
 include::../recommendations/core/REC_integrity.adoc[]
 
@@ -232,7 +232,7 @@ include::../recommendations/core/REC_integrity.adoc[]
   ...
   "integrity": {
     "method": "sha512",
-    "value": "3bb12eda3c298db5de25597f54d924f2e17e78a26ad89...b0124ecb8a"
+    "value": "CPvTLiOfYRgfL3YNF/KKElwamwvLQwnzd96VnF2WoYuuH+hVIbwFSPQHHd/qa/fNVUBckviC5/HZs3Nx2jXEsA=="
   }
   ...
 }

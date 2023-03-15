@@ -131,15 +131,19 @@ properties:
             type: string
             description: |
                 A specific set of methods for calculating the checksum algorithms:
-                * ``sha256``: the Secure Hash Algorithm 256 bits, value is base64 encoded.
-                * ``sha512``: the Secure Hash Algorithm 512 bits, value is base64 encoded.
-                * ``arbitrary``: an arbitrary string is used to identify the value.
-                * ``md5``: the Message Digest 5 hash (obsolete, perhaps will be rejected)
+                * ``sha256``: the Secure Hash Algorithm 2, 256 bits, value is base64 encoded.
+                * ``sha384``: the Secure Hash Algorithm 2, 384 bits, value is base64 encoded.
+                * ``sha512``: the Secure Hash Algorithm 2, 512 bits, value is base64 encoded.
+                * ``sha3-256``: the Secure Hash Algorithm 3, 256 bits, value is base64 encoded.
+                * ``sha3-384``: the Secure Hash Algorithm 3, 384 bits, value is base64 encoded.
+                * ``sha3-512``: the Secure Hash Algorithm 3, 512 bits, value is base64 encoded.
             enum:
               - sha256
+              - sha384
               - sha512
-              - arbitrary
-              - md5
+              - sha3-256
+              - sha3-384
+              - sha3-512
           value:
             type: string
             description: checksum value.

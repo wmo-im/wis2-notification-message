@@ -458,10 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-03-09</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-03-15</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-03-09</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-03-15</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -1461,10 +1461,10 @@ that a given data granule has not been corrupted during download.</p>
 </div>
 <div class="paragraph">
 <p>The <code>method</code> property provides a format of the hashing method used to enable integrity check of the data. Acceptable values
-are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512</code> is preferred.</p>
+are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-256</code>, <code>sha3-384</code>, and <code>sha3-512</code>.  <code>sha512</code> is preferred.</p>
 </div>
 <div class="paragraph">
-<p>The <code>value</code> property provides the result of the hashing method.</p>
+<p>The <code>value</code> property provides the result of the hashing method, base64 or hexadecimally encoded.</p>
 </div>
 <table id="rec_core_integrity" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1481,7 +1481,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>properties.integrity</code> property, consisting of a <code>method</code> property identifying the hashing method (<code>md5</code>, <code>sha256</code>, <code>sha512</code>) and a <code>value</code> property of the hashing result, when it can be easily derived.</p>
+<p>A WNM SHOULD provide a <code>properties.integrity</code> property, consisting of a <code>method</code> property identifying the hashing method (<code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-256</code>, <code>sha3-384</code>, <code>sha3-512</code>) and a <code>value</code> property of the hashing result, when it can be easily derived.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1492,7 +1492,7 @@ are <code>md5</code>, <code>sha256</code> and <code>sha512</code>.  <code>sha512
   ...
   "integrity": {
     "method": "sha512",
-    "value": "3bb12eda3c298db5de25597f54d924f2e17e78a26ad89...b0124ecb8a"
+    "value": "CPvTLiOfYRgfL3YNF/KKElwamwvLQwnzd96VnF2WoYuuH+hVIbwFSPQHHd/qa/fNVUBckviC5/HZs3Nx2jXEsA=="
   }
   ...
 }</code></pre>
@@ -2326,15 +2326,19 @@ properties:
             type: string
             description: |
                 A specific set of methods for calculating the checksum algorithms:
-                * ``sha256``: the Secure Hash Algorithm 256 bits, value is base64 encoded.
-                * ``sha512``: the Secure Hash Algorithm 512 bits, value is base64 encoded.
-                * ``arbitrary``: an arbitrary string is used to identify the value.
-                * ``md5``: the Message Digest 5 hash (obsolete, perhaps will be rejected)
+                * ``sha256``: the Secure Hash Algorithm 2, 256 bits, value is base64 encoded.
+                * ``sha384``: the Secure Hash Algorithm 2, 384 bits, value is base64 encoded.
+                * ``sha512``: the Secure Hash Algorithm 2, 512 bits, value is base64 encoded.
+                * ``sha3-256``: the Secure Hash Algorithm 3, 256 bits, value is base64 encoded.
+                * ``sha3-384``: the Secure Hash Algorithm 3, 384 bits, value is base64 encoded.
+                * ``sha3-512``: the Secure Hash Algorithm 3, 512 bits, value is base64 encoded.
             enum:
               - sha256
+              - sha384
               - sha512
-              - arbitrary
-              - md5
+              - sha3-256
+              - sha3-384
+              - sha3-512
           value:
             type: string
             description: checksum value.
@@ -2652,7 +2656,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-09 12:22:42 UTC
+Last updated 2023-03-15 11:10:03 UTC
 </div>
 </div>
 </body>

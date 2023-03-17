@@ -222,7 +222,7 @@ that a given data granule has not been corrupted during download.
 The ``method`` property provides a format of the hashing method used to enable integrity check of the data. Acceptable values
 are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.  ``sha512`` is preferred.
 
-The ``value`` property provides the result of the hashing method, base64 or hexadecimally encoded.
+The ``value`` property provides the result of the hashing method, base64 encoded.
 
 include::../recommendations/core/REC_integrity.adoc[]
 

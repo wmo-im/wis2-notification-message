@@ -1,0 +1,7 @@
+[[req_core_operation]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:req-id}* |*/req/core/operation*
+^|A |A WNM SHALL provide the `+properties.operation+` property to indicate if a resource has been updated or deleted.
+^|B |For a delete operation, a WNM SHALL provide one link object with `+rel=canonical+`, and `+href=#+`.
+|===

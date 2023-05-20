@@ -120,6 +120,23 @@ include::../requirements/core/REQ_geometry.adoc[]
 
 ==== Properties
 
+===== operation
+
+The ``operation`` property indicates the stage of the lifecycle for the resource described in the notification,
+and can be used to notify users that a resource has been updated or deleted. The default value if not specified
+is ``create``.
+ 
+[source,json]
+----
+"properties": {
+  ...
+  "operation": "delete",
+  ...
+}
+----
+
+include::../requirements/core/REQ_operation.adoc[]
+
 ===== pubtime
 
 The ``pubtime`` property identifies the date/time of when the file was posted/published, in RFC3339 format, in

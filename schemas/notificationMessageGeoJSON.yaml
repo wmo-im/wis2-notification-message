@@ -94,6 +94,14 @@ properties:
   properties:
     type: object
     properties:
+      operation:
+        type: string
+        description: the event associated with the lifecycle of a resource.
+        enum:
+          - create
+          - update
+          - delete
+        default: create
       pubtime:
         type: string
         format: date-time

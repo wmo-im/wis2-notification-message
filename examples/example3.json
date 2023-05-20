@@ -6,12 +6,12 @@
     "properties": {
         "pubtime": "2022-11-20T16:40:37Z",
         "datetime": "2022-11-11T11:11:11Z",
-        "data_id": "wis2/xyz/nmhs_xyz/data/core/weather/abcdefab-abcd-1234-5678-0123456789ab",
+        "data_id": "data/data-123/items/abcdefab-abcd-1234-5678-0123456789ab",
         "metadata_id": "urn:x-wmo:md:xyz:nmhs_xyz:some_dataset"
     },
     "links": [
         {
-            "href": "https://somedata.com/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
+            "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
             "rel": "canonical"
         }
     ]

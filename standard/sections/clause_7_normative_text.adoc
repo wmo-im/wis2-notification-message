@@ -140,11 +140,8 @@ include::../requirements/core/REQ_pubtime.adoc[]
 [[data_id]]
 ===== data_id
 
-The ``data_id`` property uniquely identifies the data. It is comprised of two parts:
-
-1. the topic where the message will be published as defined in https://community.wmo.int/wis2-topic-hierarchy, removing both the channel (origin or cache) and the version of the topic hierarchy.
-2. a unique identifier of the data. It can be the filename used by the originating center or a unique UUID (RFC4122) or a value chosen
-by the originating center as long as it is unique over a 1 week period
+The ``data_id`` property uniquely identifies the data as defined by the data producer. A data producer may use
+the identification scheme of their choice in support of uniquely identifying data described by the notification.
 
 include::../requirements/core/REQ_data_id.adoc[]
 
@@ -152,7 +149,7 @@ include::../requirements/core/REQ_data_id.adoc[]
 ----
 "properties": {
   ...
-  "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4"
+  "data_id": "org1/datasets/123/data/UANT01_CWAO_200445___15103.bufr4"
   ...
 }
 ----

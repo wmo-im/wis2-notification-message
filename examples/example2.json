@@ -37,12 +37,12 @@
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/fra/meteo-france/data/core/weather/global-analysis-prediction/abcdef-abcd-abcd-abcd-abcdefabcd",
+        "data_id": "dataset/4546/abcdef-abcd-abcd-abcd-abcdefabcd",
         "metadata_id": "urn:x-wmo:md:fra:meteo-france:gap123"
     },
     "links": [
         {
-            "href": "https://meteofrance.com/data/nwp/92c557ef-d28e-4713-91af-2e2e7be6f8ab.grib",
+            "href": "https://example.org/data/nwp/92c557ef-d28e-4713-91af-2e2e7be6f8ab.grib",
             "rel": "canonical",
             "type": "application/x-grib2"
         }

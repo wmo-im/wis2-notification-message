@@ -103,7 +103,9 @@ properties:
           their lag (how far behind the publisher they are).
       data_id: 
         type: string
-        description: Unique identifier of the data as defined by the data producer.
+        description: |
+         Unique identifier of the data as defined by the data producer.
+         Data producers SHOULD NOT use an opaque id, but something meaningful to support client side filtering.
       metadata_id:
         type: string
         description: Identifier for associated discovery metadata record to which the notification applies to.

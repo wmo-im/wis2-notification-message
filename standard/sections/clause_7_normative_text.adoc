@@ -144,6 +144,7 @@ The ``data_id`` property uniquely identifies the data as defined by the data pro
 the identification scheme of their choice in support of uniquely identifying data described by the notification.
 
 include::../requirements/core/REQ_data_id.adoc[]
+include::../recommendations/core/REC_data_id.adoc[]
 
 [source,json]
 ----

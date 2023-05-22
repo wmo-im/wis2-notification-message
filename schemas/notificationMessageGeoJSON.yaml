@@ -33,7 +33,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
-          description: For file links optional length provides the number of bytes in the file.
+          description: number of bytes returned by the link
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -121,6 +121,14 @@ properties:
         type: string
         format: date-time
         description: Identifies the end date/time date of the data being published, in RFC3339 format.
+      cache:
+        type: boolean
+        description: |
+          Whether the data in the notification should be cached (if not specified, the default value is `true`).
+          When set to `false`, WIS2 Global Cache services do not cache the canonical link, and publish the
+          notification with an unmodified canonical link (which points back to the endpoint as specified by the data producer).
+          The notification is always published by the Global Cache regardless to the `cache` topic.
+        default: true
       integrity:
         type: object
         description: Specifies a checksum to be applied to the data to ensure that the download is accurate.

@@ -212,6 +212,33 @@ include::../requirements/core/REQ_temporal.adoc[]
 }
 ----
 
+===== Cache
+
+For core data, the data in a notification's canonical link is always cached by Global Cache services by default.
+
+There exist scenarios where core data may continue to be hosted by the data producer. Examples include (but are not limited to):
+
+* size: the size of the data is very large and not suitable for storage to the Global Cache
+* download metrics: data producers may wish to keep data access isolated to their facilities in support of their own download metrics
+  and reporting
+
+A data producer can use the ``properties.cache`` value to signify Global Cache services to not cache their data granule and keep any
+canonical links unmodified.
+
+The data notification is always published by the Global Cache regardless of this value to the `cache` topic.
+
+.Example: Specifying data not to be cached
+[source,json]
+----
+"properties": {
+  "cache": false,
+  ...
+}
+----
+
+include::../recommendations/core/PER_cache.adoc[]
+
+
 ===== Integrity
 
 For data verification, it is suggested (but not mandatory) to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure

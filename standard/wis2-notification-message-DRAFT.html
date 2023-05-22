@@ -458,10 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-03-17</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-05-22</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-03-17</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-05-22</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -1282,18 +1282,8 @@ providing awareness of how far behind the publisher they may be).</p>
 <div class="sect4">
 <h5 id="data_id"><a class="anchor" href="#data_id"></a>7.1.7.2. data_id</h5>
 <div class="paragraph">
-<p>The <code>data_id</code> property uniquely identifies the data. It is comprised of two parts:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>the topic where the message will be published as defined in <a href="https://community.wmo.int/wis2-topic-hierarchy" class="bare">https://community.wmo.int/wis2-topic-hierarchy</a>, removing both the channel (origin or cache) and the version of the topic hierarchy.</p>
-</li>
-<li>
-<p>a unique identifier of the data. It can be the filename used by the originating center or a unique UUID (RFC4122) or a value chosen
-by the originating center as long as it is unique over a 1 week period</p>
-</li>
-</ol>
+<p>The <code>data_id</code> property uniquely identifies the data as defined by the data producer. A data producer may use
+the identification scheme of their choice in support of uniquely identifying data described by the notification.</p>
 </div>
 <table id="req_core_data_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1327,11 +1317,14 @@ by the originating center as long as it is unique over a 1 week period</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Unresolved directive in sections/clause_7_normative_text.adoc - include::../recommendations/core/REC_data_id.adoc[]</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"properties": {
   ...
-  "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4"
+  "data_id": "org1/datasets/123/data/UANT01_CWAO_200445___15103.bufr4"
   ...
 }</code></pre>
 </div>
@@ -2213,7 +2206,7 @@ definitions:
         rel:
           type: string
           description: |
-            the link relation describing the relationship between the link and the message.
+            The link relation describing the relationship between the link and the message.
             See https://www.iana.org/assignments/link-relations/link-relations.xhtml for the
             official list of IANA link relations.
           example: canonical
@@ -2228,7 +2221,7 @@ definitions:
           example: Trierer Strasse 70, 53115 Bonn
         length:
           type: integer
-          description: for file links optional length provides the number of bytes in the file.
+          description: For file links optional length provides the number of bytes in the file.
     pointGeoJSON:
       # from https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/pointGeoJSON.yaml
       type: object
@@ -2299,13 +2292,11 @@ properties:
       data_id: 
         type: string
         description: |
-          Uniquely identifies the data. It is formed of two parts:
-          1. MQTT topic hierarchy where this message will be published as defined in https://github.com/wmo-im/wis2-topic-hierarchy without leading channel/version
-          2. a unique identifier of the data. It could be the filename used by the originating center or a unique UUID (RFC4122) or anything chosen 
-          by the originating center as long as it is unique over a 1 week period.
+         Unique identifier of the data as defined by the data producer.
+         Data producers SHOULD NOT use an opaque id, but something meaningful to support client side filtering.
       metadata_id:
         type: string
-        description: identifier for associated discovery metadata record to which the notification applies to.
+        description: Identifier for associated discovery metadata record to which the notification applies to.
       datetime:
         type: string
         format: date-time
@@ -2341,7 +2332,7 @@ properties:
               - sha3-512
           value:
             type: string
-            description: checksum value.
+            description: Checksum value.
         required:
           - method
           - value
@@ -2351,7 +2342,7 @@ properties:
         properties:
           encoding:
             type: string
-            description: encoding of content
+            description: Encoding of content
             enum:
               - utf-8
               - base64
@@ -2361,7 +2352,7 @@ properties:
             description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
           value:
             type: string
-            description: the inline content of the file.
+            description: The inline content of the file.
         required:
           - encoding
           - size
@@ -2423,7 +2414,7 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
         "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
@@ -2467,7 +2458,7 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
         "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
@@ -2511,7 +2502,7 @@ example:
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "wis2/can/eccc-msc/data/core/weather/surface-based-obs/landFixed/UANT01_CWAO_200445___15103.bufr4",
+        "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
         "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
         "content": {
             "encoding": "utf-8",
@@ -2656,7 +2647,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-17 10:08:02 UTC
+Last updated 2023-05-22 13:55:07 UTC
 </div>
 </div>
 </body>

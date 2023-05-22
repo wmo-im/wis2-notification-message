@@ -132,10 +132,14 @@ properties:
               - gzip
           size:
             type: integer
-            description: Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
+            maximum: 4096
+            description: |
+              Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.
+              Note that the limit takes into account the data encoding used, for compressed data (for example `gzip`).
           value:
             type: string
             description: The inline content of the file.
+            maxLength: 4096
         required:
           - encoding
           - size

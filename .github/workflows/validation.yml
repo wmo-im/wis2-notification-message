@@ -25,15 +25,7 @@ jobs:
     - name: Install requirements 📦
       run: |
         python3 -m pip install --upgrade pip
-        pip3 install -r tools/requirements.txt
-    - name: Validate schema
-      run: |
-        python3 tools/validate.py schema schemas/notificationMessageGeoJSON.yaml
+        pip3 install check-jsonschema
     - name: Validate examples
       run: |
-        python3 tools/validate.py instance schemas/notificationMessageGeoJSON.yaml examples/example1.json
-        python3 tools/validate.py instance schemas/notificationMessageGeoJSON.yaml examples/example2.json
-        python3 tools/validate.py instance schemas/notificationMessageGeoJSON.yaml examples/example3.json
-    - name: Run flake8 against script(s)
-      run: |
-        flake8 tools/validate.py
+        for e in examples/*.json; do check-jsonschema --schemafile schemas/wis2-notification-message-bundled.json $e; done

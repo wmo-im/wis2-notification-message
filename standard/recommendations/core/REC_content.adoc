@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/content*
-^|A |A WNM SHOULD provide a `+content+` property, consisting of an `+encoding+` property (fixed to either ``utf-8``, ``base64``, or ``gzip``), a `+value+` property (of less than 2048 bytes) of the data, as well as a `+size+` property with the length of the data.
+^|A |A WNM SHOULD provide a `+content+` property, consisting of an `+encoding+` property (fixed to either ``utf-8``, ``base64``, or ``gzip``), a `+value+` property (of less than 4096 bytes) of the data, as well as a `+size+` property with the length of the data.
 |===

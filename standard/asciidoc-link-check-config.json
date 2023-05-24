@@ -1,7 +1,6 @@
 {
     "ignorePatterns": [
         { "pattern": "^http://www.opengis.net/def"},
-        { "pattern": "http://www.wmo.int/spec/wnm/1.0/conf/core" },
-        { "pattern": "http://www.wmo.int/spec/wnmmessage/1.0/req/core" }
+        { "pattern": "http://www.wmo.int/spec/wnm/1" }
     ]
 }

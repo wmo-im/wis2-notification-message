@@ -3,37 +3,6 @@ $id: https://schemas.wmo.int/wis2/broker/message/0.9.0/schema.yml
 title: WMO WIS 2.0 broker message schema
 description: WMO WIS 2.0 broker message schema
 
-definitions:
-  schemas:
-    link:
-      # from https://github.com/opengeospatial/ogcapi-features/blob/master/core/openapi/schemas/link.yaml
-      type: object
-      required:
-        - href
-        - rel
-      properties:
-        href:
-          type: string
-          example: https://example.com/data/obs/123
-        rel:
-          type: string
-          description: |
-            The link relation describing the relationship between the link and the message.
-            See https://www.iana.org/assignments/link-relations/link-relations.xhtml for the
-            official list of IANA link relations.
-          example: canonical
-        type:
-          type: string
-          example: application/geo+json
-        hreflang:
-          type: string
-          example: en
-        title:
-          type: string
-          example: Trierer Strasse 70, 53115 Bonn
-        length:
-          type: integer
-          description: number of bytes returned by the link
 type: object
 properties:
   id: 
@@ -160,7 +129,7 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: '#/definitions/schemas/link'
+      $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/link.yaml'
 required:
   - id
   - version

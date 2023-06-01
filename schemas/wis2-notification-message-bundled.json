@@ -3,44 +3,6 @@
   "$id": "https://schemas.wmo.int/wis2/broker/message/0.9.0/schema.yml",
   "title": "WMO WIS 2.0 broker message schema",
   "description": "WMO WIS 2.0 broker message schema",
-  "definitions": {
-    "schemas": {
-      "link": {
-        "type": "object",
-        "required": [
-          "href",
-          "rel"
-        ],
-        "properties": {
-          "href": {
-            "type": "string",
-            "example": "https://example.com/data/obs/123"
-          },
-          "rel": {
-            "type": "string",
-            "description": "The link relation describing the relationship between the link and the message.\nSee https://www.iana.org/assignments/link-relations/link-relations.xhtml for the\nofficial list of IANA link relations.\n",
-            "example": "canonical"
-          },
-          "type": {
-            "type": "string",
-            "example": "application/geo+json"
-          },
-          "hreflang": {
-            "type": "string",
-            "example": "en"
-          },
-          "title": {
-            "type": "string",
-            "example": "Trierer Strasse 70, 53115 Bonn"
-          },
-          "length": {
-            "type": "integer",
-            "description": "number of bytes returned by the link"
-          }
-        }
-      }
-    }
-  },
   "type": "object",
   "properties": {
     "id": {
@@ -196,11 +158,13 @@
             },
             "size": {
               "type": "integer",
-              "description": "Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received."
+              "maximum": 4096,
+              "description": "Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.\nNote that the limit takes into account the data encoding used, including data compression (for example `gzip`).\n"
             },
             "value": {
               "type": "string",
-              "description": "The inline content of the file."
+              "description": "The inline content of the file.",
+              "maxLength": 4096
             }
           },
           "required": [
@@ -248,12 +212,11 @@
         "properties": {
           "href": {
             "type": "string",
-            "example": "https://example.com/data/obs/123"
+            "example": "http://data.example.com/buildings/123"
           },
           "rel": {
             "type": "string",
-            "description": "The link relation describing the relationship between the link and the message.\nSee https://www.iana.org/assignments/link-relations/link-relations.xhtml for the\nofficial list of IANA link relations.\n",
-            "example": "canonical"
+            "example": "alternate"
           },
           "type": {
             "type": "string",
@@ -268,8 +231,7 @@
             "example": "Trierer Strasse 70, 53115 Bonn"
           },
           "length": {
-            "type": "integer",
-            "description": "number of bytes returned by the link"
+            "type": "integer"
           }
         }
       }

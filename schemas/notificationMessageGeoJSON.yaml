@@ -84,6 +84,7 @@ properties:
               - sha3-512
           value:
             type: string
+            contentEncoding: base64
             description: Checksum value.
         required:
           - method

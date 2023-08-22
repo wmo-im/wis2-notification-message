@@ -40,5 +40,5 @@ jobs:
           rm -rf standard
           mv -f /tmp/wis2-notification-message/* .
           git add .
-          git commit -am "update WMCP 2 build"
+          git commit -am "update WNM build"
           git push

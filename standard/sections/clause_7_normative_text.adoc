@@ -323,6 +323,8 @@ Each link object provides:
 * a ``type`` property providing the media type of the data
 * a ``length`` property providing the length (in bytes) indicating the size of the data in the response when downloading the link.
 
+Links are used to communicate new or updated data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  Note that this differs from rolling data archives (which can be described accordingly in dataset discovery metadata, for example).
+
 include::../requirements/core/REQ_links.adoc[]
 include::../recommendations/core/REC_links.adoc[]
 include::../recommendations/core/PER_links.adoc[]

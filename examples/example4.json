@@ -1,0 +1,19 @@
+{
+    "id": "31e9d66a-cd83-4174-9429-b932f1abcdef",
+    "version": "v04",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "pubtime": "2022-12-20T16:40:37Z",
+        "datetime": "2022-11-11T11:11:11Z",
+        "data_id": "data/data-123/items/abcdefab-abcd-1234-5678-0123456789ab",
+        "metadata_id": "urn:x-wmo:md:xyz:nmhs_xyz:some_dataset",
+        "cache": false
+    },
+    "links": [
+        {
+            "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
+            "rel": "http://def.wmo.int/def/rel/wnm/-/deletion"
+        }
+    ]
+}

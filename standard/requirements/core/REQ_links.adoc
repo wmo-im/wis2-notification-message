@@ -8,5 +8,5 @@
 ^|D |A WNM SHALL provide links using HTTP, HTTPS, FTP or SFTP.
 ^|E |For new data or metadata notifications, a WNM's `+links+` array property SHALL contain at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
 ^|F |For data or metadata update notifications, a WNM's `+links+` array property SHALL contain at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/update` to clearly identify the preferred access link.
-^|G |For data or metadata deletions, a WNM's `+links+` array property SHALL contain at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/deleted` to clearly identify data which has been deleted or removed.
+^|G |For data or metadata deletions, a WNM's `+links+` array property SHALL contain at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/deletion` to clearly identify data which has been deleted or removed.
 |===

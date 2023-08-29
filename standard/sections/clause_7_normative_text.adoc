@@ -124,7 +124,10 @@ include::../requirements/core/REQ_geometry.adoc[]
 
 The ``pubtime`` property identifies the date/time of when the file was posted/published, in RFC3339 format, in
 the UTC timezone (``Z``). The publication date/time is critical for subscribers to prevent message loss in
-providing awareness of how far behind the publisher they may be).
+providing awareness of how far behind the publisher they may be).  ``pubtime`` is also valuable for change
+detection as part of updates and deletion notifications.  Ensuring ``pubtime`` is properly managed for updates
+and deletions is important for data and metadata download workflows (an out of date ``pubtime`` can lead
+to errors for clients when managing updates or deletions in their local copies of data).
 
 [source,json]
 ----

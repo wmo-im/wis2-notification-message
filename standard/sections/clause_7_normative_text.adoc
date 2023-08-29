@@ -136,6 +136,7 @@ providing awareness of how far behind the publisher they may be).
 ----
 
 include::../requirements/core/REQ_pubtime.adoc[]
+include::../recommendations/core/REC_pubtime.adoc[]
 
 [[data_id]]
 ===== data_id

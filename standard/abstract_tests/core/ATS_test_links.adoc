@@ -19,12 +19,12 @@ Check that the `+links+` array property provides a minimum of one link object.
 
 [.component,class=step]
 --
-For each link object, check that the `+rel+` property contains a valid IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml].
+For each link object, check that the `+rel+` property contains a valid link relation of `canonical` footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml], `http://def.wmo.int/def/rel/wnm/-/update', or `http://def.wmo.int/def/rel/wnm/-/deletion`.
 --
 
 [.component,class=step]
 --
-Check that the `+links+` array property contains one link object with a ``rel`` property with value ``canonical`` as well as an ``href`` property.
+Check that the `+links+` array property contains one link object with a ``rel`` property with one of the values ``canonical``, ``http://def.wmo.int/def/rel/wnm/-/update``, ``http://def.wmo.int/def/rel/wnm/-/deletion`` as well as an ``href`` property.
 --
 
 =====

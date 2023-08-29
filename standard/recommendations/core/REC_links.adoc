@@ -4,4 +4,6 @@
 ^|*Recommendation {counter:rec-id}* |*/rec/core/links*
 ^|A |A WNM SHOULD provide links using secure protocols such as HTTPS and SFTP, with HTTPS being the preferred option.
 ^|B |A WNM link SHOULD provide the `length` property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.
+^|C |A WNM link relation of ``http://def.wmo.int/def/rel/wnm/-/deletion`` SHOULD be used for data or metadata invalidation.
+^|D |A WNM link relation of ``http://def.wmo.int/def/rel/wnm/-/deletion`` SHOULD NOT be used for communicating a rolling data archive.
 |===

@@ -458,10 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-08-29</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-08-30</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-08-29</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-08-30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -1235,7 +1235,10 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 <div class="paragraph">
 <p>The <code>pubtime</code> property identifies the date/time of when the file was posted/published, in RFC3339 format, in
 the UTC timezone (<code>Z</code>). The publication date/time is critical for subscribers to prevent message loss in
-providing awareness of how far behind the publisher they may be).</p>
+providing awareness of how far behind the publisher they may be).  <code>pubtime</code> is also valuable for change
+detection as part of updates and deletion notifications.  Ensuring <code>pubtime</code> is properly managed for updates
+and deletions is important for data and metadata download workflows (an out of date <code>pubtime</code> can lead
+to errors for clients when managing updates or deletions in their local copies of data).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1795,7 +1798,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata deletions, a WNM&#8217;s <code>links</code> array property SHALL contain at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deleted" class="bare">http://def.wmo.int/def/rel/wnm/-/deleted</a></code> to clearly identify data which has been deleted or removed.</p>
+<p>For data or metadata deletions, a WNM&#8217;s <code>links</code> array property SHALL contain at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> to clearly identify data which has been deleted or removed.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2743,7 +2746,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-29 14:15:48 UTC
+Last updated 2023-08-30 10:27:08 UTC
 </div>
 </div>
 </body>

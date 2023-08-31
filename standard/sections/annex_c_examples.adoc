@@ -23,7 +23,7 @@ include::../../examples/example2.json[]
 include::../../examples/example3.json[]
 ----
 
-.Example: notification of a deletion of a data granule
+.Example: notification of the deletion of a data granule
 [source,json]
 ----
 include::../../examples/example4.json[]

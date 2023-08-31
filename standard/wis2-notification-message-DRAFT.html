@@ -458,10 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-08-30</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-08-31</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-08-30</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-08-31</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -2341,9 +2341,9 @@ The schema document will only be published on <code>schemas.wmo.int</code> once 
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-yaml" data-lang="yaml">$schema: https://json-schema.org/draft/2020-12/schema
-$id: https://schemas.wmo.int/wis2/broker/message/0.9.0/schema.yml
-title: WMO WIS 2.0 broker message schema
-description: WMO WIS 2.0 broker message schema
+$id: https://schemas.wmo.int/wnm/x.y.z/notificationMessageGeoJSON.yaml
+title: WIS2 Notification Message Encoding
+description: WIS2 Notification Message Encoding
 
 type: object
 properties:
@@ -2544,37 +2544,48 @@ example:
     "version": "v04",
     "type": "Feature",
     "geometry": {
-        "type": "Point",
+        "type": "Polygon",
         "coordinates": [
-            6.146255135536194,
-            46.223296618227444
+            [
+                [
+                    -7.75,
+                    40.43
+                ],
+                [
+                    -7.75,
+                    78.46
+                ],
+                [
+                    71.91,
+                    78.46
+                ],
+                [
+                    71.91,
+                    40.43
+                ],
+                [
+                    -7.75,
+                    40.43
+                ]
+            ]
         ]
     },
     "properties": {
-        "pubtime": "2022-03-20T04:50:18.314854383Z",
-        "datetime": "2022-03-20T04:45:00Z",
+        "pubtime": "2022-0-320T04:50:18.314854383Z",
+        "start_datetime": "2022-03-20T00:06:00Z",
+        "end_datetime": "2022-03-20T00:12:00Z",
         "integrity": {
             "method": "sha512",
             "value": "A2KNxvks...S8qfSCw=="
         },
-        "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
-        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
-        "content": {
-            "encoding": "utf-8",
-            "value": "encoded bytes from the file",
-            "size": 457
-        }
+        "data_id": "dataset/4546/abcdef-abcd-abcd-abcd-abcdefabcd",
+        "metadata_id": "urn:x-wmo:md:fra:meteo-france:gap123"
     },
     "links": [
         {
-            "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+            "href": "https://example.org/data/nwp/92c557ef-d28e-4713-91af-2e2e7be6f8ab.grib",
             "rel": "canonical",
-            "type": "application/x-bufr"
-        },
-        {
-            "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
-            "rel": "item",
-            "type": "application/json"
+            "type": "application/x-grib2"
         }
     ]
 }</code></pre>
@@ -2584,41 +2595,45 @@ example:
 <div class="title">Example: minimal viable message compliant to the specification</div>
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-    "id": "31e9d66a-cd83-4174-9429-b932f1abe1be",
+    "id": "31e9d66a-cd83-4174-9429-b932f1abcdef",
     "version": "v04",
     "type": "Feature",
-    "geometry": {
-        "type": "Point",
-        "coordinates": [
-            6.146255135536194,
-            46.223296618227444
-        ]
-    },
+    "geometry": null,
     "properties": {
-        "pubtime": "2022-03-20T04:50:18.314854383Z",
-        "datetime": "2022-03-20T04:45:00Z",
-        "integrity": {
-            "method": "sha512",
-            "value": "A2KNxvks...S8qfSCw=="
-        },
-        "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
-        "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
-        "content": {
-            "encoding": "utf-8",
-            "value": "encoded bytes from the file",
-            "size": 457
-        }
+        "pubtime": "2022-11-20T16:40:37Z",
+        "datetime": "2022-11-11T11:11:11Z",
+        "data_id": "data/data-123/items/abcdefab-abcd-1234-5678-0123456789ab",
+        "metadata_id": "urn:x-wmo:md:xyz:nmhs_xyz:some_dataset",
+        "cache": false
     },
     "links": [
         {
-            "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
-            "rel": "canonical",
-            "type": "application/x-bufr"
-        },
+            "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
+            "rel": "canonical"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: notification of the deletion of a data granule</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "id": "31e9d66a-cd83-4174-9429-b932f1abcdef",
+    "version": "v04",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "pubtime": "2022-12-22T16:40:37Z",
+        "datetime": "2022-11-11T11:11:11Z",
+        "data_id": "data/data-123/items/abcdefab-abcd-1234-5678-0123456789ab",
+        "metadata_id": "urn:x-wmo:md:xyz:nmhs_xyz:some_dataset",
+        "cache": false
+    },
+    "links": [
         {
-            "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
-            "rel": "item",
-            "type": "application/json"
+            "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
+            "rel": "http://def.wmo.int/def/rel/wnm/-/deletion"
         }
     ]
 }</code></pre>
@@ -2746,7 +2761,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-08-30 10:27:08 UTC
+Last updated 2023-08-31 00:48:34 UTC
 </div>
 </div>
 </body>

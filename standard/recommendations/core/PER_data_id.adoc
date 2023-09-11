@@ -1,0 +1,6 @@
+[[per_core_data_id]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/data_id*
+^|A WNM's `+properties.data_id+` property MAY contain a valid WIS2 topic, without the channel and version.
+|===

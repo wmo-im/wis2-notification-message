@@ -19,7 +19,7 @@ Check that the `+links+` array property provides a minimum of one link object.
 
 [.component,class=step]
 --
-For each link object, check that the `+rel+` property contains a valid link relation of `canonical` footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml], `http://def.wmo.int/def/rel/wnm/-/update', or `http://def.wmo.int/def/rel/wnm/-/deletion`.
+For each link object, check that the `+href+` property contains a valid protocol scheme of one of 'http', 'https', 'ftp', 'sftp'.
 --
 
 [.component,class=step]

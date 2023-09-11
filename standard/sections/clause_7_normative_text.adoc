@@ -54,6 +54,7 @@ It has been decided to restrict those types to only two: ``Point`` and ``Polygon
 It must be noted that the geometry key is mandatory in GeoJSON but can be of type ``null``.
 
 include::../requirements/core/REQ_geometry.adoc[]
+include::../recommendations/core/PER_geometry.adoc[]
 
 .Example: Point
 [source,json]

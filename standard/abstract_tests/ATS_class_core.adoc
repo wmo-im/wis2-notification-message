@@ -6,6 +6,10 @@ subject:: Requirements Class "core"
 classification:: Target Type:Notification Metadata
 ====
 
+==== Message size
+
+include::./core/ATS_test_message_size.adoc[]
+
 ==== Validation
 
 include::./core/ATS_test_validation.adoc[]

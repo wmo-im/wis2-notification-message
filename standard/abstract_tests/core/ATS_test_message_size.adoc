@@ -1,0 +1,16 @@
+[[ats_core_message_size]]
+====
+[%metadata]
+label:: /conf/core/message_size
+subject:: /req/core/message_size
+test-purpose:: Validate that a WNM has a valid message size.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check that the size of the complete WNM does not exceed 8192 bytes.
+--
+
+=====
+====

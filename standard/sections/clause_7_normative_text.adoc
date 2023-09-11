@@ -13,6 +13,13 @@ include::../requirements/requirements_class_core.adoc[]
 
 The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
 
+=== Message size
+
+The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Content>>).
+
+include::../requirements/core/REQ_message_size.adoc[]
+include::../recommendations/core/PER_message_size.adoc[]
+
 ==== GeoJSON compliance
 
 The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.

@@ -516,13 +516,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_conformance_class_core">7.1. Conformance Class Core</a>
 <ul class="sectlevel3">
 <li><a href="#_overview">7.1.1. Overview</a></li>
-<li><a href="#_geojson_compliance">7.1.2. GeoJSON compliance</a></li>
-<li><a href="#_identifier">7.1.3. Identifier</a></li>
-<li><a href="#_version">7.1.4. Version</a></li>
-<li><a href="#_type">7.1.5. Type</a></li>
-<li><a href="#_geometry">7.1.6. Geometry</a></li>
-<li><a href="#_properties_2">7.1.7. Properties</a></li>
-<li><a href="#_links">7.1.8. Links</a></li>
+</ul>
+</li>
+<li><a href="#_message_size">7.2. Message size</a>
+<ul class="sectlevel3">
+<li><a href="#_geojson_compliance">7.2.1. GeoJSON compliance</a></li>
+<li><a href="#_identifier">7.2.2. Identifier</a></li>
+<li><a href="#_version">7.2.3. Version</a></li>
+<li><a href="#_type">7.2.4. Type</a></li>
+<li><a href="#_geometry">7.2.5. Geometry</a></li>
+<li><a href="#_properties_2">7.2.6. Properties</a></li>
+<li><a href="#_links">7.2.7. Links</a></li>
 </ul>
 </li>
 </ul>
@@ -531,15 +535,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_conformance_class_core_2">A.1. Conformance Class: Core</a>
 <ul class="sectlevel3">
-<li><a href="#_validation">A.1.1. Validation</a></li>
-<li><a href="#_identifier_2">A.1.2. Identifier</a></li>
-<li><a href="#_version_2">A.1.3. Version</a></li>
-<li><a href="#_type_2">A.1.4. Type</a></li>
-<li><a href="#_geometry_2">A.1.5. Geometry</a></li>
-<li><a href="#_properties_publication_time">A.1.6. Properties / Publication Time</a></li>
-<li><a href="#_properties_data_identification">A.1.7. Properties / Data Identification</a></li>
-<li><a href="#_properties_temporal_description">A.1.8. Properties / Temporal description</a></li>
-<li><a href="#_links_2">A.1.9. Links</a></li>
+<li><a href="#_message_size_2">A.1.1. Message size</a></li>
+<li><a href="#_validation">A.1.2. Validation</a></li>
+<li><a href="#_identifier_2">A.1.3. Identifier</a></li>
+<li><a href="#_version_2">A.1.4. Version</a></li>
+<li><a href="#_type_2">A.1.5. Type</a></li>
+<li><a href="#_geometry_2">A.1.6. Geometry</a></li>
+<li><a href="#_properties_publication_time">A.1.7. Properties / Publication Time</a></li>
+<li><a href="#_properties_data_identification">A.1.8. Properties / Data Identification</a></li>
+<li><a href="#_properties_temporal_description">A.1.9. Properties / Temporal description</a></li>
+<li><a href="#_links_2">A.1.10. Links</a></li>
 </ul>
 </li>
 </ul>
@@ -983,8 +988,34 @@ through WIS 2.0.</p>
 <p>The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.</p>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_message_size"><a class="anchor" href="#_message_size"></a>7.2. Message size</h3>
+<div class="paragraph">
+<p>The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <a href="#_content">Content</a>).</p>
+</div>
+<table id="req_core_message_size" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/message_size</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM message SHALL NOT exceed 8192 bytes.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
-<h4 id="_geojson_compliance"><a class="anchor" href="#_geojson_compliance"></a>7.1.2. GeoJSON compliance</h4>
+<h4 id="_geojson_compliance"><a class="anchor" href="#_geojson_compliance"></a>7.2.1. GeoJSON compliance</h4>
 <div class="paragraph">
 <p>The WIS2 Notification Message schema is based on <em>GeoJSON</em> (RFC7946) and its associated information model.  Compliant messages are therefore compliant with <em>GeoJSON</em>.</p>
 </div>
@@ -995,7 +1026,7 @@ through WIS 2.0.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 1</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 2</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/validation</strong></p>
 </div></div></td>
@@ -1022,7 +1053,7 @@ through WIS 2.0.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_identifier"><a class="anchor" href="#_identifier"></a>7.1.3. Identifier</h4>
+<h4 id="_identifier"><a class="anchor" href="#_identifier"></a>7.2.2. Identifier</h4>
 <div class="paragraph">
 <p>A universally unique identifier of the message using the UUID standard (RFC4122). The identifier is generated by the originator of the message.
 It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers.
@@ -1044,7 +1075,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 2</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 3</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/identifier</strong></p>
 </div></div></td>
@@ -1065,7 +1096,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </table>
 </div>
 <div class="sect3">
-<h4 id="_version"><a class="anchor" href="#_version"></a>7.1.4. Version</h4>
+<h4 id="_version"><a class="anchor" href="#_version"></a>7.2.3. Version</h4>
 <div class="paragraph">
 <p>The <code>version</code> property provides the version of WNM that the message conforms to.</p>
 </div>
@@ -1076,7 +1107,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 3</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 4</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/version</strong></p>
 </div></div></td>
@@ -1097,7 +1128,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </table>
 </div>
 <div class="sect3">
-<h4 id="_type"><a class="anchor" href="#_type"></a>7.1.5. Type</h4>
+<h4 id="_type"><a class="anchor" href="#_type"></a>7.2.4. Type</h4>
 <div class="paragraph">
 <p>The <code>type</code> property is a fixed value denoting the record as a GeoJSON Feature.</p>
 </div>
@@ -1108,7 +1139,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 4</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/type</strong></p>
 </div></div></td>
@@ -1129,7 +1160,7 @@ data from the cache. The <a href="#data_id">data_id</a> is retained to ensure tr
 </table>
 </div>
 <div class="sect3">
-<h4 id="_geometry"><a class="anchor" href="#_geometry"></a>7.1.6. Geometry</h4>
+<h4 id="_geometry"><a class="anchor" href="#_geometry"></a>7.2.5. Geometry</h4>
 <div class="paragraph">
 <p>RFC7946 defines 7 types of geometry: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, and <code>GeometryCollection</code>.
 It has been decided to restrict those types to only two: <code>Point</code> and <code>Polygon</code>.
@@ -1142,7 +1173,7 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 6</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/geometry</strong></p>
 </div></div></td>
@@ -1245,9 +1276,9 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_2"><a class="anchor" href="#_properties_2"></a>7.1.7. Properties</h4>
+<h4 id="_properties_2"><a class="anchor" href="#_properties_2"></a>7.2.6. Properties</h4>
 <div class="sect4">
-<h5 id="_pubtime"><a class="anchor" href="#_pubtime"></a>7.1.7.1. pubtime</h5>
+<h5 id="_pubtime"><a class="anchor" href="#_pubtime"></a>7.2.6.1. pubtime</h5>
 <div class="paragraph">
 <p>The <code>pubtime</code> property identifies the date/time of when the file was posted/published, in RFC3339 format, in
 the UTC timezone (<code>Z</code>). The publication date/time is critical for subscribers to prevent message loss in
@@ -1272,7 +1303,7 @@ to errors for clients when managing updates or deletions in their local copies o
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 6</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 7</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/pubtime</strong></p>
 </div></div></td>
@@ -1319,7 +1350,7 @@ to errors for clients when managing updates or deletions in their local copies o
 </table>
 </div>
 <div class="sect4">
-<h5 id="data_id"><a class="anchor" href="#data_id"></a>7.1.7.2. data_id</h5>
+<h5 id="data_id"><a class="anchor" href="#data_id"></a>7.2.6.2. data_id</h5>
 <div class="paragraph">
 <p>The <code>data_id</code> property uniquely identifies the data as defined by the data producer. A data producer may use
 the identification scheme of their choice in support of uniquely identifying data described by the notification.</p>
@@ -1331,7 +1362,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 7</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/data_id</strong></p>
 </div></div></td>
@@ -1395,7 +1426,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 <div class="sect4">
-<h5 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.7.3. metadata_id</h5>
+<h5 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.2.6.3. metadata_id</h5>
 <div class="paragraph">
 <p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.</p>
 </div>
@@ -1431,7 +1462,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 <div class="sect4">
-<h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.7.4. Temporal description (datetime, start_datetime, end_datetime)</h5>
+<h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.2.6.4. Temporal description (datetime, start_datetime, end_datetime)</h5>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
 </div>
@@ -1448,7 +1479,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/temporal</strong></p>
 </div></div></td>
@@ -1511,7 +1542,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cache"><a class="anchor" href="#_cache"></a>7.1.7.5. Cache</h5>
+<h5 id="_cache"><a class="anchor" href="#_cache"></a>7.2.6.5. Cache</h5>
 <div class="paragraph">
 <p>For core data, the data in a notification&#8217;s canonical link is always cached by Global Cache services by default.</p>
 </div>
@@ -1567,7 +1598,7 @@ canonical links unmodified.</p>
 </table>
 </div>
 <div class="sect4">
-<h5 id="_integrity"><a class="anchor" href="#_integrity"></a>7.1.7.6. Integrity</h5>
+<h5 id="_integrity"><a class="anchor" href="#_integrity"></a>7.2.6.6. Integrity</h5>
 <div class="paragraph">
 <p>For data verification, it is suggested (but not mandatory) to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1613,7 +1644,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect4">
-<h5 id="_content"><a class="anchor" href="#_content"></a>7.1.7.7. Content</h5>
+<h5 id="_content"><a class="anchor" href="#_content"></a>7.2.6.7. Content</h5>
 <div class="paragraph">
 <p>For data granules with sizes smaller than 4096 bytes, the <code>content</code> property allows for including the data in the message. The <code>content</code> property provides an additional inline data access capability, in addition to a canonical link of the message.</p>
 </div>
@@ -1636,7 +1667,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/content</strong></p>
 </div></div></td>
@@ -1704,7 +1735,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect4">
-<h5 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.7.8. Additional properties</h5>
+<h5 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.2.6.8. Additional properties</h5>
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.</p>
 </div>
@@ -1745,7 +1776,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.8. Links</h4>
+<h4 id="_links"><a class="anchor" href="#_links"></a>7.2.7. Links</h4>
 <div class="paragraph">
 <p>The <code>links</code> array consists of one or more objects providing URLs to access data.</p>
 </div>
@@ -1778,7 +1809,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/links</strong></p>
 </div></div></td>
@@ -1939,7 +1970,41 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_validation"><a class="anchor" href="#_validation"></a>A.1.1. Validation</h4>
+<h4 id="_message_size_2"><a class="anchor" href="#_message_size_2"></a>A.1.1. Message size</h4>
+<div id="ats_core_message_size" class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">label</dt>
+<dd>
+<p>/conf/core/message_size</p>
+</dd>
+<dt class="hdlist1">subject</dt>
+<dd>
+<p>/req/core/message_size</p>
+</dd>
+<dt class="hdlist1">test-purpose</dt>
+<dd>
+<p>Validate that a WNM has a valid message size.</p>
+</dd>
+</dl>
+</div>
+<div class="exampleblock component component">
+<div class="content">
+<div class="openblock component">
+<div class="content">
+<div class="paragraph">
+<p>Check that the size of the complete WNM does not exceed 8192 bytes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_validation"><a class="anchor" href="#_validation"></a>A.1.2. Validation</h4>
 <div id="ats_core_validation" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -1973,7 +2038,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_identifier_2"><a class="anchor" href="#_identifier_2"></a>A.1.2. Identifier</h4>
+<h4 id="_identifier_2"><a class="anchor" href="#_identifier_2"></a>A.1.3. Identifier</h4>
 <div id="ats_core_id" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2007,7 +2072,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_version_2"><a class="anchor" href="#_version_2"></a>A.1.3. Version</h4>
+<h4 id="_version_2"><a class="anchor" href="#_version_2"></a>A.1.4. Version</h4>
 <div id="ats_core_version" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2048,7 +2113,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_type_2"><a class="anchor" href="#_type_2"></a>A.1.4. Type</h4>
+<h4 id="_type_2"><a class="anchor" href="#_type_2"></a>A.1.5. Type</h4>
 <div id="ats_core_type" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2089,7 +2154,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_geometry_2"><a class="anchor" href="#_geometry_2"></a>A.1.5. Geometry</h4>
+<h4 id="_geometry_2"><a class="anchor" href="#_geometry_2"></a>A.1.6. Geometry</h4>
 <div id="ats_core_geometry" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2151,7 +2216,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>A.1.6. Properties / Publication Time</h4>
+<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>A.1.7. Properties / Publication Time</h4>
 <div id="ats_core_pubtime" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2199,7 +2264,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_data_identification"><a class="anchor" href="#_properties_data_identification"></a>A.1.7. Properties / Data Identification</h4>
+<h4 id="_properties_data_identification"><a class="anchor" href="#_properties_data_identification"></a>A.1.8. Properties / Data Identification</h4>
 <div id="ats_core_data_id" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2233,7 +2298,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>A.1.8. Properties / Temporal description</h4>
+<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>A.1.9. Properties / Temporal description</h4>
 <div id="ats_core_temporal" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2281,7 +2346,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_2"><a class="anchor" href="#_links_2"></a>A.1.9. Links</h4>
+<h4 id="_links_2"><a class="anchor" href="#_links_2"></a>A.1.10. Links</h4>
 <div id="ats_core_links" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2775,7 +2840,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-12 08:40:55 UTC
+Last updated 2023-09-12 11:46:31 UTC
 </div>
 </div>
 </body>

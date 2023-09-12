@@ -1,0 +1,6 @@
+[[rec_core_geometry]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/core/geometry*
+^|A |a WNM geometry MAY provide a third element (height) as per clause 4 of the GeoJSON specification.
+|===

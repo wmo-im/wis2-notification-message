@@ -18,7 +18,6 @@ The standard notification message format ensures that the WIS2 ecosystem (data p
 The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
-include::../recommendations/core/PER_message_size.adoc[]
 
 ==== GeoJSON compliance
 

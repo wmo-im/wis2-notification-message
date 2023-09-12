@@ -149,6 +149,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 
 include::../requirements/core/REQ_data_id.adoc[]
 include::../recommendations/core/REC_data_id.adoc[]
+include::../recommendations/core/PER_data_id.adoc[]
 
 [source,json]
 ----

@@ -8,7 +8,8 @@ on:
     - 'standard/**'
 
 env:
-  FILE_BASENAME: wis2-notification-message-DRAFT
+  SPEC_FILE_BASENAME: wis2-notification-message-DRAFT
+  KPI_FILE_BASENAME: wis2-notification-message-kpi-DRAFT
 
 jobs:
   build-wis2-notification-message:
@@ -22,12 +23,19 @@ jobs:
           && sudo gem install asciidoctor asciidoctor-pdf
       - name: checkout repository
         uses: actions/checkout@v3
-      - name: build documentation
+      - name: build specification
         run: |
           cd standard \
-          && asciidoctor --trace -o /tmp/wis2-notification-message/standard/${FILE_BASENAME}.html index.adoc \
-          && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/standard/${FILE_BASENAME}.docx \
-          && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/standard/${FILE_BASENAME}.pdf index.adoc \
+          && asciidoctor --trace -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.html index.adoc \
+          && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.docx \
+          && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.pdf index.adoc \
+          && cd ..
+      - name: build KPIs
+        run: |
+          cd kpi \
+          && asciidoctor --trace -o /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.html index.adoc \
+          && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.docx \
+          && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.pdf index.adoc \
           && cd ..
       - name: checkout gh-pages branch
         uses: actions/checkout@v3

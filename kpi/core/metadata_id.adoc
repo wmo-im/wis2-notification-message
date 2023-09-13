@@ -1,0 +1,43 @@
+== WCMP dataset record identification
+
+=== WCMP element(s)
+
+* `properties.metadata_id`
+
+=== What is being measured
+
+Whether WCMP discovery metadata information is available and can be successfully identified.
+
+=== Rationale for measurement
+
+Providing linkage to the associated discovery metadata in a WNM provides traceability to the overall dataset description.
+
+=== Rules for implementation
+
+.Metadata identification implementation rules
+|===
+|Rule |Score
+
+|The `+properties.metadata_id+` property is present
+|1
+
+|The metadata identifier resolves to a valid WCMP record in the Global Discovery Catalogue
+|1
+|===
+
+*Total possible score: 2 (100%)*
+
+=== Guidance to score well on this assessment
+
+* Provide an identifier of the associated WCMP dataset record in the Global Discovery Catalogue
+
+=== Examples 
+
+
+```json
+"properties": {
+  ...
+  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
+  ...
+}
+```

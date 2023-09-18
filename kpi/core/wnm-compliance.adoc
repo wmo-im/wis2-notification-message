@@ -1,0 +1,31 @@
+== WNM, Annex A Compliance
+
+=== WNM element(s)
+
+All WNM elements specified in the WNM, Annex A: Conformance Class Abstract Test Suite (Normative).footnote:[https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-DRAFT.html#_conformance_class_abstract_test_suite_normative]
+
+=== What is being measured
+
+All requirements specified in WNM, Annex A.
+
+=== Rational for measurement
+
+WNM, Annex A forms the basis of all KPIs.
+
+=== Rules for implementation
+
+. WNM, Annex A, A.1.21 Validation
+
+|===
+|Rule |Score
+
+a|Requirement A.1.1. Validation: Validate that a WNM is valid to the authoritative WNM schema.
+|1
+
+|===
+
+*Total possible score: 1 (100%)*
+
+=== Guidance to score well on this assessment
+
+Use WNM examples and/or tools to generate the notification message (e.g. pywis-pubsubfootnote:[https://github.com/wmo-im/pywis-pubsub]).

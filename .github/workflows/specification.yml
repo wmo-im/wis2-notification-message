@@ -6,6 +6,7 @@ on:
     - main
     paths:
     - 'standard/**'
+    - 'kpi/**'
 
 env:
   SPEC_FILE_BASENAME: wis2-notification-message-DRAFT
@@ -46,7 +47,7 @@ jobs:
           git checkout gh-pages
           git config --global user.email "tomkralidis@gmail.com"
           git config --global user.name "Tom Kralidis"
-          rm -rf standard
+          rm -rf standard kpi
           mv -f /tmp/wis2-notification-message/* .
           git add .
           git commit -am "update WNM build"

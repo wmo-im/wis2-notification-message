@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-09-25</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-09-26</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-09-25</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-09-26</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -522,8 +522,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_version">7.1.5. Version</a></li>
 <li><a href="#_type">7.1.6. Type</a></li>
 <li><a href="#_geometry">7.1.7. Geometry</a></li>
-<li><a href="#_properties_2">7.1.8. Properties</a></li>
-<li><a href="#_links">7.1.9. Links</a></li>
+<li><a href="#_properties_publication_time">7.1.8. Properties / Publication Time</a></li>
+<li><a href="#data_id">7.1.9. Properties / Data Identification</a></li>
+<li><a href="#metadata_id">7.1.10. Properties / Metadata Identification</a></li>
+<li><a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">7.1.11. Properties / Temporal description (datetime, start_datetime, end_datetime)</a></li>
+<li><a href="#_properties_cache">7.1.12. Properties / Cache</a></li>
+<li><a href="#_properties_integrity">7.1.13. Properties / Integrity</a></li>
+<li><a href="#_properties_content">7.1.14. Properties / Content</a></li>
+<li><a href="#_links">7.1.15. Links</a></li>
+<li><a href="#_additional_properties">7.1.16. Additional properties</a></li>
 </ul>
 </li>
 </ul>
@@ -538,7 +545,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_version_2">A.1.4. Version</a></li>
 <li><a href="#_type_2">A.1.5. Type</a></li>
 <li><a href="#_geometry_2">A.1.6. Geometry</a></li>
-<li><a href="#_properties_publication_time">A.1.7. Properties / Publication Time</a></li>
+<li><a href="#_properties_publication_time_2">A.1.7. Properties / Publication Time</a></li>
 <li><a href="#_properties_data_identification">A.1.8. Properties / Data Identification</a></li>
 <li><a href="#_properties_temporal_description">A.1.9. Properties / Temporal description</a></li>
 <li><a href="#_links_2">A.1.10. Links</a></li>
@@ -988,7 +995,7 @@ through WIS 2.0.</p>
 <div class="sect3">
 <h4 id="_message_size"><a class="anchor" href="#_message_size"></a>7.1.2. Message size</h4>
 <div class="paragraph">
-<p>The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <a href="#_content">Content</a>).</p>
+<p>The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <a href="#_properties_content">Properties / Content</a>).</p>
 </div>
 <table id="req_core_message_size" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1058,7 +1065,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 <div class="paragraph">
 <p>The message identifier is set to a new value by Global Cache services when they publish their modified message for accessing the original core
-data from the cache. The <a href="#data_id">data_id</a> is retained to ensure traceability and consistency of the same resource.</p>
+data from the cache. The <a href="#data_id">Properties / Data Identification</a> is retained to ensure traceability and consistency of the same resource.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1273,9 +1280,7 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_2"><a class="anchor" href="#_properties_2"></a>7.1.8. Properties</h4>
-<div class="sect4">
-<h5 id="_pubtime"><a class="anchor" href="#_pubtime"></a>7.1.8.1. pubtime</h5>
+<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.8. Properties / Publication Time</h4>
 <div class="paragraph">
 <p>The <code>pubtime</code> property identifies the date/time of when the file was posted/published, in RFC3339 format, in
 the UTC timezone (<code>Z</code>). The publication date/time is critical for subscribers to prevent message loss in
@@ -1346,8 +1351,8 @@ to errors for clients when managing updates or deletions in their local copies o
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="data_id"><a class="anchor" href="#data_id"></a>7.1.8.2. data_id</h5>
+<div class="sect3">
+<h4 id="data_id"><a class="anchor" href="#data_id"></a>7.1.9. Properties / Data Identification</h4>
 <div class="paragraph">
 <p>The <code>data_id</code> property uniquely identifies the data as defined by the data producer. A data producer may use
 the identification scheme of their choice in support of uniquely identifying data described by the notification.</p>
@@ -1422,8 +1427,8 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.8.3. metadata_id</h5>
+<div class="sect3">
+<h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.10. Properties / Metadata Identification</h4>
 <div class="paragraph">
 <p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.</p>
 </div>
@@ -1458,8 +1463,8 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.8.4. Temporal description (datetime, start_datetime, end_datetime)</h5>
+<div class="sect3">
+<h4 id="_properties_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_properties_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.11. Properties / Temporal description (datetime, start_datetime, end_datetime)</h4>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
 </div>
@@ -1538,8 +1543,8 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_cache"><a class="anchor" href="#_cache"></a>7.1.8.5. Cache</h5>
+<div class="sect3">
+<h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.12. Properties / Cache</h4>
 <div class="paragraph">
 <p>For core data, the data in a notification&#8217;s canonical link is always cached by Global Cache services by default.</p>
 </div>
@@ -1594,8 +1599,8 @@ canonical links unmodified.</p>
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="_integrity"><a class="anchor" href="#_integrity"></a>7.1.8.6. Integrity</h5>
+<div class="sect3">
+<h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.13. Properties / Integrity</h4>
 <div class="paragraph">
 <p>For data verification, it is suggested (but not mandatory) to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1640,8 +1645,8 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_content"><a class="anchor" href="#_content"></a>7.1.8.7. Content</h5>
+<div class="sect3">
+<h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
 <div class="paragraph">
 <p>For data granules with sizes smaller than 4096 bytes, the <code>content</code> property allows for including the data in the message. The <code>content</code> property provides an additional inline data access capability, in addition to a canonical link of the message.</p>
 </div>
@@ -1731,49 +1736,8 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.8.8. Additional properties</h5>
-<div class="paragraph">
-<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.</p>
-</div>
-<table id="per_core_additional_properties" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 4</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/per/core/additional_properties</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM MAY provide additional properties of any type in any part of the document as needed.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "_comment": {
-    "validationErrors": [
-      "error 1",
-      "error 2"
-    ]
-  }
-  ...
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.9. Links</h4>
+<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.15. Links</h4>
 <div class="paragraph">
 <p>The <code>links</code> array consists of one or more objects providing URLs to access data.</p>
 </div>
@@ -1900,7 +1864,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 5</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 4</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/per/core/links</strong></p>
 </div></div></td>
@@ -1935,6 +1899,46 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
   "rel": "item",
   "type": "application/json"
 }]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.16. Additional properties</h4>
+<div class="paragraph">
+<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.</p>
+</div>
+<table id="per_core_additional_properties" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 5</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/per/core/additional_properties</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM MAY provide additional properties of any type in any part of the document as needed.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "_comment": {
+    "validationErrors": [
+      "error 1",
+      "error 2"
+    ]
+  }
+  ...
+}</code></pre>
 </div>
 </div>
 </div>
@@ -2213,7 +2217,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>A.1.7. Properties / Publication Time</h4>
+<h4 id="_properties_publication_time_2"><a class="anchor" href="#_properties_publication_time_2"></a>A.1.7. Properties / Publication Time</h4>
 <div id="ats_core_pubtime" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2837,7 +2841,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-09-25 23:01:39 UTC
+Last updated 2023-09-26 02:36:31 UTC
 </div>
 </div>
 </body>

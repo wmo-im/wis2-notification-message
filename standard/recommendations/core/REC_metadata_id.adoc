@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/metadata_id*
-^|A |A WNM SHOULD provide a `+properties.metadata_id+` property, identifying the associated discovery metadata record to which the notification applies to.
+^|A |A WNM SHOULD provide a `+properties.metadata_id+` property, identifying the associated WCMP2 dataset discovery metadata record (see WCMP2 requirement ``http://wis.wmo.int/spec/wcmp/2/req/core/identifier``) to which the notification applies to.
 |===

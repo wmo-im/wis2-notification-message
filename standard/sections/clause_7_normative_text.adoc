@@ -15,7 +15,7 @@ The standard notification message format ensures that the WIS2 ecosystem (data p
 
 ==== Message size
 
-The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Content>>).
+The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Properties / Content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
@@ -125,9 +125,7 @@ include::../recommendations/core/PER_geometry.adoc[]
 }
 ----
 
-==== Properties
-
-===== pubtime
+==== Properties / Publication Time
 
 The ``pubtime`` property identifies the date/time of when the file was posted/published, in RFC3339 format, in
 the UTC timezone (``Z``). The publication date/time is critical for subscribers to prevent message loss in
@@ -149,7 +147,7 @@ include::../requirements/core/REQ_pubtime.adoc[]
 include::../recommendations/core/REC_pubtime.adoc[]
 
 [[data_id]]
-===== data_id
+==== Properties / Data Identification
 
 The ``data_id`` property uniquely identifies the data as defined by the data producer. A data producer may use
 the identification scheme of their choice in support of uniquely identifying data described by the notification.
@@ -168,7 +166,7 @@ include::../recommendations/core/PER_data_id.adoc[]
 ----
 
 [[metadata_id]]
-===== metadata_id
+==== Properties / Metadata Identification
 
 The ``metadata_id`` property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.
 
@@ -184,7 +182,7 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 }
 ----
 
-===== Temporal description (datetime, start_datetime, end_datetime)
+==== Properties / Temporal description (datetime, start_datetime, end_datetime)
 
 The ``datetime`` property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (``Z``).
 
@@ -224,7 +222,7 @@ include::../requirements/core/REQ_temporal.adoc[]
 }
 ----
 
-===== Cache
+==== Properties / Cache
 
 For core data, the data in a notification's canonical link is always cached by Global Cache services by default.
 
@@ -251,7 +249,7 @@ The data notification is always published by the Global Cache regardless of this
 include::../recommendations/core/PER_cache.adoc[]
 
 
-===== Integrity
+==== Properties / Integrity
 
 For data verification, it is suggested (but not mandatory) to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
@@ -275,7 +273,7 @@ include::../recommendations/core/REC_integrity.adoc[]
 }
 ----
 
-===== Content
+==== Properties / Content
 
 For data granules with sizes smaller than 4096 bytes, the ``content`` property allows for including the data in the message. The ``content`` property provides an additional inline data access capability, in addition to a canonical link of the message.
 
@@ -299,26 +297,6 @@ include::../recommendations/core/PER_content.adoc[]
     "encoding": "utf-8",
     "value": "encoded bytes from the file",
     "size": 457
-  }
-  ...
-}
-----
-
-===== Additional properties
-
-A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.
-
-include::../recommendations/core/PER_additional_properties.adoc[]
-
-[source,json]
-----
-"properties": {
-  ...
-  "_comment": {
-    "validationErrors": [
-      "error 1",
-      "error 2"
-    ]
   }
   ...
 }
@@ -363,4 +341,24 @@ include::../recommendations/core/PER_links.adoc[]
   "rel": "item",
   "type": "application/json"
 }]
+----
+
+==== Additional properties
+
+A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.
+
+include::../recommendations/core/PER_additional_properties.adoc[]
+
+[source,json]
+----
+"properties": {
+  ...
+  "_comment": {
+    "validationErrors": [
+      "error 1",
+      "error 2"
+    ]
+  }
+  ...
+}
 ----

@@ -168,7 +168,7 @@ include::../recommendations/core/PER_data_id.adoc[]
 [[metadata_id]]
 ==== Properties / Metadata Identification
 
-The ``metadata_id`` property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.
+The ``metadata_id`` property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a WCMP2 dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.
 
 include::../recommendations/core/REC_metadata_id.adoc[]
 

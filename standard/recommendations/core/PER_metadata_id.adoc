@@ -1,0 +1,6 @@
+[[per_core_metadata_id]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:per-id}* |*/per/core/metadata_id*
+^|A |A WNM MAY provide additional identifiers to discovery metadata records in non-WIS2 catalogue systems as a link object with (``rel=related`` or ``rel=up``).
+|===

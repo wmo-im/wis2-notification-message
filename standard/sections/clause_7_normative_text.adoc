@@ -127,7 +127,7 @@ include::../recommendations/core/PER_geometry.adoc[]
 
 ==== Properties / Publication Time
 
-The ``pubtime`` property identifies the date/time of when the file was posted/published, in RFC3339 format, in
+The ``pubtime`` property identifies the date/time of when the origin notification was posted/published, in RFC3339 format, in
 the UTC timezone (``Z``). The publication date/time is critical for subscribers to prevent message loss in
 providing awareness of how far behind the publisher they may be).  ``pubtime`` is also valuable for change
 detection as part of updates and deletion notifications.  Ensuring ``pubtime`` is properly managed for updates
@@ -277,7 +277,7 @@ include::../recommendations/core/REC_integrity.adoc[]
 
 For data granules with sizes smaller than 4096 bytes, the ``content`` property allows for including the data in the message. The ``content`` property provides an additional inline data access capability, in addition to a canonical link of the message.
 
-The ``encoding`` property provides the character encoding of the data (fixed to UTF-8 or Base64).
+The ``encoding`` property provides the character encoding of the data (fixed to UTF-8, Base64, or gzip).
 
 The ``value`` property provides the data in the in accordance to the ``encoding`` property.
 

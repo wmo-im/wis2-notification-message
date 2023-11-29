@@ -1,4 +1,4 @@
-name: build specification
+name: build specification and KPIs
 
 on:
   push:

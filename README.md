@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/wmo-im/wis2-notification-message/workflows/build%20specification/badge.svg)](https://github.com/wmo-im/wis2-notification-message/actions)
+[![Build Status](https://github.com/wmo-im/wis2-notification-message/workflows/build%20specification%20and%20KPIs/badge.svg)](https://github.com/wmo-im/wis2-notification-message/actions)
 [![Build Status](https://github.com/wmo-im/wis2-notification-message/workflows/validate%20schema%20and%20examples/badge.svg)](https://github.com/wmo-im/wis2-notification-message/actions)
 
 # wis2-notification-message

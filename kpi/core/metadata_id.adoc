@@ -37,7 +37,7 @@ Providing linkage to the associated discovery metadata in a WNM provides traceab
 ```json
 "properties": {
   ...
-  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
+  "metadata_id": "urn:x-wmo:md:ca-eccc-msc:observations.swob"
   ...
 }
 ```

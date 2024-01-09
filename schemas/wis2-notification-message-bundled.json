@@ -98,7 +98,10 @@
           "description": "Identifier for associated discovery metadata record to which the notification applies to."
         },
         "datetime": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "format": "date-time",
           "description": "Identifies the date/time of the data being published, in RFC3339 format."
         },

@@ -45,7 +45,9 @@ properties:
          The identification SHOULD be from a WCMP2 discovery metadata record identifier from the WIS2
          Global Discovery Catalogue. Identifiers based on external catalogue systems MAY be articulated as additional links.
       datetime:
-        type: string
+        type:
+          - string
+          - null
         format: date-time
         description: Identifies the date/time of the data being published, in RFC3339 format.
       start_datetime:

@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2023-12-08</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-10</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2023-12-08</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-10</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -2464,7 +2464,9 @@ properties:
          The identification SHOULD be from a WCMP2 discovery metadata record identifier from the WIS2
          Global Discovery Catalogue. Identifiers based on external catalogue systems MAY be articulated as additional links.
       datetime:
-        type: string
+        type:
+          - string
+          - null
         format: date-time
         description: Identifies the date/time of the data being published, in RFC3339 format.
       start_datetime:
@@ -2838,7 +2840,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-12-08 17:49:19 UTC
+Last updated 2024-01-10 19:18:25 UTC
 </div>
 </div>
 </body>

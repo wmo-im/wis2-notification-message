@@ -13,6 +13,75 @@ include::../requirements/requirements_class_core.adoc[]
 
 The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
 
+The table below provides an overview of the set of properties that may be included in a WNM.
+
+.WNM core properties
+|===
+|Property|Requirement|Description
+
+|``id``
+|**required**
+|A universally unique identifier of the message (see <<_identifier>>)
+
+|``type``
+|**required**
+|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_validation>>)
+
+|``version``
+|**required**
+|Version of message specification (see <<_version>>)
+
+|``geometry``
+|**required**
+|Geospatial location associated with the notification, in a geographic coordinate reference system (see <<_geometry>>)
+
+|``properties.pubtime``
+|**required**
+|The date/time of when the file was posted/published, in RFC3339 format (see <<_properties_publication_time>>)
+
+|``properties.data_id``
+|**optional**
+|Unique identifier of the data as defined by the data producer (see <<data_id>>)
+
+|``properties.metadata_id``
+|**optional**
+|Identifier for associated discovery metadata record to which the notification applies to (see <<metadata_id>>)
+
+|``properties.datetime``
+|**optional**
+|Identifies the date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+
+|``properties.start_datetime``
+|**optional**
+|Identifies the start date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+
+|``properties.end_datetime``
+|**optional**
+|Identifies the end date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+
+|``properties.cache``
+|**optional**
+|Whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+
+|``properties.cache``
+|**optional**
+|Whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+
+|``properties.integrity``
+|**optional**
+|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_properties_integrity>>)
+
+|``properties.content``
+|**optional**
+|Used to embed small products inline within the message (see <<_properties_content>>)
+
+|``links``
+|**required**
+|Online linkages to data retrieval or additional resources associated with the dataset (see <<_links>>)
+
+|===
+
+
 ==== Message size
 
 The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Properties / Content>>).

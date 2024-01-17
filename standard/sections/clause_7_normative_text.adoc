@@ -1,17 +1,21 @@
 == The WIS2 Notification Message Encoding
 
-A WIS2 Notification Message provides descriptive information about a data made available
-through WIS 2.0.
+A WIS2 Notification Message (WNM) provides descriptive information about a data made available through WIS 2.0. The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
+
+WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, Global Broker services, as well as Replay API services.
+
+//add
+It provides basic information about a data file in a dataset or a metadata record.... 
+
+WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).
 
 === Conformance Class Core
 
 ==== Overview
 
-This Core Conformance Class provides requirements to articulate the required elements of a WIS2 Notification Message.
+This Core Conformance Class provides requirements for a WIS2 Notification Message.
 
 include::../requirements/requirements_class_core.adoc[]
-
-The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
 
 The table below provides an overview of the set of properties that may be included in a WNM.
 
@@ -25,7 +29,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``type``
 |**required**
-|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_validation>>)
+|A fixed value denoting the record as a GeoJSON ``Feature``
 
 |``version``
 |**required**
@@ -33,11 +37,11 @@ The table below provides an overview of the set of properties that may be includ
 
 |``geometry``
 |**required**
-|Geospatial location associated with the notification, in a geographic coordinate reference system (see <<_geometry>>)
+|Geospatial location associated with the data, in a geographic coordinate reference system (see <<_geometry>>)
 
 |``properties.pubtime``
 |**required**
-|The date/time of when the file was posted/published, in RFC3339 format (see <<_properties_publication_time>>)
+|The date and time of when the notification file was posted or published, in RFC3339 format (see <<_properties_publication_time>>)
 
 |``properties.data_id``
 |**optional**
@@ -49,23 +53,19 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.datetime``
 |**optional**
-|Identifies the date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
 
 |``properties.start_datetime``
 |**optional**
-|Identifies the start date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
 
 |``properties.end_datetime``
 |**optional**
-|Identifies the end date/time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
 
 |``properties.cache``
 |**optional**
-|Whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
-
-|``properties.cache``
-|**optional**
-|Whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+|Indicates that the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
 
 |``properties.integrity``
 |**optional**
@@ -77,22 +77,22 @@ The table below provides an overview of the set of properties that may be includ
 
 |``links``
 |**required**
-|Online linkages to data retrieval or additional resources associated with the dataset (see <<_links>>)
+|Online linkages for data retrieval or additional resources associated with the dataset (see <<_links>>)
 
 |===
 
 
 ==== Message size
 
-The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <<Properties / Content>>).
+The WIS2 Notification Message allows for transmission of messages in a compact manner, and includes the ability to embedding content inline as required (see <<Properties / Content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
-==== GeoJSON compliance
+//==== GeoJSON compliance
 
-The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.
+//The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.
 
-include::../requirements/core/REQ_validation.adoc[]
+//include::../requirements/core/REQ_validation.adoc[]
 
 ==== Identifier
 
@@ -100,8 +100,9 @@ A universally unique identifier of the message using the UUID standard (RFC4122)
 It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers.
 It remains the same throughout the lifetime of the message in the WIS2 ecosystem.
 
-The message identifier is set to a new value by Global Cache services when they publish their modified message for accessing the original core
-data from the cache. The <<data_id>> is retained to ensure traceability and consistency of the same resource.
+//The message identifier is set to a new value by Global Cache services when they publish their modified message for accessing the original core data from the cache. 
+
+The <<data_id>> is retained to ensure traceability and consistency of the same resource.
 
 [source,json]
 ----
@@ -124,9 +125,8 @@ include::../requirements/core/REQ_type.adoc[]
 
 ==== Geometry
 
-RFC7946 defines 7 types of geometry: ``Point``, ``MultiPoint``, ``LineString``, ``MultiLineString``, ``Polygon``, ``MultiPolygon``, and ``GeometryCollection``.
-It has been decided to restrict those types to only two: ``Point`` and ``Polygon``.
-It must be noted that the geometry key is mandatory in GeoJSON but can be of type ``null``.
+//RFC7946 defines 7 types of geometry: ``Point``, ``MultiPoint``, ``LineString``, ``MultiLineString``, ``Polygon``, ``MultiPolygon``, and ``GeometryCollection``.
+The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the the geometry can not be derived.
 
 include::../requirements/core/REQ_geometry.adoc[]
 include::../recommendations/core/PER_geometry.adoc[]
@@ -196,12 +196,14 @@ include::../recommendations/core/PER_geometry.adoc[]
 
 ==== Properties / Publication Time
 
-The ``pubtime`` property identifies the date/time of when the origin notification was posted/published, in RFC3339 format, in
-the UTC timezone (``Z``). The publication date/time is critical for subscribers to prevent message loss in
-providing awareness of how far behind the publisher they may be).  ``pubtime`` is also valuable for change
-detection as part of updates and deletion notifications.  Ensuring ``pubtime`` is properly managed for updates
-and deletions is important for data and metadata download workflows (an out of date ``pubtime`` can lead
-to errors for clients when managing updates or deletions in their local copies of data).
+The ``pubtime`` property identifies the date/time of when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
+//FIX?
+The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.  
+
+The ``pubtime`` property is also valuable for change detection as part of updates and deletion notifications.  
+
+//FIX?
+Ensuring ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows (an out of date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data).
 
 [source,json]
 ----
@@ -218,8 +220,7 @@ include::../recommendations/core/REC_pubtime.adoc[]
 [[data_id]]
 ==== Properties / Data Identification
 
-The ``data_id`` property uniquely identifies the data as defined by the data producer. A data producer may use
-the identification scheme of their choice in support of uniquely identifying data described by the notification.
+The ``data_id`` property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.
 
 include::../requirements/core/REQ_data_id.adoc[]
 include::../recommendations/core/REC_data_id.adoc[]
@@ -235,9 +236,9 @@ include::../recommendations/core/PER_data_id.adoc[]
 ----
 
 [[metadata_id]]
-==== Properties / Metadata Identification
+==== Properties / Metadata identification
 
-The ``metadata_id`` property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a WCMP2 dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.
+The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. Inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
 
 include::../recommendations/core/REC_metadata_id.adoc[]
 
@@ -251,13 +252,15 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 }
 ----
 
-==== Properties / Temporal description (datetime, start_datetime, end_datetime)
+==== Properties / Temporal description 
 
-The ``datetime`` property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (``Z``).
+The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed). 
 
-The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (e.g. start/end times for an NWP forecasting period), in RFC3339 format, in the UTC timezone (``Z``). 
+The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).
 
-A ``null`` value can also be used if no temporal description of the data can be derived as part of generating the message.
+All dates and time are encoded in RFC3339 format with the UTC timezone (``Z``). 
+
+A ``null`` value can also be used if a temporal description of the data cannot be derived.
 
 include::../requirements/core/REQ_temporal.adoc[]
 
@@ -293,18 +296,16 @@ include::../requirements/core/REQ_temporal.adoc[]
 
 ==== Properties / Cache
 
-For core data, the data in a notification's canonical link is always cached by Global Cache services by default.
+All core data, by default, is cached by Global Cache services.
 
-There exist scenarios where core data may continue to be hosted by the data producer. Examples include (but are not limited to):
+//There exist scenarios where core data may continue to be hosted by the data producer. Examples include (but are not limited to):
 
-* size: the size of the data is very large and not suitable for storage to the Global Cache
-* download metrics: data producers may wish to keep data access isolated to their facilities in support of their own download metrics
-  and reporting
+//* size: the size of the data is very large and not suitable for storage to the Global Cache
+//* download metrics: data producers may wish to keep data access isolated to their facilities in support of their own download metrics and reporting
 
-A data producer can use the ``properties.cache`` value to signify Global Cache services to not cache their data granule and keep any
-canonical links unmodified.
+However, a data producer can use the ``properties.cache`` value to request Global Cache services to not cache their ``core`` data granule.
 
-The data notification is always published by the Global Cache regardless of this value to the `cache` topic.
+//The data notification is always published by the Global Cache regardless of this value to the `cache` topic.
 
 .Example: Specifying data not to be cached
 [source,json]
@@ -320,13 +321,13 @@ include::../recommendations/core/PER_cache.adoc[]
 
 ==== Properties / Integrity
 
-For data verification, it is suggested (but not mandatory) to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
+For data verification, it is recommended to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
 
-The ``method`` property provides a format of the hashing method used to enable integrity check of the data. Acceptable values
-are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.  ``sha512`` is preferred.
+The ``method`` property provides a format of the hashing method used to enable integrity check of the data. The preferred values
+are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.  ``sha512``.
 
-The ``value`` property provides the result of the hashing method, base64 encoded.
+The ``value`` property provides the result of the hashing method in base64 encoding.
 
 include::../recommendations/core/REC_integrity.adoc[]
 
@@ -344,15 +345,15 @@ include::../recommendations/core/REC_integrity.adoc[]
 
 ==== Properties / Content
 
-For data granules with sizes smaller than 4096 bytes, the ``content`` property allows for including the data in the message. The ``content`` property provides an additional inline data access capability, in addition to a canonical link of the message.
+The ``content`` property allows for inclusion of the data in the notification message when the data is smaller than 4096 bytes. 
 
-The ``encoding`` property provides the character encoding of the data (fixed to UTF-8, Base64, or gzip).
+The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``).
 
-The ``value`` property provides the data in the in accordance to the ``encoding`` property.
+The ``value`` property provides the data in accordance with the ``encoding`` property.
 
 The ``size`` property provides the size, in bytes, of the data in accordance to the ``encoding`` property. The value must be below 4096. Global Brokers may discard messages for where inline data sizes are greater than 4096 bytes.
 
-The limit takes into account the used data encoding. That is, if the data is compressed with gzip (``properties.content.encoding="gzip"``), the compressed size must be less than 4096 bytes.
+The limit takes into account the data encoding. That is, if the data is compressed with gzip, the compressed size must be less than 4096 bytes. 
 
 include::../requirements/core/REQ_content.adoc[]
 include::../recommendations/core/REC_content.adoc[]
@@ -373,16 +374,17 @@ include::../recommendations/core/PER_content.adoc[]
 
 ==== Links
 
-The ``links`` array consists of one or more objects providing URLs to access data.
+The ``links`` array property consists of one or more objects providing URLs to access data.
 
 Each link object provides:
 
-* an ``href`` property with a fully qualified link to access the data in a secure manner
+* an ``href`` property with a fully qualified link to access the data
 * a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] describing the relationship between the link and the message
 * a ``type`` property providing the media type of the data
-* a ``length`` property providing the length (in bytes) indicating the size of the data in the response when downloading the link.
-
-Links are used to communicate new or updated data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  Note that this differs from rolling data archives (which can be described accordingly in dataset discovery metadata, for example).
+* a ``length`` property providing the length (in bytes) indicating the size of the data.
+ 
+Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  
+//Note that this differs from rolling data archives (which can be described accordingly in dataset discovery metadata).
 
 include::../requirements/core/REQ_links.adoc[]
 include::../recommendations/core/REC_links.adoc[]
@@ -396,6 +398,7 @@ include::../recommendations/core/PER_links.adoc[]
   "rel": "canonical",
   "type": "application/x-bufr"
 }]
+
 ----
 
 .Example: Multiple links

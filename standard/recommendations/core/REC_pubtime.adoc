@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/pubtime*
-^|A |For notifications of updates or deletions, a WNM `+properties.pubtime+` property SHOULD be updated in support of client handling of change detection.
+^|A |For notifications of updates or deletions, the `+properties.pubtime+` property SHOULD be updated in support of client handling of change detection.
 |===

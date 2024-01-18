@@ -2,11 +2,11 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/links*
-^|A |A WNM SHALL define a `+links+` array property.
-^|B |A WNM's `+links+` array property SHALL contain at least one link with at least the required `+href+` and `+rel+` properties.
-^|C |A WNM's `+links+` array property SHALL contain links which, for core data, require no further action in order to download the resource.
-^|D |A WNM SHALL provide links using HTTP, HTTPS, FTP or SFTP.
-^|E |For new or updated data or metadata notifications, a WNM's `+links+` array property SHALL contain at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
-^|F |For data or metadata update notifications, a WNM's `+links+` array property SHALL contain at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/update` to clearly identify the preferred access link.
-^|G |For data or metadata deletions, a WNM's `+links+` array property SHALL contain at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/deletion` to clearly identify data which has been deleted or removed.
+^|A |A WNM SHALL provide a `+links+` array property.
+^|B |The `+links+` array property SHALL provide at least one link with at least the required `+href+` and `+rel+` properties.
+^|C |The links for core data SHALL NOT require further action in order to download the resource.
+^|D |The links shall be HTTP, HTTPS, FTP or SFTP.
+^|E |For new or updated data or metadata notifications, the `+links+` array property SHALL provide at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
+^|F |For data or metadata update notifications, the `+links+` array property SHALL provide at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/update` to clearly identify the preferred access link.
+^|G |For data or metadata deletions, the `+links+` array property SHALL provide at least one link with a link relation of `http://def.wmo.int/def/rel/wnm/-/deletion` to clearly identify data which has been deleted or removed.
 |===

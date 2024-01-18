@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/type*
 ^|A |A WNM SHALL provide a `+type+` property.
-^|B |A WNM's `+type+` property SHALL provide a fixed value of ``Feature``.
+^|B |The `+type+` property SHALL be a fixed value of ``Feature``.
 |===

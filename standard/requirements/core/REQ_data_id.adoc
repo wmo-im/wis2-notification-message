@@ -3,5 +3,5 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/data_id*
 ^|A |A WNM SHALL provide a `+properties.data_id+` property.
-^|B |A WNM's `+properties.data_id+` property SHALL be unique.
+^|B |The `+properties.data_id+` property SHALL be unique.
 |===

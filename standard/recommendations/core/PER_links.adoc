@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/links*
-^|A |A WNM `+links+` array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).
+^|A |The `+links+` array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).
 |===

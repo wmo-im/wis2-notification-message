@@ -4,6 +4,6 @@
 ^|*Requirement {counter:req-id}* |*/req/core/validation*
 ^|A |Each WNM SHALL validate without error against the WNM schema.
 ^|B |Each WNM SHALL provide `+id+`, `+version+`, `+type+`, `+geometry+` and `+properties+` properties for GeoJSON compliance.
-^|C |Each WNM record `+type+` property SHALL be set to a fixed value of `+Feature+` for GeoJSON compliance.
+^|C |The `+type+` property SHALL be set to a fixed value of `+Feature+` for GeoJSON compliance.
 |===
 

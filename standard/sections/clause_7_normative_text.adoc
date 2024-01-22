@@ -124,7 +124,6 @@ include::../requirements/core/REQ_type.adoc[]
 
 ==== Geometry
 
-//RFC7946 defines 7 types of geometry: ``Point``, ``MultiPoint``, ``LineString``, ``MultiLineString``, ``Polygon``, ``MultiPolygon``, and ``GeometryCollection``.
 The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the geometry cannot be derived.
 
 include::../requirements/core/REQ_geometry.adoc[]

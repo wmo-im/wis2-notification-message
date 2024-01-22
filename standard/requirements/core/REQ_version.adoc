@@ -3,6 +3,6 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/version*
 ^|A |A WNM SHALL provide information on version conformance via the ``version`` property.
-^|B |A WNM's ``version`` property SHALL be fixed to ``v04`` for this version of the specification.
+^|B |The ``version`` property SHALL be fixed to ``v04`` for this version of the specification.
 |===
 

@@ -1,24 +1,24 @@
-{ 
-  "id": "e686f5cf-bacf-4703-9f94-217e2b5d5ebb", 
-  "version": "v04", 
-  "type": "Feature", 
-  "geometry": null, 
-  "properties": { 
-    "data_id": "wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_", 
-    "metadata_id": "urn:x-wmo:md:int:eumetsat:EO:EUM:DAT:MSG:HRSEVIRI3", 
-    "pubtime": "2024-01-18T12:05:02Z", 
-    "integrity": { 
-      "method": "sha512", 
-      "value": "5a4cae86ee22d91f349ac51e24db08eba33f42950bdb295a78fdd00532bffc924bffa9e40b7d246e0b3629d4d7b2398e54710179e611d42aa9ef86ec0f2599e5" 
-    }, 
-    "datetime": "2024-01-18T12:00:00Z" 
-  }, 
-  "links": [ 
-    { 
-      "href": "https://wisdev.kishou.go.jp/data/wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_", 
-      "rel": "canonical", 
-      "type": "application/octet-stream", 
-      "length": 409575 
-    } 
-  ] 
-} 
+{
+    "id": "e686f5cf-bacf-4703-9f94-217e2b5d5ebb",
+    "version": "v04",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "data_id": "wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_",
+        "metadata_id": "urn:x-wmo:md:int:eumetsat:EO:EUM:DAT:MSG:HRSEVIRI3",
+        "pubtime": "2024-01-18T12:05:02Z",
+        "integrity": {
+            "method": "sha512",
+            "value": "5a4cae86ee22d91f349ac51e24db08eba33f42950bdb295a78fdd00532bffc924bffa9e40b7d246e0b3629d4d7b2398e54710179e611d42aa9ef86ec0f2599e5"
+        },
+        "datetime": "2024-01-18T12:00:00Z"
+    },
+    "links": [
+        {
+            "href": "https://wisdev.kishou.go.jp/data/wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_/H-000-MSG3__-MSG3________-IR_134___-000001___-202401181200-C_",
+            "rel": "canonical",
+            "type": "application/octet-stream",
+            "length": 409575
+        }
+    ]
+}

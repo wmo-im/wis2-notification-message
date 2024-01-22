@@ -1,11 +1,10 @@
 == The WIS2 Notification Message Encoding
 
-A WIS2 Notification Message (WNM) provides descriptive information about a data made available through WIS 2.0. The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
+A WIS2 Notification Message (WNM) provides descriptive information about data or metadata made available through WIS 2.0. The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
 
 WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, Global Broker services, as well as Replay API services.
 
-//add
-It provides basic information about a data file in a dataset or a metadata record.... 
+A WNM provides notification metadata about data or metadata published to WIS2, including when the data was published, its spatial and temporal characteristics, and where to access and download.
 
 WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).
 
@@ -37,11 +36,11 @@ The table below provides an overview of the set of properties that may be includ
 
 |``geometry``
 |**required**
-|Geospatial location associated with the data, in a geographic coordinate reference system (see <<_geometry>>)
+|Geospatial location associated with the data or metadata, in a geographic coordinate reference system (see <<_geometry>>)
 
 |``properties.pubtime``
 |**required**
-|The date and time of when the notification file was posted or published, in RFC3339 format (see <<_properties_publication_time>>)
+|The date and time of when the notification was published, in RFC3339 format (see <<_properties_publication_time>>)
 
 |``properties.data_id``
 |**optional**
@@ -65,7 +64,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.cache``
 |**optional**
-|Indicates that the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
 
 |``properties.integrity``
 |**optional**
@@ -88,11 +87,11 @@ The WIS2 Notification Message allows for transmission of messages in a compact m
 
 include::../requirements/core/REQ_message_size.adoc[]
 
-//==== GeoJSON compliance
+==== GeoJSON compliance
 
-//The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.
+The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.
 
-//include::../requirements/core/REQ_validation.adoc[]
+include::../requirements/core/REQ_validation.adoc[]
 
 ==== Identifier
 
@@ -126,7 +125,7 @@ include::../requirements/core/REQ_type.adoc[]
 ==== Geometry
 
 //RFC7946 defines 7 types of geometry: ``Point``, ``MultiPoint``, ``LineString``, ``MultiLineString``, ``Polygon``, ``MultiPolygon``, and ``GeometryCollection``.
-The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the the geometry can not be derived.
+The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the geometry cannot be derived.
 
 include::../requirements/core/REQ_geometry.adoc[]
 include::../recommendations/core/PER_geometry.adoc[]
@@ -197,13 +196,12 @@ include::../recommendations/core/PER_geometry.adoc[]
 ==== Properties / Publication Time
 
 The ``pubtime`` property identifies the date/time of when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
-//FIX?
+
 The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.  
 
 The ``pubtime`` property is also valuable for change detection as part of updates and deletion notifications.  
 
-//FIX?
-Ensuring ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows (an out of date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data).
+Ensuring ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out of date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data.
 
 [source,json]
 ----

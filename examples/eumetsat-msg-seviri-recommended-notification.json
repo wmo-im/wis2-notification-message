@@ -1,0 +1,29 @@
+{
+    "id": "952de8f5-1220-4930-930f-d4fb2fc07087",
+    "version": "v04",
+    "type": "Feature",
+    "geometry": null,
+    "properties": {
+        "data_id": "wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/EO:EUM:DAT:MSG:HRSEVIRI-MSG3-SEVI-MSG15-0100-NA-20240122075742.471000000Z-NA",
+        "metadata_id": "urn:x-wmo:md:int:eumetsat:EO:EUM:DAT:MSG:HRSEVIRI3",
+        "pubtime": "2024-01-18T12:05:02Z",
+        "integrity": {
+            "method": "sha512",
+            "value": "5a4cae86ee22d91f349ac51e24db08eba33f42950bdb295a78fdd00532bffc924bffa9e40b7d246e0b3629d4d7b2398e54710179e611d42aa9ef86ec0f2599e5"
+        },
+        "datetime": "2024-01-22T07:45:00Z"
+    },
+    "links": [
+        {
+            "href": "https://api.eumetsat.int/data/download/1.0.0/collections/EO%3AEUM%3ADAT%3A0410/products/S3A_OL_1_ERR____20240121T151343_20240121T155733_20240121T171621_2630_108_125______MAR_O_NR_002.SEN3",
+            "rel": "canonical",
+            "type": "application/zip",
+            "length": 4023452
+        },
+        {
+            "href": "https://user.eumetsat.int/resources/user-guides/data-store-detailed-guide",
+            "rel": "about",
+            "type": "text/html"
+        }
+    ]
+}

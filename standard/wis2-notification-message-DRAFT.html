@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-21</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-22</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-21</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-22</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -524,8 +524,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_geometry">7.1.7. Geometry</a></li>
 <li><a href="#_properties_publication_time">7.1.8. Properties / Publication Time</a></li>
 <li><a href="#data_id">7.1.9. Properties / Data Identification</a></li>
-<li><a href="#metadata_id">7.1.10. Properties / Metadata Identification</a></li>
-<li><a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">7.1.11. Properties / Temporal description (datetime, start_datetime, end_datetime)</a></li>
+<li><a href="#metadata_id">7.1.10. Properties / Metadata identification</a></li>
+<li><a href="#_properties_temporal_description">7.1.11. Properties / Temporal description</a></li>
 <li><a href="#_properties_cache">7.1.12. Properties / Cache</a></li>
 <li><a href="#_properties_integrity">7.1.13. Properties / Integrity</a></li>
 <li><a href="#_properties_content">7.1.14. Properties / Content</a></li>
@@ -547,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_geometry_2">A.1.6. Geometry</a></li>
 <li><a href="#_properties_publication_time_2">A.1.7. Properties / Publication Time</a></li>
 <li><a href="#_properties_data_identification">A.1.8. Properties / Data Identification</a></li>
-<li><a href="#_properties_temporal_description">A.1.9. Properties / Temporal description</a></li>
+<li><a href="#_properties_temporal_description_2">A.1.9. Properties / Temporal description</a></li>
 <li><a href="#_links_2">A.1.10. Links</a></li>
 </ul>
 </li>
@@ -944,15 +944,23 @@ messages.</p>
 <h2 id="_the_wis2_notification_message_encoding"><a class="anchor" href="#_the_wis2_notification_message_encoding"></a>7. The WIS2 Notification Message Encoding</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A WIS2 Notification Message provides descriptive information about a data made available
-through WIS 2.0.</p>
+<p>A WIS2 Notification Message (WNM) provides descriptive information about data or metadata made available through WIS 2.0. The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.</p>
+</div>
+<div class="paragraph">
+<p>WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, Global Broker services, as well as Replay API services.</p>
+</div>
+<div class="paragraph">
+<p>A WNM provides notification metadata about data or metadata published to WIS2, including when the data was published, its spatial and temporal characteristics, and where to access and download.</p>
+</div>
+<div class="paragraph">
+<p>WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).</p>
 </div>
 <div class="sect2">
 <h3 id="_conformance_class_core"><a class="anchor" href="#_conformance_class_core"></a>7.1. Conformance Class Core</h3>
 <div class="sect3">
 <h4 id="_overview"><a class="anchor" href="#_overview"></a>7.1.1. Overview</h4>
 <div class="paragraph">
-<p>This Core Conformance Class provides requirements to articulate the required elements of a WIS2 Notification Message.</p>
+<p>This Core Conformance Class provides requirements for a WIS2 Notification Message.</p>
 </div>
 <table id="rc_core" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -989,9 +997,6 @@ through WIS 2.0.</p>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.</p>
-</div>
-<div class="paragraph">
 <p>The table below provides an overview of the set of properties that may be included in a WNM.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1017,7 +1022,7 @@ through WIS 2.0.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>type</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A fixed value denoting the record as a GeoJSON <code>Feature</code> (see <a href="#_validation">Validation</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A fixed value denoting the record as a GeoJSON <code>Feature</code> (see <a href="#_geojson_compliance">GeoJSON compliance</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>version</code></p></td>
@@ -1027,12 +1032,12 @@ through WIS 2.0.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>geometry</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Geospatial location associated with the notification, in a geographic coordinate reference system (see <a href="#_geometry">Geometry</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Geospatial location associated with the data or metadata, in a geographic coordinate reference system (see <a href="#_geometry">Geometry</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.pubtime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date/time of when the file was posted/published, in RFC3339 format (see <a href="#_properties_publication_time">Properties / Publication Time</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date and time of when the notification was published, in RFC3339 format (see <a href="#_properties_publication_time">Properties / Publication Time</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.data_id</code></p></td>
@@ -1042,32 +1047,27 @@ through WIS 2.0.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.metadata_id</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifier for associated discovery metadata record to which the notification applies to (see <a href="#metadata_id">Properties / Metadata Identification</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifier for associated discovery metadata record to which the notification applies to (see <a href="#metadata_id">Properties / Metadata identification</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the date/time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">Properties / Temporal description (datetime, start_datetime, end_datetime)</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.start_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date/time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">Properties / Temporal description (datetime, start_datetime, end_datetime)</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.end_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date/time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">Properties / Temporal description (datetime, start_datetime, end_datetime)</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.cache</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Whether the data in the notification should be cached (if not specified, the default value is <code>true</code>) (see <a href="#_properties_cache">Properties / Cache</a>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.cache</code></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Whether the data in the notification should be cached (if not specified, the default value is <code>true</code>) (see <a href="#_properties_cache">Properties / Cache</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Indicates whether the data in the notification should be cached (if not specified, the default value is <code>true</code>) (see <a href="#_properties_cache">Properties / Cache</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.integrity</code></p></td>
@@ -1082,7 +1082,7 @@ through WIS 2.0.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>links</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Online linkages to data retrieval or additional resources associated with the dataset (see <a href="#_links">Links</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Online linkages for data retrieval or additional resources associated with the dataset (see <a href="#_links">Links</a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1090,7 +1090,7 @@ through WIS 2.0.</p>
 <div class="sect3">
 <h4 id="_message_size"><a class="anchor" href="#_message_size"></a>7.1.2. Message size</h4>
 <div class="paragraph">
-<p>The WIS2 Notification Message allows for transmission of messages in a compacted or minified manner, and includes the ability to embedding content inline as required (see <a href="#_properties_content">Properties / Content</a>).</p>
+<p>The WIS2 Notification Message allows for transmission of messages in a compact manner, and includes the ability to embedding content inline as required (see <a href="#_properties_content">Properties / Content</a>).</p>
 </div>
 <table id="req_core_message_size" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1159,8 +1159,7 @@ It provides the anti-loop feature that is needed to ensure that the message will
 It remains the same throughout the lifetime of the message in the WIS2 ecosystem.</p>
 </div>
 <div class="paragraph">
-<p>The message identifier is set to a new value by Global Cache services when they publish their modified message for accessing the original core
-data from the cache. The <a href="#data_id">Properties / Data Identification</a> is retained to ensure traceability and consistency of the same resource.</p>
+<p>The <a href="#data_id">Properties / Data Identification</a> is retained to ensure traceability and consistency of the same resource.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1182,13 +1181,13 @@ data from the cache. The <a href="#data_id">Properties / Data Identification</a>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL have an identifier via the <code>id</code> property.</p>
+<p>A WNM SHALL provide an identifier via the <code>id</code> property.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM identifier SHALL be provided as a Universally Unique Identifier (UUID).</p>
+<p>The <code>id</code> property SHALL be a Universally Unique Identifier (UUID).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1220,7 +1219,7 @@ data from the cache. The <a href="#data_id">Properties / Data Identification</a>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>version</code> property SHALL be fixed to <code>v04</code> for this version of the specification.</p>
+<p>The <code>version</code> property SHALL be fixed to <code>v04</code> for this version of the specification.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1252,7 +1251,7 @@ data from the cache. The <a href="#data_id">Properties / Data Identification</a>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>type</code> property SHALL provide a fixed value of <code>Feature</code>.</p>
+<p>The <code>type</code> property SHALL be a fixed value of <code>Feature</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1261,9 +1260,7 @@ data from the cache. The <a href="#data_id">Properties / Data Identification</a>
 <div class="sect3">
 <h4 id="_geometry"><a class="anchor" href="#_geometry"></a>7.1.7. Geometry</h4>
 <div class="paragraph">
-<p>RFC7946 defines 7 types of geometry: <code>Point</code>, <code>MultiPoint</code>, <code>LineString</code>, <code>MultiLineString</code>, <code>Polygon</code>, <code>MultiPolygon</code>, and <code>GeometryCollection</code>.
-It has been decided to restrict those types to only two: <code>Point</code> and <code>Polygon</code>.
-It must be noted that the geometry key is mandatory in GeoJSON but can be of type <code>null</code>.</p>
+<p>The type of geometry in a notification message may be <code>Point</code> or <code>Polygon</code>. It can also be type <code>null</code> if the geometry cannot be derived.</p>
 </div>
 <table id="req_core_geometry" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1286,7 +1283,7 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
+<p>The <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1306,7 +1303,7 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>a WNM geometry MAY provide a third element (height) as per clause 4 of the GeoJSON specification.</p>
+<p>The <code>geometry</code> property MAY provide a third element (height) as per clause 4 of the GeoJSON specification.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1377,12 +1374,16 @@ It must be noted that the geometry key is mandatory in GeoJSON but can be of typ
 <div class="sect3">
 <h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.8. Properties / Publication Time</h4>
 <div class="paragraph">
-<p>The <code>pubtime</code> property identifies the date/time of when the origin notification was posted/published, in RFC3339 format, in
-the UTC timezone (<code>Z</code>). The publication date/time is critical for subscribers to prevent message loss in
-providing awareness of how far behind the publisher they may be).  <code>pubtime</code> is also valuable for change
-detection as part of updates and deletion notifications.  Ensuring <code>pubtime</code> is properly managed for updates
-and deletions is important for data and metadata download workflows (an out of date <code>pubtime</code> can lead
-to errors for clients when managing updates or deletions in their local copies of data).</p>
+<p>The <code>pubtime</code> property identifies the date/time of when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
+</div>
+<div class="paragraph">
+<p>The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.</p>
+</div>
+<div class="paragraph">
+<p>The <code>pubtime</code> property is also valuable for change detection as part of updates and deletion notifications.</p>
+</div>
+<div class="paragraph">
+<p>Ensuring <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out of date <code>pubtime</code> can lead to errors for clients when managing updates or deletions in their local copies of data.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1414,13 +1415,13 @@ to errors for clients when managing updates or deletions in their local copies o
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>properties.pubtime</code> property SHALL be provided in RFC3339 format.</p>
+<p>The <code>properties.pubtime</code> property SHALL be in RFC3339 format.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>properties.pubtime</code> property SHALL be provided in the UTC timezone.</p>
+<p>The <code>properties.pubtime</code> property SHALL be in UTC timezone.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1440,7 +1441,7 @@ to errors for clients when managing updates or deletions in their local copies o
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For notifications of updates or deletions, a WNM <code>properties.pubtime</code> property SHOULD be updated in support of client handling of change detection.</p>
+<p>For notifications of updates or deletions, the <code>properties.pubtime</code> property SHOULD be updated in support of client handling of change detection.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1449,8 +1450,7 @@ to errors for clients when managing updates or deletions in their local copies o
 <div class="sect3">
 <h4 id="data_id"><a class="anchor" href="#data_id"></a>7.1.9. Properties / Data Identification</h4>
 <div class="paragraph">
-<p>The <code>data_id</code> property uniquely identifies the data as defined by the data producer. A data producer may use
-the identification scheme of their choice in support of uniquely identifying data described by the notification.</p>
+<p>The <code>data_id</code> property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.</p>
 </div>
 <table id="req_core_data_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1473,7 +1473,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>properties.data_id</code> property SHALL be unique.</p>
+<p>The <code>properties.data_id</code> property SHALL be unique.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1493,7 +1493,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM <code>properties.data_id</code> property SHOULD NOT use an opaque id, but something meaningful to support client side filtering.</p>
+<p>The <code>properties.data_id</code> property SHOULD NOT use an opaque id. It should be encoded with meaningful values to support client side filtering.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1513,7 +1513,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>properties.data_id</code> property MAY contain a valid WIS2 topic, without the channel and version.</p>
+<p>The <code>properties.data_id</code> property MAY contain a valid WIS2 topic, without the channel and version.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1529,9 +1529,9 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 <div class="sect3">
-<h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.10. Properties / Metadata Identification</h4>
+<h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.10. Properties / Metadata identification</h4>
 <div class="paragraph">
-<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record to which the notification applies to. This element is an important linkage between a WCMP2 dataset discovery metadata record and its data notifications, allowing a subscriber to consult additional documentation of the dataset, including any access control applied to the data.</p>
+<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. Inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
 </div>
 <table id="rec_core_metadata_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1548,7 +1548,7 @@ the identification scheme of their choice in support of uniquely identifying dat
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property, identifying the associated WCMP2 dataset discovery metadata record (see WCMP2 requirement <code><a href="http://wis.wmo.int/spec/wcmp/2/req/core/identifier" class="bare">http://wis.wmo.int/spec/wcmp/2/req/core/identifier</a></code>) to which the notification applies to.</p>
+<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property that identifies the associated WCMP2 dataset discovery metadata record. See requirement for metadata identification in WCMP2.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1565,15 +1565,18 @@ the identification scheme of their choice in support of uniquely identifying dat
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description_datetime_start_datetime_end_datetime"><a class="anchor" href="#_properties_temporal_description_datetime_start_datetime_end_datetime"></a>7.1.11. Properties / Temporal description (datetime, start_datetime, end_datetime)</h4>
+<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>7.1.11. Properties / Temporal description</h4>
 <div class="paragraph">
-<p>The <code>datetime</code> property identifies the date and time of the data (e.g. date of measurement, for observation data), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
+<p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).</p>
 </div>
 <div class="paragraph">
-<p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (e.g. start/end times for an NWP forecasting period), in RFC3339 format, in the UTC timezone (<code>Z</code>).</p>
+<p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).</p>
 </div>
 <div class="paragraph">
-<p>A <code>null</code> value can also be used if no temporal description of the data can be derived as part of generating the message.</p>
+<p>All dates and time are encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
+</div>
+<div class="paragraph">
+<p>A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
 </div>
 <table id="req_core_temporal" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1596,19 +1599,19 @@ the identification scheme of their choice in support of uniquely identifying dat
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s temporal description SHALL be provided in RFC3339 format.</p>
+<p>The temporal description SHALL be in RFC3339 format.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s temporal description SHALL be provided in the UTC timezone.</p>
+<p>The temporal description SHALL be in the UTC timezone.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s temporal description SHALL be set to <code>null</code> (using only <code>properties.datetime</code>) when a temporal description cannot be derived.</p>
+<p>The temporal description SHALL be set to <code>null</code> (using only <code>properties.datetime</code>) when a temporal description cannot be derived.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1647,28 +1650,10 @@ the identification scheme of their choice in support of uniquely identifying dat
 <div class="sect3">
 <h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.12. Properties / Cache</h4>
 <div class="paragraph">
-<p>For core data, the data in a notification&#8217;s canonical link is always cached by Global Cache services by default.</p>
+<p>All core data, by default, is cached by Global Cache services.</p>
 </div>
 <div class="paragraph">
-<p>There exist scenarios where core data may continue to be hosted by the data producer. Examples include (but are not limited to):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>size: the size of the data is very large and not suitable for storage to the Global Cache</p>
-</li>
-<li>
-<p>download metrics: data producers may wish to keep data access isolated to their facilities in support of their own download metrics
-and reporting</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A data producer can use the <code>properties.cache</code> value to signify Global Cache services to not cache their data granule and keep any
-canonical links unmodified.</p>
-</div>
-<div class="paragraph">
-<p>The data notification is always published by the Global Cache regardless of this value to the <code>cache</code> topic.</p>
+<p>However, a data producer can use the <code>properties.cache</code> value to request Global Cache services to not cache their <code>core</code> data granule.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example: Specifying data not to be cached</div>
@@ -1703,15 +1688,15 @@ canonical links unmodified.</p>
 <div class="sect3">
 <h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.13. Properties / Integrity</h4>
 <div class="paragraph">
-<p>For data verification, it is suggested (but not mandatory) to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
+<p>For data verification, it is recommended to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
 </div>
 <div class="paragraph">
-<p>The <code>method</code> property provides a format of the hashing method used to enable integrity check of the data. Acceptable values
-are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-256</code>, <code>sha3-384</code>, and <code>sha3-512</code>.  <code>sha512</code> is preferred.</p>
+<p>The <code>method</code> property provides a format of the hashing method used to enable integrity check of the data. The preferred values
+are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-256</code>, <code>sha3-384</code>, and <code>sha3-512</code>.  <code>sha512</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>value</code> property provides the result of the hashing method, base64 encoded.</p>
+<p>The <code>value</code> property provides the result of the hashing method in base64 encoding.</p>
 </div>
 <table id="rec_core_integrity" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1749,19 +1734,19 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
 <div class="paragraph">
-<p>For data granules with sizes smaller than 4096 bytes, the <code>content</code> property allows for including the data in the message. The <code>content</code> property provides an additional inline data access capability, in addition to a canonical link of the message.</p>
+<p>The <code>content</code> property allows for inclusion of the data in the notification message when the data is smaller than 4096 bytes.</p>
 </div>
 <div class="paragraph">
-<p>The <code>encoding</code> property provides the character encoding of the data (fixed to UTF-8, Base64, or gzip).</p>
+<p>The <code>encoding</code> property provides the character encoding of the data (<code>UTF-8</code>, <code>Base64</code>, or <code>gzip</code>).</p>
 </div>
 <div class="paragraph">
-<p>The <code>value</code> property provides the data in the in accordance to the <code>encoding</code> property.</p>
+<p>The <code>value</code> property provides the data in accordance with the <code>encoding</code> property.</p>
 </div>
 <div class="paragraph">
 <p>The <code>size</code> property provides the size, in bytes, of the data in accordance to the <code>encoding</code> property. The value must be below 4096. Global Brokers may discard messages for where inline data sizes are greater than 4096 bytes.</p>
 </div>
 <div class="paragraph">
-<p>The limit takes into account the used data encoding. That is, if the data is compressed with gzip (<code>properties.content.encoding="gzip"</code>), the compressed size must be less than 4096 bytes.</p>
+<p>The limit takes into account the data encoding. That is, if the data is compressed with gzip, the compressed size must be less than 4096 bytes.</p>
 </div>
 <table id="req_core_content" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1798,7 +1783,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>content</code> property, consisting of an <code>encoding</code> property (fixed to either <code>utf-8</code>, <code>base64</code>, or <code>gzip</code>), a <code>value</code> property (of less than 4096 bytes) of the data, as well as a <code>size</code> property with the length of the data.</p>
+<p>A WNM MAY provide a <code>content</code> property, consisting of an <code>encoding</code> property (either <code>utf-8</code>, <code>base64</code>, or <code>gzip</code>), a <code>value</code> property of the data, as well as a <code>size</code> property with the length of the data.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1818,7 +1803,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data whose resulting size (taking into account encoding, including possible compression) is less than 4096 bytes, notifications MAY provide inline via <code>properties.content.value</code>.</p>
+<p>For data whose resulting size (after possible compression) is less than 4096 bytes, notifications MAY provide the data inline via <code>properties.content.value</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1840,7 +1825,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_links"><a class="anchor" href="#_links"></a>7.1.15. Links</h4>
 <div class="paragraph">
-<p>The <code>links</code> array consists of one or more objects providing URLs to access data.</p>
+<p>The <code>links</code> array property consists of one or more objects providing URLs to access data.</p>
 </div>
 <div class="paragraph">
 <p>Each link object provides:</p>
@@ -1848,7 +1833,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="ulist">
 <ul>
 <li>
-<p>an <code>href</code> property with a fully qualified link to access the data in a secure manner</p>
+<p>an <code>href</code> property with a fully qualified link to access the data</p>
 </li>
 <li>
 <p>a <code>rel</code> property providing an IANA link relation <sup class="footnote">[<a id="_footnoteref_20" class="footnote" href="#_footnotedef_20" title="View footnote.">20</a>]</sup> describing the relationship between the link and the message</p>
@@ -1857,12 +1842,12 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <p>a <code>type</code> property providing the media type of the data</p>
 </li>
 <li>
-<p>a <code>length</code> property providing the length (in bytes) indicating the size of the data in the response when downloading the link.</p>
+<p>a <code>length</code> property providing the length (in bytes) indicating the size of the data.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Links are used to communicate new or updated data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  Note that this differs from rolling data archives (which can be described accordingly in dataset discovery metadata, for example).</p>
+<p>Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.</p>
 </div>
 <table id="req_core_links" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1879,43 +1864,43 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL define a <code>links</code> array property.</p>
+<p>A WNM SHALL provide a <code>links</code> array property.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>links</code> array property SHALL contain at least one link with at least the required <code>href</code> and <code>rel</code> properties.</p>
+<p>The <code>links</code> array property SHALL contain at least one link with, at a minimum, the <code>href</code> and <code>rel</code> properties.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM&#8217;s <code>links</code> array property SHALL contain links which, for core data, require no further action in order to download the resource.</p>
+<p>The links for core data SHALL NOT require further action in order to download the resource.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL provide links using HTTP, HTTPS, FTP or SFTP.</p>
+<p>The links SHALL be HTTP, HTTPS, FTP or SFTP.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">E</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For new or updated data or metadata notifications, a WNM&#8217;s <code>links</code> array property SHALL contain at least one link with an IANA link relation of <code>canonical</code> to clearly identify the preferred access link.</p>
+<p>For new data and metadata notifications, the <code>links</code> array property SHALL provide at least one link with an IANA link relation of <code>canonical</code> to clearly identify the preferred access link.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata update notifications, a WNM&#8217;s <code>links</code> array property SHALL contain at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/update" class="bare">http://def.wmo.int/def/rel/wnm/-/update</a></code> to clearly identify the preferred access link.</p>
+<p>For data or metadata update notifications, the <code>links</code> array property SHALL provide at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/update" class="bare">http://def.wmo.int/def/rel/wnm/-/update</a></code> to clearly identify the preferred access link.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata deletions, a WNM&#8217;s <code>links</code> array property SHALL contain at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> to clearly identify data which has been deleted or removed.</p>
+<p>For data or metadata deletions, the <code>links</code> array property SHALL provide at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> to clearly identify data which has been deleted or removed.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1941,13 +1926,13 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM link SHOULD provide the <code>length</code> property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.</p>
+<p>The <code>link</code> property SHOULD provide a <code>length</code> property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> SHOULD NOT be used for communicating a rolling data archive.</p>
+<p>The link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> SHOULD NOT be used for communicating a rolling data archive.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2394,7 +2379,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>A.1.9. Properties / Temporal description</h4>
+<h4 id="_properties_temporal_description_2"><a class="anchor" href="#_properties_temporal_description_2"></a>A.1.9. Properties / Temporal description</h4>
 <div id="ats_core_temporal" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2941,7 +2926,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-21 21:49:35 UTC
+Last updated 2024-01-22 21:16:03 UTC
 </div>
 </div>
 </body>

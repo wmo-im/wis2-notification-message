@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/data_id*
-^|A |A WNM `+properties.data_id+` property SHOULD NOT use an opaque id, but something meaningful to support client side filtering.
+^|A |The `+properties.data_id+` property SHOULD NOT use an opaque id. It should be encoded with meaningful values to support client side filtering.
 |===

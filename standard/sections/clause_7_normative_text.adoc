@@ -48,7 +48,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.metadata_id``
 |**optional**
-|Identifier for associated discovery metadata record to which the notification applies to (see <<metadata_id>>)
+|Identifier for associated discovery metadata record to which the notification applies (see <<metadata_id>>)
 
 |``properties.datetime``
 |**optional**
@@ -83,7 +83,7 @@ The table below provides an overview of the set of properties that may be includ
 
 ==== Message size
 
-The WIS2 Notification Message allows for transmission of messages in a compact manner, and includes the ability to embedding content inline as required (see <<Properties / Content>>).
+The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<Properties / Content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
@@ -192,13 +192,13 @@ include::../recommendations/core/PER_geometry.adoc[]
 
 ==== Properties / Publication Time
 
-The ``pubtime`` property identifies the date/time of when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
+The ``pubtime`` property identifies the date/time when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
 
 The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.  
 
 The ``pubtime`` property is also valuable for change detection as part of updates and deletion notifications.  
 
-Ensuring ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out of date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data.
+Ensuring ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out-of-date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data.
 
 [source,json]
 ----
@@ -233,7 +233,7 @@ include::../recommendations/core/PER_data_id.adoc[]
 [[metadata_id]]
 ==== Properties / Metadata identification
 
-The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. Inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
+The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
 
 include::../recommendations/core/REC_metadata_id.adoc[]
 
@@ -253,7 +253,7 @@ The ``datetime`` property identifies the date and time of the data (for example,
 
 The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).
 
-All dates and time are encoded in RFC3339 format with the UTC timezone (``Z``). 
+All dates and times are encoded in RFC3339 format with the UTC timezone (``Z``). 
 
 A ``null`` value can also be used if a temporal description of the data cannot be derived.
 
@@ -312,7 +312,7 @@ include::../recommendations/core/PER_cache.adoc[]
 For data verification, it is recommended to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
 
-The ``method`` property provides a format of the hashing method used to enable integrity check of the data. The preferred values
+The ``method`` property provides a format of the hashing method used to enable an integrity check of the data. The preferred values
 are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.  ``sha512``.
 
 The ``value`` property provides the result of the hashing method in base64 encoding.
@@ -333,15 +333,15 @@ include::../recommendations/core/REC_integrity.adoc[]
 
 ==== Properties / Content
 
-The ``content`` property allows for inclusion of the data in the notification message when the data is smaller than 4096 bytes. 
+The ``content`` property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes. 
 
 The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``).
 
 The ``value`` property provides the data in accordance with the ``encoding`` property.
 
-The ``size`` property provides the size, in bytes, of the data in accordance to the ``encoding`` property. The value must be below 4096. Global Brokers may discard messages for where inline data sizes are greater than 4096 bytes.
+The ``size`` property provides the size, in bytes, of the data in accordance with the ``encoding`` property. The value must be below 4096. Global Brokers may discard messages where inline data sizes are greater than 4096 bytes.
 
-The limit takes into account the data encoding. That is, if the data is compressed with gzip, the compressed size must be less than 4096 bytes. 
+The limit takes into account the data encoding. That is if the data are compressed with gzip, the compressed size must be less than 4096 bytes. 
 
 include::../requirements/core/REQ_content.adoc[]
 include::../recommendations/core/REC_content.adoc[]
@@ -403,7 +403,7 @@ include::../recommendations/core/PER_links.adoc[]
 
 ==== Additional properties
 
-A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.
+A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.
 
 include::../recommendations/core/PER_additional_properties.adoc[]
 

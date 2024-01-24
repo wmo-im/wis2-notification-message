@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-22</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-24</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-22</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-24</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -513,7 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_the_wis2_notification_message_encoding">7. The WIS2 Notification Message Encoding</a>
 <ul class="sectlevel2">
-<li><a href="#_conformance_class_core">7.1. Conformance Class Core</a>
+<li><a href="#_conformance_class_core">7.1. Conformance Class "Core"</a>
 <ul class="sectlevel3">
 <li><a href="#_overview">7.1.1. Overview</a></li>
 <li><a href="#_message_size">7.1.2. Message size</a></li>
@@ -956,7 +956,7 @@ messages.</p>
 <p>WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).</p>
 </div>
 <div class="sect2">
-<h3 id="_conformance_class_core"><a class="anchor" href="#_conformance_class_core"></a>7.1. Conformance Class Core</h3>
+<h3 id="_conformance_class_core"><a class="anchor" href="#_conformance_class_core"></a>7.1. Conformance Class "Core"</h3>
 <div class="sect3">
 <h4 id="_overview"><a class="anchor" href="#_overview"></a>7.1.1. Overview</h4>
 <div class="paragraph">
@@ -1047,7 +1047,7 @@ messages.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.metadata_id</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifier for associated discovery metadata record to which the notification applies to (see <a href="#metadata_id">Properties / Metadata identification</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifier for associated discovery metadata record to which the notification applies (see <a href="#metadata_id">Properties / Metadata identification</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.datetime</code></p></td>
@@ -1090,7 +1090,7 @@ messages.</p>
 <div class="sect3">
 <h4 id="_message_size"><a class="anchor" href="#_message_size"></a>7.1.2. Message size</h4>
 <div class="paragraph">
-<p>The WIS2 Notification Message allows for transmission of messages in a compact manner, and includes the ability to embedding content inline as required (see <a href="#_properties_content">Properties / Content</a>).</p>
+<p>The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <a href="#_properties_content">Properties / Content</a>).</p>
 </div>
 <table id="req_core_message_size" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1374,7 +1374,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="sect3">
 <h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.8. Properties / Publication Time</h4>
 <div class="paragraph">
-<p>The <code>pubtime</code> property identifies the date/time of when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
+<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
 <p>The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.</p>
@@ -1383,7 +1383,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <p>The <code>pubtime</code> property is also valuable for change detection as part of updates and deletion notifications.</p>
 </div>
 <div class="paragraph">
-<p>Ensuring <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out of date <code>pubtime</code> can lead to errors for clients when managing updates or deletions in their local copies of data.</p>
+<p>Ensuring <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows. For example, an out-of-date <code>pubtime</code> can lead to errors for clients when managing updates or deletions in their local copies of data.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1493,7 +1493,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>properties.data_id</code> property SHOULD NOT use an opaque id. It should be encoded with meaningful values to support client side filtering.</p>
+<p>The <code>properties.data_id</code> property SHOULD NOT use an opaque id. It should be encoded with meaningful values to support client-side filtering.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1531,7 +1531,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="sect3">
 <h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.10. Properties / Metadata identification</h4>
 <div class="paragraph">
-<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. Inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
+<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
 </div>
 <table id="rec_core_metadata_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1573,7 +1573,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).</p>
 </div>
 <div class="paragraph">
-<p>All dates and time are encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
+<p>All dates and times are encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
 <p>A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
@@ -1692,7 +1692,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 that a given data granule has not been corrupted during download.</p>
 </div>
 <div class="paragraph">
-<p>The <code>method</code> property provides a format of the hashing method used to enable integrity check of the data. The preferred values
+<p>The <code>method</code> property provides a format of the hashing method used to enable an integrity check of the data. The preferred values
 are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-256</code>, <code>sha3-384</code>, and <code>sha3-512</code>.  <code>sha512</code>.</p>
 </div>
 <div class="paragraph">
@@ -1734,7 +1734,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
 <div class="paragraph">
-<p>The <code>content</code> property allows for inclusion of the data in the notification message when the data is smaller than 4096 bytes.</p>
+<p>The <code>content</code> property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes.</p>
 </div>
 <div class="paragraph">
 <p>The <code>encoding</code> property provides the character encoding of the data (<code>UTF-8</code>, <code>Base64</code>, or <code>gzip</code>).</p>
@@ -1743,10 +1743,10 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <p>The <code>value</code> property provides the data in accordance with the <code>encoding</code> property.</p>
 </div>
 <div class="paragraph">
-<p>The <code>size</code> property provides the size, in bytes, of the data in accordance to the <code>encoding</code> property. The value must be below 4096. Global Brokers may discard messages for where inline data sizes are greater than 4096 bytes.</p>
+<p>The <code>size</code> property provides the size, in bytes, of the data in accordance with the <code>encoding</code> property. The value must be below 4096. Global Brokers may discard messages where inline data sizes are greater than 4096 bytes.</p>
 </div>
 <div class="paragraph">
-<p>The limit takes into account the data encoding. That is, if the data is compressed with gzip, the compressed size must be less than 4096 bytes.</p>
+<p>The limit takes into account the data encoding. That is if the data are compressed with gzip, the compressed size must be less than 4096 bytes.</p>
 </div>
 <table id="req_core_content" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1926,7 +1926,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>link</code> property SHOULD provide a <code>length</code> property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.</p>
+<p>The <code>link</code> property SHOULD provide a <code>length</code> property to communicate the size of a given data download in advance of a data download workflow when the size of the data is known or can be easily derived.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1985,7 +1985,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.16. Additional properties</h4>
 <div class="paragraph">
-<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance to this specification.</p>
+<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.</p>
 </div>
 <table id="per_core_additional_properties" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -2926,7 +2926,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-22 21:16:03 UTC
+Last updated 2024-01-24 22:25:53 UTC
 </div>
 </div>
 </body>

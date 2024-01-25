@@ -34,4 +34,4 @@ toc::[]
 <<<
 
 include::overview.adoc[]
-include::core/metadata_id.adoc[]
+include::kpis.adoc[]

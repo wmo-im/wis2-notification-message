@@ -387,7 +387,8 @@ Each link object provides:
 * an ``href`` property with a fully qualified link to access the data
 * a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] describing the relationship between the link and the message
 * a ``type`` property providing the media type of the data
-* a ``length`` property providing the length (in bytes) indicating the size of the data.
+* a ``length`` property providing the length (in bytes) indicating the size of the data
+* a ``security`` property providing a description of the access control mechanism applied (i.e., for recommended data)
  
 Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  
 
@@ -416,6 +417,28 @@ include::../recommendations/core/PER_links.adoc[]
   "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
   "rel": "item",
   "type": "application/json"
+}]
+----
+
+===== Access control
+
+For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic Authentication for a given data access service.
+
+.Example: Access controlled link
+[source,json]
+----
+"links": [{
+  "rel": "data",
+  "type": "application/json",
+  "title": "link to WAF endpoint",
+  "href": "https://example.org/data/secure-data",
+  "security": {
+    "default": {
+      "type": "http",
+      "scheme": "basic",
+      "description": "Please contact the data provider for accessing this secured resource."
+    }
+  }
 }]
 ----
 

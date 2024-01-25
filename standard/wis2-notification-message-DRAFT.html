@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-24</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-25</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-24</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-25</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -525,12 +525,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_properties_publication_time">7.1.8. Properties / Publication Time</a></li>
 <li><a href="#data_id">7.1.9. Properties / Data Identification</a></li>
 <li><a href="#metadata_id">7.1.10. Properties / Metadata identification</a></li>
-<li><a href="#_properties_temporal_description">7.1.11. Properties / Temporal description</a></li>
-<li><a href="#_properties_cache">7.1.12. Properties / Cache</a></li>
-<li><a href="#_properties_integrity">7.1.13. Properties / Integrity</a></li>
-<li><a href="#_properties_content">7.1.14. Properties / Content</a></li>
-<li><a href="#_links">7.1.15. Links</a></li>
-<li><a href="#_additional_properties">7.1.16. Additional properties</a></li>
+<li><a href="#_properties_producer">7.1.11. Properties / Producer</a></li>
+<li><a href="#_properties_temporal_description">7.1.12. Properties / Temporal description</a></li>
+<li><a href="#_properties_cache">7.1.13. Properties / Cache</a></li>
+<li><a href="#_properties_integrity">7.1.14. Properties / Integrity</a></li>
+<li><a href="#_properties_content">7.1.15. Properties / Content</a></li>
+<li><a href="#_links">7.1.16. Links</a></li>
+<li><a href="#_additional_properties">7.1.17. Additional properties</a></li>
 </ul>
 </li>
 </ul>
@@ -1050,19 +1051,24 @@ messages.</p>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifier for associated discovery metadata record to which the notification applies (see <a href="#metadata_id">Properties / Metadata identification</a>)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.producer</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <a href="#_properties_producer">Properties / Producer</a>)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description">Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.start_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description">Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.end_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>optional</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description_datetime_start_datetime_end_datetime">[_properties_temporal_description_datetime_start_datetime_end_datetime]</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date and time of the data being published, in RFC3339 format (see <a href="#_properties_temporal_description">Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.cache</code></p></td>
@@ -1558,14 +1564,48 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <pre class="highlight"><code class="language-json" data-lang="json">"properties": {
   ...
   "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
-
   ...
 }</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>7.1.11. Properties / Temporal description</h4>
+<h4 id="_properties_producer"><a class="anchor" href="#_properties_producer"></a>7.1.11. Properties / Producer</h4>
+<div class="paragraph">
+<p>The <code>producer</code> property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "producer": "fra"
+  ...
+}</code></pre>
+</div>
+</div>
+<table id="rec_core_producer" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 5</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/rec/core/producer</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM SHOULD provide a <code>properties.producer</code> property when publishing data on behalf of other Members.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>7.1.12. Properties / Temporal description</h4>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).</p>
 </div>
@@ -1648,7 +1688,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.12. Properties / Cache</h4>
+<h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.13. Properties / Cache</h4>
 <div class="paragraph">
 <p>All core data, by default, is cached by Global Cache services.</p>
 </div>
@@ -1686,7 +1726,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </table>
 </div>
 <div class="sect3">
-<h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.13. Properties / Integrity</h4>
+<h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.14. Properties / Integrity</h4>
 <div class="paragraph">
 <p>For data verification, it is recommended to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1705,7 +1745,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 5</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 6</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/integrity</strong></p>
 </div></div></td>
@@ -1732,7 +1772,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
+<h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.15. Properties / Content</h4>
 <div class="paragraph">
 <p>The <code>content</code> property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes.</p>
 </div>
@@ -1775,7 +1815,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 6</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 7</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/content</strong></p>
 </div></div></td>
@@ -1823,7 +1863,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.15. Links</h4>
+<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.16. Links</h4>
 <div class="paragraph">
 <p>The <code>links</code> array property consists of one or more objects providing URLs to access data.</p>
 </div>
@@ -1912,7 +1952,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 7</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/core/links</strong></p>
 </div></div></td>
@@ -1983,7 +2023,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.16. Additional properties</h4>
+<h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.17. Additional properties</h4>
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.</p>
 </div>
@@ -2549,6 +2589,10 @@ properties:
          Identifier for associated discovery metadata record to which the notification applies to.
          The identification SHOULD be from a WCMP2 discovery metadata record identifier from the WIS2
          Global Discovery Catalogue. Identifiers based on external catalogue systems MAY be articulated as additional links.
+      producer:
+        type: string
+        description: |
+          Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
       datetime:
         type:
           - string
@@ -2926,7 +2970,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-24 22:25:53 UTC
+Last updated 2024-01-25 07:50:02 UTC
 </div>
 </div>
 </body>

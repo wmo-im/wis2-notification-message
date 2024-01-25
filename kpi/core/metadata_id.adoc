@@ -1,18 +1,18 @@
-== WCMP dataset record identification
+=== WCMP dataset record identification
 
-=== WCMP element(s)
+==== WCMP element(s)
 
 * `properties.metadata_id`
 
-=== What is being measured
+==== What is being measured
 
 Whether WCMP discovery metadata information is available and can be successfully identified.
 
-=== Rationale for measurement
+==== Rationale for measurement
 
 Providing linkage to the associated discovery metadata in a WNM provides traceability to the overall dataset description.
 
-=== Rules for implementation
+==== Rules for implementation
 
 .Metadata identification implementation rules
 |===
@@ -27,11 +27,11 @@ Providing linkage to the associated discovery metadata in a WNM provides traceab
 
 *Total possible score: 2 (100%)*
 
-=== Guidance to score well on this assessment
+==== Guidance to score well on this assessment
 
 * Provide an identifier of the associated WCMP dataset record in the Global Discovery Catalogue
 
-=== Examples 
+==== Examples 
 
 
 ```json

@@ -1882,7 +1882,10 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <p>a <code>type</code> property providing the media type of the data</p>
 </li>
 <li>
-<p>a <code>length</code> property providing the length (in bytes) indicating the size of the data.</p>
+<p>a <code>length</code> property providing the length (in bytes) indicating the size of the data</p>
+</li>
+<li>
+<p>a <code>security</code> property providing a description of the access control mechanism applied (i.e., for recommended data)</p>
 </li>
 </ul>
 </div>
@@ -2019,6 +2022,30 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
   "rel": "item",
   "type": "application/json"
 }]</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_access_control"><a class="anchor" href="#_access_control"></a>7.1.16.1. Access control</h5>
+<div class="paragraph">
+<p>For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic Authentication for a given data access service.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Access controlled link</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
+  "rel": "data",
+  "type": "application/json",
+  "title": "link to WAF endpoint",
+  "href": "https://example.org/data/secure-data",
+  "security": {
+    "default": {
+      "type": "http",
+      "scheme": "basic",
+      "description": "Please contact the data provider for accessing this secured resource."
+    }
+  }
+}]</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2684,7 +2711,13 @@ properties:
     type: array
     minItems: 1
     items:
-      $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/link.yaml'
+      allOf:
+        - $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/link.yaml'
+        - properties:
+            security:
+              type: object
+              $ref: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.1.0/schemas/v3.0/schema.yaml#/definitions/Components/properties/securitySchemes
+
 required:
   - id
   - version
@@ -2970,7 +3003,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-25 08:27:32 UTC
+Last updated 2024-01-25 11:46:00 UTC
 </div>
 </div>
 </body>

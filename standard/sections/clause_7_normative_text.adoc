@@ -52,7 +52,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.producer``
 |**optional**
-|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other members (see <<_properties_producer>>)
+|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_properties_producer>>)
 
 |``properties.datetime``
 |**optional**
@@ -252,7 +252,7 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 
 ==== Properties / Producer
 
-The ``producer`` property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other members.
+The ``producer`` property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.
 
 [source,json]
 ----

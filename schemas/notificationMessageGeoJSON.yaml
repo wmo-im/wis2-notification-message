@@ -47,7 +47,7 @@ properties:
       producer:
         type: string
         description: |
-          Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other members.
+          Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
       datetime:
         type:
           - string

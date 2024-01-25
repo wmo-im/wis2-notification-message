@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/producer*
-^|A |A WNM SHOULD provide a `+properties.producer+` property when publishing data on behalf of other members.
+^|A |A WNM SHOULD provide a `+properties.producer+` property when publishing data on behalf of other Members.
 |===

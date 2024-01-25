@@ -253,7 +253,6 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 ==== Properties / Producer
 
 The ``producer`` property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other members.
-v
 
 [source,json]
 ----

@@ -44,6 +44,10 @@ properties:
          Identifier for associated discovery metadata record to which the notification applies to.
          The identification SHOULD be from a WCMP2 discovery metadata record identifier from the WIS2
          Global Discovery Catalogue. Identifiers based on external catalogue systems MAY be articulated as additional links.
+      producer:
+        type: string
+        description: |
+          Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other members.
       datetime:
         type:
           - string

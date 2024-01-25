@@ -95,7 +95,11 @@
         },
         "metadata_id": {
           "type": "string",
-          "description": "Identifier for associated discovery metadata record to which the notification applies to."
+          "description": "Identifier for associated discovery metadata record to which the notification applies to.\nThe identification SHOULD be from a WCMP2 discovery metadata record identifier from the WIS2\nGlobal Discovery Catalogue. Identifiers based on external catalogue systems MAY be articulated as additional links.\n"
+        },
+        "producer": {
+          "type": "string",
+          "description": "Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other members.\n"
         },
         "datetime": {
           "type": [
@@ -208,36 +212,52 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "type": "object",
-        "required": [
-          "href",
-          "rel"
-        ],
-        "properties": {
-          "href": {
-            "type": "string",
-            "example": "http://data.example.com/buildings/123"
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "rel"
+            ],
+            "properties": {
+              "rel": {
+                "type": "string",
+                "description": "The type or semantics of the relation.",
+                "example": "alternate"
+              },
+              "type": {
+                "type": "string",
+                "description": "A hint indicating what the media type of the result of dereferencing the link should be.",
+                "example": "application/geo+json"
+              },
+              "hreflang": {
+                "type": "string",
+                "description": "A hint indicating what the language of the result of dereferencing the link should be.",
+                "example": "en"
+              },
+              "title": {
+                "type": "string",
+                "description": "Used to label the destination of a link such that it can be used as a human-readable identifier.",
+                "example": "Trierer Strasse 70, 53115 Bonn"
+              },
+              "length": {
+                "type": "integer"
+              }
+            }
           },
-          "rel": {
-            "type": "string",
-            "example": "alternate"
-          },
-          "type": {
-            "type": "string",
-            "example": "application/geo+json"
-          },
-          "hreflang": {
-            "type": "string",
-            "example": "en"
-          },
-          "title": {
-            "type": "string",
-            "example": "Trierer Strasse 70, 53115 Bonn"
-          },
-          "length": {
-            "type": "integer"
+          {
+            "type": "object",
+            "required": [
+              "href"
+            ],
+            "properties": {
+              "href": {
+                "type": "string",
+                "description": "The URI of the link target.",
+                "example": "http://data.example.com/buildings/123"
+              }
+            }
           }
-        }
+        ]
       }
     }
   },
@@ -268,7 +288,7 @@
         "value": "A2KNxvks...S8qfSCw=="
       },
       "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
-      "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob",
+      "metadata_id": "urn:x-wmo:md:ca-eccc-msc:observations.swob",
       "content": {
         "encoding": "utf-8",
         "value": "encoded bytes from the file",

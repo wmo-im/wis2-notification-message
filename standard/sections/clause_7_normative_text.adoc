@@ -50,17 +50,21 @@ The table below provides an overview of the set of properties that may be includ
 |**optional**
 |Identifier for associated discovery metadata record to which the notification applies (see <<metadata_id>>)
 
+|``properties.producer``
+|**optional**
+|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_properties_producer>>)
+
 |``properties.datetime``
 |**optional**
-|Identifies the date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.start_datetime``
 |**optional**
-|Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.end_datetime``
 |**optional**
-|Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description_datetime_start_datetime_end_datetime>>)
+|Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.cache``
 |**optional**
@@ -242,10 +246,24 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 "properties": {
   ...
   "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
-
   ...
 }
 ----
+
+==== Properties / Producer
+
+The ``producer`` property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.
+
+[source,json]
+----
+"properties": {
+  ...
+  "producer": "fra"
+  ...
+}
+----
+
+include::../recommendations/core/REC_producer.adoc[]
 
 ==== Properties / Temporal description 
 

@@ -214,46 +214,69 @@
       "items": {
         "allOf": [
           {
-            "type": "object",
-            "required": [
-              "rel"
-            ],
-            "properties": {
-              "rel": {
-                "type": "string",
-                "description": "The type or semantics of the relation.",
-                "example": "alternate"
+            "allOf": [
+              {
+                "type": "object",
+                "required": [
+                  "rel"
+                ],
+                "properties": {
+                  "rel": {
+                    "type": "string",
+                    "description": "The type or semantics of the relation.",
+                    "example": "alternate"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "A hint indicating what the media type of the result of dereferencing the link should be.",
+                    "example": "application/geo+json"
+                  },
+                  "hreflang": {
+                    "type": "string",
+                    "description": "A hint indicating what the language of the result of dereferencing the link should be.",
+                    "example": "en"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Used to label the destination of a link such that it can be used as a human-readable identifier.",
+                    "example": "Trierer Strasse 70, 53115 Bonn"
+                  },
+                  "length": {
+                    "type": "integer"
+                  }
+                }
               },
-              "type": {
-                "type": "string",
-                "description": "A hint indicating what the media type of the result of dereferencing the link should be.",
-                "example": "application/geo+json"
-              },
-              "hreflang": {
-                "type": "string",
-                "description": "A hint indicating what the language of the result of dereferencing the link should be.",
-                "example": "en"
-              },
-              "title": {
-                "type": "string",
-                "description": "Used to label the destination of a link such that it can be used as a human-readable identifier.",
-                "example": "Trierer Strasse 70, 53115 Bonn"
-              },
-              "length": {
-                "type": "integer"
+              {
+                "type": "object",
+                "required": [
+                  "href"
+                ],
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "description": "The URI of the link target.",
+                    "example": "http://data.example.com/buildings/123"
+                  }
+                }
               }
-            }
+            ]
           },
           {
-            "type": "object",
-            "required": [
-              "href"
-            ],
             "properties": {
-              "href": {
-                "type": "string",
-                "description": "The URI of the link target.",
-                "example": "http://data.example.com/buildings/123"
+              "security": {
+                "type": "object",
+                "patternProperties": {
+                  "^[a-zA-Z0-9\\.\\-_]+$": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/definitions/Foo_Reference"
+                      },
+                      {
+                        "$ref": "#/definitions/Foo_SecurityScheme"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -307,5 +330,308 @@
         "type": "application/json"
       }
     ]
+  },
+  "definitions": {
+    "Foo_APIKeySecurityScheme": {
+      "type": "object",
+      "required": [
+        "type",
+        "name",
+        "in"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "apiKey"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "in": {
+          "type": "string",
+          "enum": [
+            "header",
+            "query",
+            "cookie"
+          ]
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_AuthorizationCodeOAuthFlow": {
+      "type": "object",
+      "required": [
+        "authorizationUrl",
+        "tokenUrl"
+      ],
+      "properties": {
+        "authorizationUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_ClientCredentialsFlow": {
+      "type": "object",
+      "required": [
+        "tokenUrl"
+      ],
+      "properties": {
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_HTTPSecurityScheme": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "type"
+      ],
+      "properties": {
+        "scheme": {
+          "type": "string"
+        },
+        "bearerFormat": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "http"
+          ]
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "description": "Bearer",
+          "properties": {
+            "scheme": {
+              "enum": [
+                "bearer"
+              ]
+            }
+          }
+        },
+        {
+          "description": "Non Bearer",
+          "not": {
+            "required": [
+              "bearerFormat"
+            ]
+          },
+          "properties": {
+            "scheme": {
+              "not": {
+                "enum": [
+                  "bearer"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Foo_ImplicitOAuthFlow": {
+      "type": "object",
+      "required": [
+        "authorizationUrl",
+        "scopes"
+      ],
+      "properties": {
+        "authorizationUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_OAuth2SecurityScheme": {
+      "type": "object",
+      "required": [
+        "type",
+        "flows"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "oauth2"
+          ]
+        },
+        "flows": {
+          "$ref": "#/definitions/Foo_OAuthFlows"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_OAuthFlows": {
+      "type": "object",
+      "properties": {
+        "implicit": {
+          "$ref": "#/definitions/Foo_ImplicitOAuthFlow"
+        },
+        "password": {
+          "$ref": "#/definitions/Foo_PasswordOAuthFlow"
+        },
+        "clientCredentials": {
+          "$ref": "#/definitions/Foo_ClientCredentialsFlow"
+        },
+        "authorizationCode": {
+          "$ref": "#/definitions/Foo_AuthorizationCodeOAuthFlow"
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_OpenIdConnectSecurityScheme": {
+      "type": "object",
+      "required": [
+        "type",
+        "openIdConnectUrl"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "openIdConnect"
+          ]
+        },
+        "openIdConnectUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_PasswordOAuthFlow": {
+      "type": "object",
+      "required": [
+        "tokenUrl"
+      ],
+      "properties": {
+        "tokenUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "refreshUrl": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "scopes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
+    "Foo_Reference": {
+      "type": "object",
+      "required": [
+        "$ref"
+      ],
+      "patternProperties": {
+        "^\\$ref$": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
+    "Foo_SecurityScheme": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/Foo_APIKeySecurityScheme"
+        },
+        {
+          "$ref": "#/definitions/Foo_HTTPSecurityScheme"
+        },
+        {
+          "$ref": "#/definitions/Foo_OAuth2SecurityScheme"
+        },
+        {
+          "$ref": "#/definitions/Foo_OpenIdConnectSecurityScheme"
+        }
+      ]
+    }
   }
 }

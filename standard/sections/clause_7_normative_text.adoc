@@ -385,7 +385,8 @@ The ``links`` array property consists of one or more objects providing URLs to a
 Each link object provides:
 
 * an ``href`` property with a fully qualified link to access the data
-* a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] describing the relationship between the link and the message
+* a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] or WCMP2
+ defined extensionsfootnote:[https://github.com/wmo-im/wcmp2-codelists/blob/main/codelists/link-type.csv] describing the relationship between the link and the message
 * a ``type`` property providing the media type of the data
 * a ``length`` property providing the length (in bytes) indicating the size of the data
 * a ``security`` property providing a description of the access control mechanism applied (i.e., for recommended data)

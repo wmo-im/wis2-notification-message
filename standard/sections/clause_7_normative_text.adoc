@@ -47,35 +47,35 @@ The table below provides an overview of the set of properties that may be includ
 |Unique identifier of the data as defined by the data producer (see <<data_id>>)
 
 |``properties.metadata_id``
-|**optional**
+|optional
 |Identifier for associated discovery metadata record to which the notification applies (see <<metadata_id>>)
 
 |``properties.producer``
-|**optional**
+|optional
 |Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_properties_producer>>)
 
 |``properties.datetime``
-|**optional**
+|optional
 |Identifies the date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.start_datetime``
-|**optional**
+|optional
 |Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.end_datetime``
-|**optional**
+|optional
 |Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
 
 |``properties.cache``
-|**optional**
+|optional
 |Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
 
 |``properties.integrity``
-|**optional**
+|optional
 |Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_properties_integrity>>)
 
 |``properties.content``
-|**optional**
+|optional
 |Used to embed small products inline within the message (see <<_properties_content>>)
 
 |``links``

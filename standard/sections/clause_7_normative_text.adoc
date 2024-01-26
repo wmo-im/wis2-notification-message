@@ -43,7 +43,7 @@ The table below provides an overview of the set of properties that may be includ
 |The date and time of when the notification was published, in RFC3339 format (see <<_properties_publication_time>>)
 
 |``properties.data_id``
-|**optional**
+|**required**
 |Unique identifier of the data as defined by the data producer (see <<data_id>>)
 
 |``properties.metadata_id``

@@ -13,7 +13,7 @@
     "links": [
         {
             "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
-            "rel": "http://def.wmo.int/def/rel/wnm/-/deletion"
+            "rel": "deletion"
         }
     ]
 }

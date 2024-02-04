@@ -24,7 +24,7 @@ For each link object, check that the `+href+` property contains a valid protocol
 
 [.component,class=step]
 --
-Check that the `+links+` array property contains one link object with a ``rel`` property with one of the values ``canonical``, ``http://def.wmo.int/def/rel/wnm/-/update``, ``http://def.wmo.int/def/rel/wnm/-/deletion`` as well as an ``href`` property.
+Check that the `+links+` array property contains one link object with a ``rel`` property with one of the values ``canonical``, ``update``, ``deletion`` as well as an ``href`` property.
 --
 
 =====

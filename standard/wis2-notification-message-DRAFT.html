@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-01-27</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-02-04</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-01-27</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-02-04</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -973,7 +973,7 @@ messages.</p>
 <td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirements Class</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.wmo.int/spec/wnm/1/req/core" class="bare">http://www.wmo.int/spec/wnm/1/req/core</a></p></td>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://wis.wmo.int/spec/wnm/1/req/core" class="bare">http://wis.wmo.int/spec/wnm/1/req/core</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Target type</p></td>
@@ -1938,13 +1938,13 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata update notifications, the <code>links</code> array property SHALL provide at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/update" class="bare">http://def.wmo.int/def/rel/wnm/-/update</a></code> to clearly identify the preferred access link.</p>
+<p>For data or metadata update notifications, the <code>links</code> array property SHALL provide at least one link with a link relation of <code>update</code> to clearly identify the preferred access link.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata deletions, the <code>links</code> array property SHALL provide at least one link with a link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> to clearly identify data which has been deleted or removed.</p>
+<p>For data or metadata deletions, the <code>links</code> array property SHALL provide at least one link with a link relation of <code>deletion</code> to clearly identify data which has been deleted or removed.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1976,7 +1976,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The link relation of <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> SHOULD NOT be used for communicating a rolling data archive.</p>
+<p>The link relation of <code>deletion</code> SHOULD NOT be used for communicating a rolling data archive.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2104,7 +2104,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 <dl>
 <dt class="hdlist1">label</dt>
 <dd>
-<p><a href="http://www.wmo.int/spec/wnm/1/conf/core" class="bare">http://www.wmo.int/spec/wnm/1/conf/core</a></p>
+<p><a href="http://wis.wmo.int/spec/wnm/1/conf/core" class="bare">http://wis.wmo.int/spec/wnm/1/conf/core</a></p>
 </dd>
 <dt class="hdlist1">subject</dt>
 <dd>
@@ -2540,7 +2540,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 <div class="openblock component">
 <div class="content">
 <div class="paragraph">
-<p>Check that the <code>links</code> array property contains one link object with a <code>rel</code> property with one of the values <code>canonical</code>, <code><a href="http://def.wmo.int/def/rel/wnm/-/update" class="bare">http://def.wmo.int/def/rel/wnm/-/update</a></code>, <code><a href="http://def.wmo.int/def/rel/wnm/-/deletion" class="bare">http://def.wmo.int/def/rel/wnm/-/deletion</a></code> as well as an <code>href</code> property.</p>
+<p>Check that the <code>links</code> array property contains one link object with a <code>rel</code> property with one of the values <code>canonical</code>, <code>update</code>, <code>deletion</code> as well as an <code>href</code> property.</p>
 </div>
 </div>
 </div>
@@ -2879,7 +2879,7 @@ example:
     "links": [
         {
             "href": "https://example.org/92c557ef-d28e-4713-91af-2e2e7be6f8ab.txt",
-            "rel": "http://def.wmo.int/def/rel/wnm/-/deletion"
+            "rel": "deletion"
         }
     ]
 }</code></pre>
@@ -3007,7 +3007,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-27 14:12:15 UTC
+Last updated 2024-02-04 21:16:47 UTC
 </div>
 </div>
 </body>

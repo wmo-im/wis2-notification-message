@@ -520,18 +520,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_geojson_compliance">7.1.3. GeoJSON compliance</a></li>
 <li><a href="#_identifier">7.1.4. Identifier</a></li>
 <li><a href="#_version">7.1.5. Version</a></li>
-<li><a href="#_type">7.1.6. Type</a></li>
-<li><a href="#_geometry">7.1.7. Geometry</a></li>
-<li><a href="#_properties_publication_time">7.1.8. Properties / Publication Time</a></li>
-<li><a href="#data_id">7.1.9. Properties / Data Identification</a></li>
-<li><a href="#metadata_id">7.1.10. Properties / Metadata identification</a></li>
-<li><a href="#_properties_producer">7.1.11. Properties / Producer</a></li>
-<li><a href="#_properties_temporal_description">7.1.12. Properties / Temporal description</a></li>
-<li><a href="#_properties_cache">7.1.13. Properties / Cache</a></li>
-<li><a href="#_properties_integrity">7.1.14. Properties / Integrity</a></li>
-<li><a href="#_properties_content">7.1.15. Properties / Content</a></li>
-<li><a href="#_links">7.1.16. Links</a></li>
-<li><a href="#_additional_properties">7.1.17. Additional properties</a></li>
+<li><a href="#_geometry">7.1.6. Geometry</a></li>
+<li><a href="#_properties_publication_time">7.1.7. Properties / Publication Time</a></li>
+<li><a href="#data_id">7.1.8. Properties / Data Identification</a></li>
+<li><a href="#metadata_id">7.1.9. Properties / Metadata identification</a></li>
+<li><a href="#_properties_producer">7.1.10. Properties / Producer</a></li>
+<li><a href="#_properties_temporal_description">7.1.11. Properties / Temporal description</a></li>
+<li><a href="#_properties_cache">7.1.12. Properties / Cache</a></li>
+<li><a href="#_properties_integrity">7.1.13. Properties / Integrity</a></li>
+<li><a href="#_properties_content">7.1.14. Properties / Content</a></li>
+<li><a href="#_links">7.1.15. Links</a></li>
+<li><a href="#_additional_properties">7.1.16. Additional properties</a></li>
 </ul>
 </li>
 </ul>
@@ -544,12 +543,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_validation">A.1.2. Validation</a></li>
 <li><a href="#_identifier_2">A.1.3. Identifier</a></li>
 <li><a href="#_version_2">A.1.4. Version</a></li>
-<li><a href="#_type_2">A.1.5. Type</a></li>
-<li><a href="#_geometry_2">A.1.6. Geometry</a></li>
-<li><a href="#_properties_publication_time_2">A.1.7. Properties / Publication Time</a></li>
-<li><a href="#_properties_data_identification">A.1.8. Properties / Data Identification</a></li>
-<li><a href="#_properties_temporal_description_2">A.1.9. Properties / Temporal description</a></li>
-<li><a href="#_links_2">A.1.10. Links</a></li>
+<li><a href="#_geometry_2">A.1.5. Geometry</a></li>
+<li><a href="#_properties_publication_time_2">A.1.6. Properties / Publication Time</a></li>
+<li><a href="#_properties_data_identification">A.1.7. Properties / Data Identification</a></li>
+<li><a href="#_properties_temporal_description_2">A.1.8. Properties / Temporal description</a></li>
+<li><a href="#_links_2">A.1.9. Links</a></li>
 </ul>
 </li>
 </ul>
@@ -1145,7 +1143,7 @@ messages.</p>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Each WNM SHALL provide <code>id</code>, <code>version</code>, <code>type</code>, <code>geometry</code> and <code>properties</code> properties for GeoJSON compliance.</p>
+<p>Each WNM SHALL provide <code>id</code>, <code>type</code>, <code>geometry</code> and <code>properties</code> properties for GeoJSON compliance.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1187,12 +1185,6 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL provide an identifier via the <code>id</code> property.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>The <code>id</code> property SHALL be a Universally Unique Identifier (UUID).</p>
 </div></div></td>
 </tr>
@@ -1232,39 +1224,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </table>
 </div>
 <div class="sect3">
-<h4 id="_type"><a class="anchor" href="#_type"></a>7.1.6. Type</h4>
-<div class="paragraph">
-<p>The <code>type</code> property is a fixed value denoting the record as a GeoJSON Feature.</p>
-</div>
-<table id="req_core_type" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/type</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL provide a <code>type</code> property.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>type</code> property SHALL be a fixed value of <code>Feature</code>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_geometry"><a class="anchor" href="#_geometry"></a>7.1.7. Geometry</h4>
+<h4 id="_geometry"><a class="anchor" href="#_geometry"></a>7.1.6. Geometry</h4>
 <div class="paragraph">
 <p>The type of geometry in a notification message may be <code>Point</code> or <code>Polygon</code>. It can also be type <code>null</code> if the geometry cannot be derived.</p>
 </div>
@@ -1275,19 +1235,13 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 6</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/geometry</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHALL provide a <code>geometry</code> property.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>The <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
 </div></div></td>
@@ -1378,7 +1332,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.8. Properties / Publication Time</h4>
+<h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.7. Properties / Publication Time</h4>
 <div class="paragraph">
 <p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
 </div>
@@ -1407,7 +1361,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 7</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 6</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/pubtime</strong></p>
 </div></div></td>
@@ -1454,7 +1408,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </table>
 </div>
 <div class="sect3">
-<h4 id="data_id"><a class="anchor" href="#data_id"></a>7.1.9. Properties / Data Identification</h4>
+<h4 id="data_id"><a class="anchor" href="#data_id"></a>7.1.8. Properties / Data Identification</h4>
 <div class="paragraph">
 <p>The <code>data_id</code> property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.</p>
 </div>
@@ -1465,7 +1419,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 7</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/data_id</strong></p>
 </div></div></td>
@@ -1535,7 +1489,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 </div>
 <div class="sect3">
-<h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.10. Properties / Metadata identification</h4>
+<h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.9. Properties / Metadata identification</h4>
 <div class="paragraph">
 <p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
 </div>
@@ -1570,7 +1524,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_producer"><a class="anchor" href="#_properties_producer"></a>7.1.11. Properties / Producer</h4>
+<h4 id="_properties_producer"><a class="anchor" href="#_properties_producer"></a>7.1.10. Properties / Producer</h4>
 <div class="paragraph">
 <p>The <code>producer</code> property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.</p>
 </div>
@@ -1605,7 +1559,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </table>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>7.1.12. Properties / Temporal description</h4>
+<h4 id="_properties_temporal_description"><a class="anchor" href="#_properties_temporal_description"></a>7.1.11. Properties / Temporal description</h4>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).</p>
 </div>
@@ -1625,7 +1579,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/temporal</strong></p>
 </div></div></td>
@@ -1688,7 +1642,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.13. Properties / Cache</h4>
+<h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.12. Properties / Cache</h4>
 <div class="paragraph">
 <p>All core data, by default, is cached by Global Cache services.</p>
 </div>
@@ -1726,7 +1680,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </table>
 </div>
 <div class="sect3">
-<h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.14. Properties / Integrity</h4>
+<h4 id="_properties_integrity"><a class="anchor" href="#_properties_integrity"></a>7.1.13. Properties / Integrity</h4>
 <div class="paragraph">
 <p>For data verification, it is recommended to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1772,7 +1726,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.15. Properties / Content</h4>
+<h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
 <div class="paragraph">
 <p>The <code>content</code> property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes.</p>
 </div>
@@ -1795,7 +1749,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/content</strong></p>
 </div></div></td>
@@ -1863,7 +1817,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.16. Links</h4>
+<h4 id="_links"><a class="anchor" href="#_links"></a>7.1.15. Links</h4>
 <div class="paragraph">
 <p>The <code>links</code> array property consists of one or more objects providing URLs to access data.</p>
 </div>
@@ -1900,7 +1854,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/links</strong></p>
 </div></div></td>
@@ -2026,7 +1980,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect4">
-<h5 id="_access_control"><a class="anchor" href="#_access_control"></a>7.1.16.1. Access control</h5>
+<h5 id="_access_control"><a class="anchor" href="#_access_control"></a>7.1.15.1. Access control</h5>
 <div class="paragraph">
 <p>For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic Authentication for a given data access service.</p>
 </div>
@@ -2051,7 +2005,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.17. Additional properties</h4>
+<h4 id="_additional_properties"><a class="anchor" href="#_additional_properties"></a>7.1.16. Additional properties</h4>
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.</p>
 </div>
@@ -2215,6 +2169,13 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 </div>
+<div class="openblock component">
+<div class="content">
+<div class="paragraph">
+<p>Check that the <code>id</code> property is a valid UUID.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2262,48 +2223,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_type_2"><a class="anchor" href="#_type_2"></a>A.1.5. Type</h4>
-<div id="ats_core_type" class="exampleblock">
-<div class="content">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">label</dt>
-<dd>
-<p>/conf/core/type</p>
-</dd>
-<dt class="hdlist1">subject</dt>
-<dd>
-<p>/req/core/type</p>
-</dd>
-<dt class="hdlist1">test-purpose</dt>
-<dd>
-<p>Validate that a WNM provides a valid type.</p>
-</dd>
-</dl>
-</div>
-<div class="exampleblock component component">
-<div class="content">
-<div class="openblock component">
-<div class="content">
-<div class="paragraph">
-<p>Check for the existence of a <code>type</code> property in the WNM</p>
-</div>
-</div>
-</div>
-<div class="openblock component">
-<div class="content">
-<div class="paragraph">
-<p>Check that the <code>type</code> property is equal to <code>Feature</code>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_geometry_2"><a class="anchor" href="#_geometry_2"></a>A.1.6. Geometry</h4>
+<h4 id="_geometry_2"><a class="anchor" href="#_geometry_2"></a>A.1.5. Geometry</h4>
 <div id="ats_core_geometry" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2365,7 +2285,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_publication_time_2"><a class="anchor" href="#_properties_publication_time_2"></a>A.1.7. Properties / Publication Time</h4>
+<h4 id="_properties_publication_time_2"><a class="anchor" href="#_properties_publication_time_2"></a>A.1.6. Properties / Publication Time</h4>
 <div id="ats_core_pubtime" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2413,7 +2333,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_data_identification"><a class="anchor" href="#_properties_data_identification"></a>A.1.8. Properties / Data Identification</h4>
+<h4 id="_properties_data_identification"><a class="anchor" href="#_properties_data_identification"></a>A.1.7. Properties / Data Identification</h4>
 <div id="ats_core_data_id" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2447,7 +2367,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties_temporal_description_2"><a class="anchor" href="#_properties_temporal_description_2"></a>A.1.9. Properties / Temporal description</h4>
+<h4 id="_properties_temporal_description_2"><a class="anchor" href="#_properties_temporal_description_2"></a>A.1.8. Properties / Temporal description</h4>
 <div id="ats_core_temporal" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -2495,7 +2415,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_21" class="footnote
 </div>
 </div>
 <div class="sect3">
-<h4 id="_links_2"><a class="anchor" href="#_links_2"></a>A.1.10. Links</h4>
+<h4 id="_links_2"><a class="anchor" href="#_links_2"></a>A.1.9. Links</h4>
 <div id="ats_core_links" class="exampleblock">
 <div class="content">
 <div class="dlist">
@@ -3007,7 +2927,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-05 12:44:05 UTC
+Last updated 2024-02-05 12:45:04 UTC
 </div>
 </div>
 </body>

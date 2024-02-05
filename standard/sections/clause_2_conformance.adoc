@@ -9,8 +9,8 @@ of providing MQP services.
 
 WMO shall publish guidance material to assist data providers in constructing WIS2 Notification Messages.
 
-This standard identifies one Conformance Class which defines the functional requirements.
+This standard identifies one Requirements Class which defines the functional requirements.
 
-The mandatory Conformance Class for this specification is:
+The mandatory Requirements Class for this specification is:
 
 * "WIS2 Notification Message Encoding Core"

@@ -22,10 +22,6 @@ include::./core/ATS_test_id.adoc[]
 
 include::./core/ATS_test_version.adoc[]
 
-==== Type
-
-include::./core/ATS_test_type.adoc[]
-
 ==== Geometry
 
 include::./core/ATS_test_geometry.adoc[]

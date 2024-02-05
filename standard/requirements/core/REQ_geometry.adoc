@@ -2,6 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/geometry*
-^|A |A WNM SHALL provide a `+geometry+` property.
-^|B |The `+geometry+` property SHALL only provide one of a ``Point`` or ``Polygon`` geometry, or a ``null`` value when a geometry value is unknown or cannot be determined.
+^|A |The `+geometry+` property SHALL only provide one of a ``Point`` or ``Polygon`` geometry, or a ``null`` value when a geometry value is unknown or cannot be determined.
 |===

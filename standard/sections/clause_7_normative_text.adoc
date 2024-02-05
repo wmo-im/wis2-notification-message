@@ -118,12 +118,6 @@ The ``version`` property provides the version of WNM that the message conforms t
 
 include::../requirements/core/REQ_version.adoc[]
 
-==== Type
-
-The ``type`` property is a fixed value denoting the record as a GeoJSON Feature.
-
-include::../requirements/core/REQ_type.adoc[]
-
 ==== Geometry
 
 The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the geometry cannot be derived.

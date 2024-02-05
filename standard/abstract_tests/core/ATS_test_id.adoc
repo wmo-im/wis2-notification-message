@@ -11,5 +11,11 @@ test-purpose:: Validate that a WNM has a valid identifier.
 --
 Check for the existence of an `+id+` property in the WNM.
 --
+
+[.component,class=step]
+--
+Check that the `+id+` property is a valid UUID.
+--
+
 =====
 ====

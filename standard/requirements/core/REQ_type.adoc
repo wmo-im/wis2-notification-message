@@ -1,7 +1,0 @@
-[[req_core_type]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/type*
-^|A |A WNM SHALL provide a `+type+` property.
-^|B |The `+type+` property SHALL be a fixed value of ``Feature``.
-|===

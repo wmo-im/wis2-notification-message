@@ -8,11 +8,11 @@ A WNM provides notification metadata about data or metadata published to WIS2, i
 
 WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).
 
-=== Conformance Class "Core"
+=== Requirements Class "Core"
 
 ==== Overview
 
-This Core Conformance Class provides requirements for a WIS2 Notification Message.
+This Core Requirements Class provides requirements for a WIS2 Notification Message.
 
 include::../requirements/requirements_class_core.adoc[]
 

@@ -7,6 +7,7 @@
 |Dependency |<<rfc8259,IETF RFC8259: The JavaScript Object Notation (JSON) Data Interchange Format>>
 |Dependency |<<json-schema, JSON Schema>>
 |Dependency |<<rfc7946,GeoJSON>>
+|Dependency |<<ogcapi-features,OGC API - Features - Core: Part 1>>
 |Pre-conditions |
 The record conforms to GeoJSON (RFC7946)
 |===

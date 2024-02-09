@@ -36,7 +36,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``geometry``
 |**required**
-|Geospatial location associated with the data or metadata, in a geographic coordinate reference system (see <<_geometry>>)
+|Geospatial location associated with the data or metadata (see <<_geometry>>)
 
 |``properties.pubtime``
 |**required**
@@ -190,7 +190,7 @@ include::../recommendations/core/PER_geometry.adoc[]
 
 ==== Properties / Publication Time
 
-The ``pubtime`` property identifies the date/time when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
+The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
 
 The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.  
 
@@ -223,7 +223,7 @@ include::../recommendations/core/PER_data_id.adoc[]
 ----
 "properties": {
   ...
-  "data_id": "org1/datasets/123/data/UANT01_CWAO_200445___15103.bufr4"
+  "data_id": "wis2/hkg/hongkong/data/core/weather/surface-based-observations/synop/WIGOS_0-20000-0-45007_20240209T090000"
   ...
 }
 ----
@@ -246,7 +246,7 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 
 ==== Properties / Producer
 
-The ``producer`` property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.
+The ``producer`` property identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
 
 [source,json]
 ----
@@ -429,7 +429,7 @@ For recommended data, WNM links may also provide links to resources that impleme
   "href": "https://example.org/data/secure-data",
   "security": {
     "default": {
-      "type": "http",
+      "type": "https",
       "scheme": "basic",
       "description": "Please contact the data provider for accessing this secured resource."
     }

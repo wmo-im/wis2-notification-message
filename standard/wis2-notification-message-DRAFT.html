@@ -1238,52 +1238,6 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="paragraph">
 <p>The type of geometry in a notification message may be <code>Point</code> or <code>Polygon</code>. It can also be type <code>null</code> if the geometry cannot be derived.</p>
 </div>
-<table id="req_core_geometry" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/core/geometry</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM record SHALL provide ONE geometry property to convey the geospatial properties of a notification using a geographic coordinate reference system (World Geodetic System 1984 [WGS 84]) and longitude and latitude decimal degree units.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table id="per_core_geometry" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 1</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/per/core/geometry</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>geometry</code> property MAY provide a third element (height) as per clause 4 of the GeoJSON specification.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
 <div class="listingblock">
 <div class="title">Example: Point</div>
 <div class="content">
@@ -1346,6 +1300,52 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 }</code></pre>
 </div>
 </div>
+<table id="req_core_geometry" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 5</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/geometry</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM record SHALL provide ONE geometry property to convey the geospatial properties of a notification using a geographic coordinate reference system (World Geodetic System 1984 [WGS 84]) and longitude and latitude decimal degree units.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<table id="per_core_geometry" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 1</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/per/core/geometry</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The <code>geometry</code> property MAY provide a third element (height) as per clause 4 of the GeoJSON specification.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.7. Properties / Publication Time</h4>
@@ -1428,6 +1428,15 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="paragraph">
 <p>The <code>data_id</code> property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
+  ...
+}</code></pre>
+</div>
+</div>
 <table id="req_core_data_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1494,20 +1503,20 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="metadata_id"><a class="anchor" href="#metadata_id"></a>7.1.9. Properties / Metadata identification</h4>
 <div class="paragraph">
 <p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
+  ...
+}</code></pre>
+</div>
 </div>
 <table id="rec_core_metadata_id" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1529,15 +1538,6 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "metadata_id": "urn:x-wmo:md:can:eccc-msc:observations.swob"
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_properties_producer"><a class="anchor" href="#_properties_producer"></a>7.1.10. Properties / Producer</h4>
@@ -1588,6 +1588,36 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="paragraph">
 <p>A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
 </div>
+<div class="listingblock">
+<div class="title">Example: Temporal instant</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "datetime": "2022-03-20T04:45:00Z"
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: Temporal extent</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "start_datetime": "2022-03-20T04:45:00Z",
+  "end_datetime": "2022-03-22T04:45:00Z"
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: No temporal description</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  "datetime": null,
+  ...
+}</code></pre>
+</div>
+</div>
 <table id="req_core_temporal" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1626,36 +1656,6 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="title">Example: Temporal instant</div>
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "datetime": "2022-03-20T04:45:00Z"
-  ...
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example: Temporal extent</div>
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "start_datetime": "2022-03-20T04:45:00Z",
-  "end_datetime": "2022-03-22T04:45:00Z"
-  ...
-}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example: No temporal description</div>
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  "datetime": null,
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_properties_cache"><a class="anchor" href="#_properties_cache"></a>7.1.12. Properties / Cache</h4>
@@ -1708,6 +1708,18 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="paragraph">
 <p>The <code>value</code> property provides the result of the hashing method in base64 encoding.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "integrity": {
+    "method": "sha512",
+    "value": "CPvTLiOfYRgfL3YNF/KKElwamwvLQwnzd96VnF2WoYuuH+hVIbwFSPQHHd/qa/fNVUBckviC5/HZs3Nx2jXEsA=="
+  }
+  ...
+}</code></pre>
+</div>
+</div>
 <table id="rec_core_integrity" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1728,18 +1740,6 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "integrity": {
-    "method": "sha512",
-    "value": "CPvTLiOfYRgfL3YNF/KKElwamwvLQwnzd96VnF2WoYuuH+hVIbwFSPQHHd/qa/fNVUBckviC5/HZs3Nx2jXEsA=="
-  }
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.14. Properties / Content</h4>
@@ -1757,6 +1757,19 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 <div class="paragraph">
 <p>The limit takes into account the data encoding. That is if the data are compressed with gzip, the compressed size must be less than 4096 bytes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "content": {
+    "encoding": "utf-8",
+    "value": "encoded bytes from the file",
+    "size": 457
+  }
+  ...
+}</code></pre>
+</div>
 </div>
 <table id="req_core_content" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1818,19 +1831,6 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "content": {
-    "encoding": "utf-8",
-    "value": "encoded bytes from the file",
-    "size": 457
-  }
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_links"><a class="anchor" href="#_links"></a>7.1.15. Links</h4>
@@ -1862,6 +1862,30 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </div>
 <div class="paragraph">
 <p>Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Canonical link</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
+  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+  "rel": "canonical",
+  "type": "application/x-bufr"
+}]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example: Multiple links</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
+  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+  "rel": "canonical",
+  "type": "application/x-bufr"
+}, {
+  "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
+  "rel": "item",
+  "type": "application/json"
+}]</code></pre>
+</div>
 </div>
 <table id="req_core_links" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1971,30 +1995,6 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="title">Example: Canonical link</div>
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
-  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
-  "rel": "canonical",
-  "type": "application/x-bufr"
-}]</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Example: Multiple links</div>
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"links": [{
-  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
-  "rel": "canonical",
-  "type": "application/x-bufr"
-}, {
-  "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
-  "rel": "item",
-  "type": "application/json"
-}]</code></pre>
-</div>
-</div>
 <div class="sect4">
 <h5 id="_access_control"><a class="anchor" href="#_access_control"></a>7.1.15.1. Access control</h5>
 <div class="paragraph">
@@ -2025,6 +2025,20 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "_comment": {
+    "validationErrors": [
+      "error 1",
+      "error 2"
+    ]
+  }
+  ...
+}</code></pre>
+</div>
+</div>
 <table id="per_core_additional_properties" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -2045,20 +2059,6 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </tr>
 </tbody>
 </table>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
-  ...
-  "_comment": {
-    "validationErrors": [
-      "error 1",
-      "error 2"
-    ]
-  }
-  ...
-}</code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2949,7 +2949,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-10 14:50:29 UTC
+Last updated 2024-02-10 14:56:07 UTC
 </div>
 </div>
 </body>

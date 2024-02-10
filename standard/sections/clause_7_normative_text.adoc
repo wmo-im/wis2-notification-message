@@ -122,9 +122,6 @@ include::../requirements/core/REQ_version.adoc[]
 
 The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the geometry cannot be derived.
 
-include::../requirements/core/REQ_geometry.adoc[]
-include::../recommendations/core/PER_geometry.adoc[]
-
 .Example: Point
 [source,json]
 ----
@@ -188,6 +185,9 @@ include::../recommendations/core/PER_geometry.adoc[]
 }
 ----
 
+include::../requirements/core/REQ_geometry.adoc[]
+include::../recommendations/core/PER_geometry.adoc[]
+
 ==== Properties / Publication Time
 
 The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
@@ -215,10 +215,6 @@ include::../recommendations/core/REC_pubtime.adoc[]
 
 The ``data_id`` property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.
 
-include::../requirements/core/REQ_data_id.adoc[]
-include::../recommendations/core/REC_data_id.adoc[]
-include::../recommendations/core/PER_data_id.adoc[]
-
 [source,json]
 ----
 "properties": {
@@ -228,12 +224,14 @@ include::../recommendations/core/PER_data_id.adoc[]
 }
 ----
 
+include::../requirements/core/REQ_data_id.adoc[]
+include::../recommendations/core/REC_data_id.adoc[]
+include::../recommendations/core/PER_data_id.adoc[]
+
 [[metadata_id]]
 ==== Properties / Metadata identification
 
 The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
-
-include::../recommendations/core/REC_metadata_id.adoc[]
 
 [source,json]
 ----
@@ -243,6 +241,8 @@ include::../recommendations/core/REC_metadata_id.adoc[]
   ...
 }
 ----
+
+include::../recommendations/core/REC_metadata_id.adoc[]
 
 ==== Properties / Producer
 
@@ -268,8 +268,6 @@ The ``start_datetime`` and ``end_datetime`` properties identify a temporal exten
 All dates and times are encoded in RFC3339 format with the UTC timezone (``Z``). 
 
 A ``null`` value can also be used if a temporal description of the data cannot be derived.
-
-include::../requirements/core/REQ_temporal.adoc[]
 
 .Example: Temporal instant
 [source,json]
@@ -301,6 +299,8 @@ include::../requirements/core/REQ_temporal.adoc[]
 }
 ----
 
+include::../requirements/core/REQ_temporal.adoc[]
+
 ==== Properties / Cache
 
 All core data, by default, is cached by Global Cache services.
@@ -318,7 +318,6 @@ However, a data producer can use the ``properties.cache`` value to request Globa
 
 include::../recommendations/core/PER_cache.adoc[]
 
-
 ==== Properties / Integrity
 
 For data verification, it is recommended to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
@@ -328,8 +327,6 @@ The ``method`` property provides a format of the hashing method used to enable a
 are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.
 
 The ``value`` property provides the result of the hashing method in base64 encoding.
-
-include::../recommendations/core/REC_integrity.adoc[]
 
 [source,json]
 ----
@@ -343,6 +340,8 @@ include::../recommendations/core/REC_integrity.adoc[]
 }
 ----
 
+include::../recommendations/core/REC_integrity.adoc[]
+
 ==== Properties / Content
 
 The ``content`` property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes. 
@@ -354,10 +353,6 @@ The ``value`` property provides the data in accordance with the ``encoding`` pro
 The ``size`` property provides the size, in bytes, of the data in accordance with the ``encoding`` property. The value must be below 4096. Global Brokers may discard messages where inline data sizes are greater than 4096 bytes.
 
 The limit takes into account the data encoding. That is if the data are compressed with gzip, the compressed size must be less than 4096 bytes. 
-
-include::../requirements/core/REQ_content.adoc[]
-include::../recommendations/core/REC_content.adoc[]
-include::../recommendations/core/PER_content.adoc[]
 
 [source,json]
 ----
@@ -371,6 +366,10 @@ include::../recommendations/core/PER_content.adoc[]
   ...
 }
 ----
+
+include::../requirements/core/REQ_content.adoc[]
+include::../recommendations/core/REC_content.adoc[]
+include::../recommendations/core/PER_content.adoc[]
 
 ==== Links
 
@@ -386,10 +385,6 @@ Each link object provides:
 * a ``security`` property providing a description of the access control mechanism applied (i.e., for recommended data)
  
 Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  
-
-include::../requirements/core/REQ_links.adoc[]
-include::../recommendations/core/REC_links.adoc[]
-include::../recommendations/core/PER_links.adoc[]
 
 .Example: Canonical link
 [source,json]
@@ -414,6 +409,10 @@ include::../recommendations/core/PER_links.adoc[]
   "type": "application/json"
 }]
 ----
+
+include::../requirements/core/REQ_links.adoc[]
+include::../recommendations/core/REC_links.adoc[]
+include::../recommendations/core/PER_links.adoc[]
 
 ===== Access control
 
@@ -441,8 +440,6 @@ For recommended data, WNM links may also provide links to resources that impleme
 
 A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.
 
-include::../recommendations/core/PER_additional_properties.adoc[]
-
 [source,json]
 ----
 "properties": {
@@ -456,3 +453,5 @@ include::../recommendations/core/PER_additional_properties.adoc[]
   ...
 }
 ----
+
+include::../recommendations/core/PER_additional_properties.adoc[]

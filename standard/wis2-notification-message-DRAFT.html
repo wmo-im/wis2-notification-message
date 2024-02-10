@@ -454,10 +454,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-02-07</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-02-10</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-02-07</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0-DRAFT-2024-02-10</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document location: TBD</p></td>
@@ -993,7 +993,7 @@ messages.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#rfc7946">GeoJSON</a></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><a href="#rfc7946">GeoJSON</a> (RFC7946)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Dependency</p></td>
@@ -1001,7 +1001,7 @@ messages.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Pre-conditions</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The record conforms to GeoJSON (RFC7946)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The record conforms to GeoJSON</p></td>
 </tr>
 </tbody>
 </table>
@@ -1041,7 +1041,7 @@ messages.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>geometry</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Geospatial location associated with the data or metadata, in a geographic coordinate reference system (see <a href="#_geometry">Geometry</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Geospatial location associated with the data or metadata (see <a href="#_geometry">Geometry</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.pubtime</code></p></td>
@@ -1253,6 +1253,12 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A WNM record SHALL provide ONE geometry property to convey the geospatial properties of a notification using a geographic coordinate reference system (World Geodetic System 1984 [WGS 84]) and longitude and latitude decimal degree units.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>The <code>geometry</code> property SHALL only provide one of a <code>Point</code> or <code>Polygon</code> geometry, or a <code>null</code> value when a geometry value is unknown or cannot be determined.</p>
 </div></div></td>
 </tr>
@@ -1344,7 +1350,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="sect3">
 <h4 id="_properties_publication_time"><a class="anchor" href="#_properties_publication_time"></a>7.1.7. Properties / Publication Time</h4>
 <div class="paragraph">
-<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
+<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the UTC timezone (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
 <p>The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.</p>
@@ -1443,7 +1449,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>properties.data_id</code> property SHALL be unique.</p>
+<p>The <code>properties.data_id</code> property SHALL be unique within the scope of the relevant dataset.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1492,7 +1498,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">"properties": {
   ...
-  "data_id": "org1/datasets/123/data/UANT01_CWAO_200445___15103.bufr4"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
   ...
 }</code></pre>
 </div>
@@ -1536,7 +1542,7 @@ It remains the same throughout the lifetime of the message in the WIS2 ecosystem
 <div class="sect3">
 <h4 id="_properties_producer"><a class="anchor" href="#_properties_producer"></a>7.1.10. Properties / Producer</h4>
 <div class="paragraph">
-<p>The <code>producer</code> property identifies the provider that initially captured and processed the source data, in support data distribution on behalf of other Members.</p>
+<p>The <code>producer</code> property identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1787,7 +1793,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM MAY provide a <code>content</code> property, consisting of an <code>encoding</code> property (either <code>utf-8</code>, <code>base64</code>, or <code>gzip</code>), a <code>value</code> property of the data, as well as a <code>size</code> property with the length of the data.</p>
+<p>A WNM SHOULD provide a <code>content</code> property, consisting of an <code>encoding</code> property (either <code>utf-8</code>, <code>base64</code>, or <code>gzip</code>), a <code>value</code> property of the data, as well as a <code>size</code> property with the length of the data.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2943,7 +2949,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-07 12:41:57 UTC
+Last updated 2024-02-10 14:50:29 UTC
 </div>
 </div>
 </body>

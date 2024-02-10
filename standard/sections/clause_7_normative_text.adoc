@@ -223,7 +223,7 @@ include::../recommendations/core/PER_data_id.adoc[]
 ----
 "properties": {
   ...
-  "data_id": "wis2/hkg/hongkong/data/core/weather/surface-based-observations/synop/WIGOS_0-20000-0-45007_20240209T090000"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
   ...
 }
 ----
@@ -429,7 +429,7 @@ For recommended data, WNM links may also provide links to resources that impleme
   "href": "https://example.org/data/secure-data",
   "security": {
     "default": {
-      "type": "https",
+      "type": "http",
       "scheme": "basic",
       "description": "Please contact the data provider for accessing this secured resource."
     }

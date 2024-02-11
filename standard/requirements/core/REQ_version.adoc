@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/version*
-^|A |A WNM SHALL provide information on version conformance via the ``version`` property.
-^|B |The ``version`` property SHALL be fixed to ``v04`` for this version of the specification.
+^|A |A WNM shall provide information on version conformance via the ``version`` property.
+^|B |The ``version`` property shall be fixed to ``v1.0`` for this version of the specification.
 |===
 

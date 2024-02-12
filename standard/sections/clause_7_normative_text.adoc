@@ -468,3 +468,9 @@ A WIS2 Notification Message can be extended as required for organizational purpo
 ----
 
 include::../recommendations/core/PER_additional_properties.adoc[]
+
+=== WIS2 Notification Message resources
+
+==== WMO Codes Registry
+
+==== WMO schemas server

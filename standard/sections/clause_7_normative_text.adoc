@@ -473,4 +473,8 @@ include::../recommendations/core/PER_additional_properties.adoc[]
 
 ==== WMO Codes Registry
 
+* http://codes.wmo.int/wis/link-relations
+
 ==== WMO schemas server
+
+Validation, examples and other resources are published at https://schemas.wmo.int/wnm.

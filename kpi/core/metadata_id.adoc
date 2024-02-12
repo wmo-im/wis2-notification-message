@@ -36,7 +36,7 @@ Whether WCMP discovery metadata information is available and can be successfully
 ```json
 "properties": {
   ...
-  "metadata_id": "urn:x-wmo:md:ca-eccc-msc:observations.swob"
+  "metadata_id": "urn:wmo:md:ca-eccc-msc:observations.swob"
   ...
 }
 ```

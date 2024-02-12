@@ -311,7 +311,7 @@
         "value": "A2KNxvks...S8qfSCw=="
       },
       "data_id": "dataset/123/data-granule/UANT01_CWAO_200445___15103.bufr4",
-      "metadata_id": "urn:x-wmo:md:ca-eccc-msc:observations.swob",
+      "metadata_id": "urn:wmo:md:ca-eccc-msc:observations.swob",
       "content": {
         "encoding": "utf-8",
         "value": "encoded bytes from the file",

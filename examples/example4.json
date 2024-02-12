@@ -7,7 +7,7 @@
         "pubtime": "2022-12-22T16:40:37Z",
         "datetime": "2022-11-11T11:11:11Z",
         "data_id": "data/data-123/items/abcdefab-abcd-1234-5678-0123456789ab",
-        "metadata_id": "urn:x-wmo:md:test-nmhs-xyz:some_dataset",
+        "metadata_id": "urn:wmo:md:test-nmhs-xyz:some_dataset",
         "cache": false
     },
     "links": [

@@ -5,7 +5,7 @@
     "geometry": null,
     "properties": {
         "data_id": "wis2/int-eumetsat/data/core/weather/space-based-observations/satellite4nowcasting/Meteosat-10/ImageL1-5/EO:EUM:DAT:MSG:HRSEVIRI-MSG3-SEVI-MSG15-0100-NA-20240122075742.471000000Z-NA",
-        "metadata_id": "urn:x-wmo:md:int:eumetsat:EO:EUM:DAT:MSG:HRSEVIRI3",
+        "metadata_id": "urn:wmo:md:int:eumetsat:EO:EUM:DAT:MSG:HRSEVIRI3",
         "pubtime": "2024-01-18T12:05:02Z",
         "integrity": {
             "method": "sha512",

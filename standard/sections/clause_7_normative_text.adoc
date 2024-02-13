@@ -210,7 +210,6 @@ An update with newer ``pubtime`` and identical ``datetime`` indicates a newer ve
 ----
 
 include::../requirements/core/REQ_pubtime.adoc[]
-include::../recommendations/core/REC_pubtime.adoc[]
 
 [[data_id]]
 ==== Properties / Data Identification

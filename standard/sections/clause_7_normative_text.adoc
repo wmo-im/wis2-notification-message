@@ -264,7 +264,7 @@ include::../recommendations/core/REC_producer.adoc[]
 ==== Properties / Temporal description 
 
 The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed).
-When a data or metadata is updated or deleted this value should identify the original data or metadata, that is, it can be quite different from the current time.
+When a data or metadata is updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.
 
 The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).
 
@@ -380,7 +380,7 @@ Each link object provides:
 
 * an ``href`` property with a fully qualified link to access the data
 * a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] or WCMP2
- defined extensions footnote:[https://github.com/wmo-im/wcmp2-codelists/blob/main/codelists/link-type.csv] describing the relationship between the link and the message
+ defined extensionsfootnote:[https://github.com/wmo-im/wcmp2-codelists/blob/main/codelists/link-type.csv] describing the relationship between the link and the message
 * a ``type`` property providing the media type of the data
 * a ``length`` property providing the length (in bytes) indicating the size of the data
 * a ``security`` property providing a description of the access control mechanism applied (i.e., for recommended data)

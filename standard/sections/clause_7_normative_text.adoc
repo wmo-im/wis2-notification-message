@@ -344,15 +344,13 @@ include::../recommendations/core/REC_integrity.adoc[]
 
 ==== Properties / Content
 
-The ``content`` property allows for the inclusion of data in the notification message when the data is smaller than 4096 bytes. 
+The ``content`` property allows for the inclusion of data in the notification message when the encoded data is smaller than 4096 bytes. The limit takes into account the data encoding. That is, if the data are encoded in a form that changes the size, the resulting size must be less than 4096 bytes.
 
-The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``).
+The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``), the ``gzip`` encoding means that the data are compressed using algorithm defined in RFC1952 and consequently converted to text using Base64 encoding.
 
 The ``value`` property provides the data in accordance with the ``encoding`` property.
 
-The ``size`` property provides the size, in bytes, of the data in accordance with the ``encoding`` property. The value must be below 4096. Global Brokers may discard messages where inline data sizes are greater than 4096 bytes.
-
-The limit takes into account the data encoding. That is if the data are compressed with gzip, the compressed size must be less than 4096 bytes. 
+The ``size`` property provides the size, in bytes, of the data in its original unencoded form, therefore this value shall not be directly compared with the aforementioned size limit.
 
 [source,json]
 ----

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.wmo.int/wnm/1.0/schemas/wis2-notification-message-1.0.json",
+  "$id": "https://schemas.wmo.int/wnm/1.0/schemas/wis2-notification-message-bundled.json",
   "title": "WIS2 Notification Message Encoding",
   "description": "WIS2 Notification Message Encoding",
   "type": "object",

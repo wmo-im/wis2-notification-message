@@ -1,5 +1,5 @@
 $schema: https://json-schema.org/draft/2020-12/schema
-$id: https://schemas.wmo.int/wnm/x.y.z/notificationMessageGeoJSON.yaml
+$id: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/schemas/notificationMessageGeoJSON.yaml
 title: WIS2 Notification Message Encoding
 description: WIS2 Notification Message Encoding
 

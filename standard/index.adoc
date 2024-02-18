@@ -1,7 +1,8 @@
 :title: WMO WIS2 Notification Message Encoding
 :titletext: {title}
-:version: 1.0.0-DRAFT-{docdate}
-:copyright: Copyright © 2022 World Meteorological Organization (WMO)
+:version: 1.0.0
+:date: {docdate}
+:copyright: Copyright © 2024 World Meteorological Organization (WMO)
 :doctype: book
 :encoding: utf-8
 :lang: en

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.wmo.int/wnm/x.y.z/notificationMessageGeoJSON.yaml",
+  "$id": "https://schemas.wmo.int/wnm/1.0/schemas/wis2-notification-message-1.0.json",
   "title": "WIS2 Notification Message Encoding",
   "description": "WIS2 Notification Message Encoding",
   "type": "object",
@@ -269,10 +269,10 @@
                   "^[a-zA-Z0-9\\.\\-_]+$": {
                     "oneOf": [
                       {
-                        "$ref": "#/definitions/Foo_Reference"
+                        "$ref": "#/definitions/Schema_Reference"
                       },
                       {
-                        "$ref": "#/definitions/Foo_SecurityScheme"
+                        "$ref": "#/definitions/Schema_SecurityScheme"
                       }
                     ]
                   }
@@ -332,7 +332,7 @@
     ]
   },
   "definitions": {
-    "Foo_APIKeySecurityScheme": {
+    "Schema_APIKeySecurityScheme": {
       "type": "object",
       "required": [
         "type",
@@ -366,7 +366,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_AuthorizationCodeOAuthFlow": {
+    "Schema_AuthorizationCodeOAuthFlow": {
       "type": "object",
       "required": [
         "authorizationUrl",
@@ -397,7 +397,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_ClientCredentialsFlow": {
+    "Schema_ClientCredentialsFlow": {
       "type": "object",
       "required": [
         "tokenUrl"
@@ -423,7 +423,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_HTTPSecurityScheme": {
+    "Schema_HTTPSecurityScheme": {
       "type": "object",
       "required": [
         "scheme",
@@ -480,7 +480,7 @@
         }
       ]
     },
-    "Foo_ImplicitOAuthFlow": {
+    "Schema_ImplicitOAuthFlow": {
       "type": "object",
       "required": [
         "authorizationUrl",
@@ -507,7 +507,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_OAuth2SecurityScheme": {
+    "Schema_OAuth2SecurityScheme": {
       "type": "object",
       "required": [
         "type",
@@ -521,7 +521,7 @@
           ]
         },
         "flows": {
-          "$ref": "#/definitions/Foo_OAuthFlows"
+          "$ref": "#/definitions/Schema_OAuthFlows"
         },
         "description": {
           "type": "string"
@@ -532,20 +532,20 @@
       },
       "additionalProperties": false
     },
-    "Foo_OAuthFlows": {
+    "Schema_OAuthFlows": {
       "type": "object",
       "properties": {
         "implicit": {
-          "$ref": "#/definitions/Foo_ImplicitOAuthFlow"
+          "$ref": "#/definitions/Schema_ImplicitOAuthFlow"
         },
         "password": {
-          "$ref": "#/definitions/Foo_PasswordOAuthFlow"
+          "$ref": "#/definitions/Schema_PasswordOAuthFlow"
         },
         "clientCredentials": {
-          "$ref": "#/definitions/Foo_ClientCredentialsFlow"
+          "$ref": "#/definitions/Schema_ClientCredentialsFlow"
         },
         "authorizationCode": {
-          "$ref": "#/definitions/Foo_AuthorizationCodeOAuthFlow"
+          "$ref": "#/definitions/Schema_AuthorizationCodeOAuthFlow"
         }
       },
       "patternProperties": {
@@ -553,7 +553,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_OpenIdConnectSecurityScheme": {
+    "Schema_OpenIdConnectSecurityScheme": {
       "type": "object",
       "required": [
         "type",
@@ -579,7 +579,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_PasswordOAuthFlow": {
+    "Schema_PasswordOAuthFlow": {
       "type": "object",
       "required": [
         "tokenUrl"
@@ -605,7 +605,7 @@
       },
       "additionalProperties": false
     },
-    "Foo_Reference": {
+    "Schema_Reference": {
       "type": "object",
       "required": [
         "$ref"
@@ -617,19 +617,19 @@
         }
       }
     },
-    "Foo_SecurityScheme": {
+    "Schema_SecurityScheme": {
       "oneOf": [
         {
-          "$ref": "#/definitions/Foo_APIKeySecurityScheme"
+          "$ref": "#/definitions/Schema_APIKeySecurityScheme"
         },
         {
-          "$ref": "#/definitions/Foo_HTTPSecurityScheme"
+          "$ref": "#/definitions/Schema_HTTPSecurityScheme"
         },
         {
-          "$ref": "#/definitions/Foo_OAuth2SecurityScheme"
+          "$ref": "#/definitions/Schema_OAuth2SecurityScheme"
         },
         {
-          "$ref": "#/definitions/Foo_OpenIdConnectSecurityScheme"
+          "$ref": "#/definitions/Schema_OpenIdConnectSecurityScheme"
         }
       ]
     }

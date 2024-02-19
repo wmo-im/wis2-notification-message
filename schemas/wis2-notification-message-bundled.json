@@ -10,9 +10,16 @@
       "format": "uuid",
       "description": "UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period."
     },
+    "conformsTo": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "example": "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core"
+      }
+    },
     "version": {
       "type": "string",
-      "description": "Version of message specification.",
+      "description": "DEPRECATED, please use `conformsTo`.",
       "const": "v04"
     },
     "type": {
@@ -286,11 +293,22 @@
   },
   "required": [
     "id",
-    "version",
     "type",
     "geometry",
     "properties",
     "links"
+  ],
+  "oneOf": [
+    {
+      "required": [
+        "conformsTo"
+      ]
+    },
+    {
+      "required": [
+        "version"
+      ]
+    }
   ],
   "example": {
     "id": "31e9d66a-cd83-4174-9429-b932f1abe1be",

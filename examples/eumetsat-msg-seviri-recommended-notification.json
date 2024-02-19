@@ -1,6 +1,8 @@
 {
     "id": "952de8f5-1220-4930-930f-d4fb2fc07087",
-    "version": "v04",
+    "conformsTo": [
+        "http://wis.wmo.int/spec/wnm/1/conf/core"
+    ],
     "type": "Feature",
     "geometry": null,
     "properties": {

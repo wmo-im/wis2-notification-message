@@ -238,7 +238,7 @@ The ``metadata_id`` property uniquely identifies the associated discovery metada
 ----
 "properties": {
   ...
-  "metadata_id": "urn:wmo:md:can:eccc-msc:observations.swob"
+  "metadata_id": "urn:wmo:md:ca-eccc-msc:observations.swob"
   ...
 }
 ----

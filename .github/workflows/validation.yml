@@ -26,7 +26,7 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
         pip3 install check-jsonschema pywis-pubsub
-        pywis-pubsub bundle sync
+        pywis-pubsub schema sync
     - name: Run JSON Schema validation
       run: |
         check-jsonschema --check-metaschema schemas/wis2-notification-message-bundled.json

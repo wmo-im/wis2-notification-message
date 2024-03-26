@@ -148,17 +148,21 @@ properties:
               type: object
               $ref: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.1.0/schemas/v3.0/schema.yaml#/definitions/Components/properties/securitySchemes
 
-required:
-  - id
-  - type
-  - geometry
-  - properties
-  - links
 oneOf:
   - required:
+    - id
     - conformsTo
+    - type
+    - geometry
+    - properties
+    - links
   - required:
+    - id
     - version
+    - type
+    - geometry
+    - properties
+    - links
 
 example:
   $ref: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/examples/example1.json

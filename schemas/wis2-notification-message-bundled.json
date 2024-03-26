@@ -14,7 +14,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "example": "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core"
+        "example": "http://wis.wmo.int/spec/wnm/1/conf/core"
       }
     },
     "version": {
@@ -291,22 +291,25 @@
       }
     }
   },
-  "required": [
-    "id",
-    "type",
-    "geometry",
-    "properties",
-    "links"
-  ],
   "oneOf": [
     {
       "required": [
-        "conformsTo"
+        "id",
+        "conformsTo",
+        "type",
+        "geometry",
+        "properties",
+        "links"
       ]
     },
     {
       "required": [
-        "version"
+        "id",
+        "version",
+        "type",
+        "geometry",
+        "properties",
+        "links"
       ]
     }
   ],

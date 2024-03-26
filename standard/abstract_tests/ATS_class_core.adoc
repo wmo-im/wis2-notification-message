@@ -18,6 +18,10 @@ include::./core/ATS_test_validation.adoc[]
 
 include::./core/ATS_test_id.adoc[]
 
+==== Conformance
+
+include::./core/ATS_test_conformance.adoc[]
+
 ==== Version
 
 include::./core/ATS_test_version.adoc[]

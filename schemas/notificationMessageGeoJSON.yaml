@@ -9,9 +9,11 @@ properties:
     type: string
     format: uuid
     description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period.
+  conformsTo:
+    $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/confClasses.yaml#/properties/conformsTo'
   version:
     type: string
-    description: Version of message specification.
+    description: DEPRECATED, please use `conformsTo`.
     const: v04
   type:
     type: string
@@ -146,12 +148,21 @@ properties:
               type: object
               $ref: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.1.0/schemas/v3.0/schema.yaml#/definitions/Components/properties/securitySchemes
 
-required:
-  - id
-  - version
-  - type
-  - geometry
-  - properties
-  - links
+oneOf:
+  - required:
+    - id
+    - conformsTo
+    - type
+    - geometry
+    - properties
+    - links
+  - required:
+    - id
+    - version
+    - type
+    - geometry
+    - properties
+    - links
+
 example:
   $ref: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/examples/example1.json

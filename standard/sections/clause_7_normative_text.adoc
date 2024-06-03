@@ -328,7 +328,7 @@ include::../requirements/core/REQ_temporal.adoc[]
 
 ==== Properties / Cache
 
-All core data, by default, is cached by Global Cache services.
+Core data, by default, is cached by Global Cache services as described in the Guide to the WMO Information System (WMO-NO 1061).
 
 However, a data producer can use the ``properties.cache`` value to request Global Cache services to not cache their ``core`` data granule.
 

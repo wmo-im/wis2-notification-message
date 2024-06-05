@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.22">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <meta name="copyright" content="Copyright © 2024 World Meteorological Organization (WMO)">
 <title>WMO WIS2 Notification Message Encoding</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-03-26</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-06-05</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0</p></td>
@@ -1797,7 +1797,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_properties_content"><a class="anchor" href="#_properties_content"></a>7.1.15. Properties / Content</h4>
 <div class="paragraph">
-<p>The <code>content</code> property allows for the inclusion of data in the notification message when the encoded data is smaller than 4096 bytes. The limit takes into account the data encoding. That is, if the data are encoded in a form that changes the size, the resulting size must be less than 4096 bytes.</p>
+<p>The <code>content</code> property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4096 bytes.</p>
 </div>
 <div class="paragraph">
 <p>The <code>encoding</code> property provides the character encoding of the data (<code>UTF-8</code>, <code>Base64</code>, or <code>gzip</code>), the <code>gzip</code> encoding means that the data are compressed using algorithm defined in RFC1952 and consequently converted to text using Base64 encoding.</p>
@@ -2158,7 +2158,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2192,7 +2192,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2226,7 +2226,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2267,7 +2267,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2308,7 +2308,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2349,7 +2349,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2411,7 +2411,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2459,7 +2459,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2493,7 +2493,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -2541,7 +2541,7 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 </dd>
 </dl>
 </div>
-<div class="exampleblock component component">
+<div class="exampleblock component">
 <div class="content">
 <div class="openblock component">
 <div class="content">
@@ -3059,7 +3059,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-03-26 02:50:51 UTC
+Last updated 2024-06-05 14:20:51 UTC
 </div>
 </div>
 </body>

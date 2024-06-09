@@ -10,7 +10,9 @@ properties:
     format: uuid
     description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period.
   conformsTo:
-    $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/confClasses.yaml#/properties/conformsTo'
+    type: array
+    contains:
+      const: http://wis.wmo.int/spec/wnm/1/conf/core
   version:
     type: string
     description: DEPRECATED, please use `conformsTo`.

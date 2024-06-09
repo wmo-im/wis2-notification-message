@@ -12,9 +12,8 @@
     },
     "conformsTo": {
       "type": "array",
-      "items": {
-        "type": "string",
-        "example": "http://wis.wmo.int/spec/wnm/1/conf/core"
+      "contains": {
+        "const": "http://wis.wmo.int/spec/wnm/1/conf/core"
       }
     },
     "version": {

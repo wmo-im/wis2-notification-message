@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-06-05</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-07-19</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0</p></td>
@@ -1991,6 +1991,12 @@ defined extensions<sup class="footnote">[<a id="_footnoteref_23" class="footnote
 <p>For data or metadata deletions, the <code>links</code> array property SHALL provide at least one link with a link relation of <code>deletion</code> to clearly identify data which has been deleted or removed.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">H</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>For metadata deletions, the <code>properties.metadata_id</code> property SHALL be specified to support deletion of a WCMP2 record from the Global Discovery Catalogue.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <table id="rec_core_links" class="tableblock frame-all grid-all" style="width: 90%;">
@@ -2610,7 +2616,9 @@ properties:
     format: uuid
     description: UUID (RFC4122) - Guarantee uniqueness of the message over (at least) a 24h period.
   conformsTo:
-    $ref: 'https://raw.githubusercontent.com/opengeospatial/ogcapi-features/master/core/openapi/schemas/confClasses.yaml#/properties/conformsTo'
+    type: array
+    contains:
+      const: http://wis.wmo.int/spec/wnm/1/conf/core
   version:
     type: string
     description: DEPRECATED, please use `conformsTo`.
@@ -3059,7 +3067,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-06-05 14:21:00 UTC
+Last updated 2024-07-19 11:37:13 UTC
 </div>
 </div>
 </body>

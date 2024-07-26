@@ -18,7 +18,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``id``
 |**required**
-|A universally unique identifier of the message (see <<_1_4_identifier>>)
+|A universally unique identifier (UUID) of the message (see <<_1_4_identifier>>)
 
 |``type``
 |**required**
@@ -31,7 +31,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``version``
 |**required** (one of ``conformsTo`` or ``version``)
-|*DEPRECATED.*  Please use ``conformsTo`` (see <<_1_5_conformance>>)
+|*DEPRECATED.**  Please use ``conformsTo`` (see <<_1_5_conformance>>)
 
 |``geometry``
 |**required**
@@ -39,7 +39,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.pubtime``
 |**required**
-|The date and time of when the notification was published, in RFC3339 format (see <<_1_8_properties_publication_time>>), UTC
+|The date and time of when the notification was published, in RFC3339 format, UTC (see <<_1_8_properties_publication_time>>)
 
 |``properties.data_id``
 |**required**
@@ -55,7 +55,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.datetime``
 |optional
-|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format (see <<_1_12_properties_temporal_description>>), UTC
+|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <<_1_12_properties_temporal_description>>)
 
 |``properties.start_datetime``
 |optional

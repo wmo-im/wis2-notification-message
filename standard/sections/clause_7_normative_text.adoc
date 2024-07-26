@@ -18,68 +18,68 @@ The table below provides an overview of the set of properties that may be includ
 
 |``id``
 |**required**
-|A universally unique identifier of the message (see <<_identifier>>)
+|A universally unique identifier of the message (see <<_1_4_identifier>>)
 
 |``type``
 |**required**
-|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_geojson_compliance>>)
+|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_1_3_geojson_compliance>>)
 
 
 |``conformsTo``
 |**required** (one of ``conformsTo`` or ``version``)
-|The version of WNM associated that the record conforms to (see <<_conformance_2>>.
+|The version of WNM associated that the record conforms to (see <<_1_5_conformance>>.
 
 |``version``
 |**required** (one of ``conformsTo`` or ``version``)
-|*DEPRECATED.  Please use ``conformsTo`` (see <<_conformance_2>>)*
+|*DEPRECATED.*  Please use ``conformsTo`` (see <<_1_5_conformance>>)
 
 |``geometry``
 |**required**
-|Geospatial location associated with the data or metadata (see <<_geometry>>)
+|Geospatial location associated with the data or metadata (see <<_1_7_geometry>>)
 
 |``properties.pubtime``
 |**required**
-|The date and time of when the notification was published, in RFC3339 format (see <<_properties_publication_time>>), UTC
+|The date and time of when the notification was published, in RFC3339 format (see <<_1_8_properties_publication_time>>), UTC
 
 |``properties.data_id``
 |**required**
-|Unique identifier of the data as defined by the data producer (see <<data_id>>)
+|Unique identifier of the data as defined by the data producer (see <<_1_9_properties_data_identification>>)
 
 |``properties.metadata_id``
 |optional
-|Identifier for associated discovery metadata record to which the notification applies (see <<metadata_id>>)
+|Identifier for associated discovery metadata record to which the notification applies (see <<_1_10_properties_metadata_identification>>)
 
 |``properties.producer``
 |optional
-|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_properties_producer>>)
+|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_1_11_properties_producer>>)
 
 |``properties.datetime``
 |optional
-|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format (see <<_properties_temporal_description>>), UTC
+|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format (see <<_1_12_properties_temporal_description>>), UTC
 
 |``properties.start_datetime``
 |optional
-|Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
+|Identifies the start date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.end_datetime``
 |optional
-|Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
+|Identifies the end date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.cache``
 |optional
-|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_13_properties_cache>>)
 
 |``properties.integrity``
 |optional
-|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_properties_integrity>>)
+|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_14_properties_integrity>>)
 
 |``properties.content``
 |optional
-|Used to embed small products inline within the message (see <<_properties_content>>)
+|Used to embed small products inline within the message (see <<_1_15_properties_content>>)
 
 |``links``
 |**required**
-|Online linkages for data retrieval or additional resources associated with the dataset (see <<_links>>)
+|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_16_links>>)
 
 |===
 
@@ -227,7 +227,6 @@ An update with newer ``pubtime`` and identical ``datetime`` indicates a newer ve
 
 include::../requirements/core/REQ_pubtime.adoc[]
 
-[[data_id]]
 ==== 1.9 Properties / Data identification
 
 The ``data_id`` property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.
@@ -247,7 +246,7 @@ include::../requirements/core/REQ_data_id.adoc[]
 include::../recommendations/core/REC_data_id.adoc[]
 include::../recommendations/core/PER_data_id.adoc[]
 
-[[metadata_id]]
+
 ==== 1.10 Properties / Metadata identification
 
 The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.

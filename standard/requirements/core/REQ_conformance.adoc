@@ -5,3 +5,4 @@
 ^|A |A WNM SHALL provide information on conformance via the OAFeat `+conformsTo+` property.
 ^|B |The `+conformsTo+` property SHALL advertise conformance to WNM.
 |===
+//req4

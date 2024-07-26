@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/geometry*
-^|A |A WNM record SHALL provide ONE geometry property to convey the geospatial properties of a notification using a geographic coordinate reference system (World Geodetic System 1984 [WGS 84]) and longitude and latitude decimal degree units.
+^|A |A WNM record SHALL provide one geometry property to convey the geospatial properties of a notification using a geographic coordinate reference system (World Geodetic System 1984 [WGS 84]) with longitude and latitude decimal degree units.
 ^|B |The `+geometry+` property SHALL only provide one of a ``Point`` or ``Polygon`` geometry, or a ``null`` value when a geometry value is unknown or cannot be determined.
 |===

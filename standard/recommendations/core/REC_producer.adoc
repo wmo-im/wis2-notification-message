@@ -4,3 +4,4 @@
 ^|*Recommendation {counter:rec-id}* |*/rec/core/producer*
 ^|A |A WNM SHOULD provide a `+properties.producer+` property when publishing data on behalf of other Members.
 |===
+//rec4

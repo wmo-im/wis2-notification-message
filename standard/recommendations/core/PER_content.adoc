@@ -4,4 +4,4 @@
 ^|*Permission {counter:per-id}* |*/per/core/content*
 ^|A |For data whose resulting size (after possible compression) is less than 4096 bytes, notifications MAY provide the data inline via properties.content.value.
 |===
-
+//per3

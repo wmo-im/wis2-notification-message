@@ -1,5 +1,5 @@
 
-== The WIS2 Notification Message Encoding
+== Appendix E: WIS2 Notification Message
 
 The WIS2 Notification Message (WNM) is an extension of the OGC API - Features standard  and shall be encoded in GeoJSON. The normative provisions in this standard are denoted by the base URI (``http://wis.wmo.int/spec/wnm/1``) and requirements are denoted by partial URIs relative to this base. Property names, values and examples are represented with ``shaded`` text in this document.
 

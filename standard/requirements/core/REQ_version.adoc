@@ -5,4 +5,4 @@
 ^|A |A WNM shall provide information on version conformance via the ``version`` property.
 ^|B |The ``version`` property shall be fixed to ``v1.0`` for this version of the specification.
 |===
-
+//req5

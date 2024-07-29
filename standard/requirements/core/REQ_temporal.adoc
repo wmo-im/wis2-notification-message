@@ -7,3 +7,4 @@
 ^|C |The temporal description shall be in the UTC timezone.
 ^|D |The temporal description shall be set to ``null`` (using only `+properties.datetime+`) when a temporal description cannot be derived.
 |===
+//req9

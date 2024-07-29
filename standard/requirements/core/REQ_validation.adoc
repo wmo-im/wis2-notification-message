@@ -6,4 +6,4 @@
 ^|B |Each WNM shall provide `+id+`, `+type+`, `+geometry+` and `+properties+` properties for GeoJSON compliance. (see <<WMO schemas server>>)
 ^|C |Each WNM record `+type+` property shall be set to a fixed value of `+Feature+` for GeoJSON compliance.
 |===
-
+//req2

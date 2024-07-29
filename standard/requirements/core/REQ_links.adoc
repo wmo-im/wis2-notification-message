@@ -2,11 +2,12 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/links*
-^|A |A WNM shall provide a `+links+` array property.
-^|B |The `+links+` array property shall contain at least one link with, at a minimum, the `+href+` and `+rel+` properties.
-^|C |The links for core data shall not require further action in order to download the resource.
-^|D |The links shall be HTTP, HTTPS, FTP or SFTP.
-^|E |For new data and metadata notifications, the `+links+` array property shall provide at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
-^|F |For data or metadata update notifications, the `+links+` array property shall provide at least one link with a link relation of `update` to clearly identify the preferred access link.
-^|G |For data or metadata deletions, the `+links+` array property shall provide at least one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
+^|A |A WNM SHALL provide a `+links+` array property.
+^|B |The `+links+` array property SHALL contain at least one link with, at a minimum, the `+href+` and `+rel+` properties.
+^|C |The links for core data SHALL NOT require further action in order to download the resource.
+^|D |The links SHALL be HTTP, HTTPS, FTP or SFTP.
+^|E |For new data and metadata notifications, the `+links+` array property SHALL provide at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
+^|F |For data or metadata update notifications, the `+links+` array property SHALL provide at least one link with a link relation of `update` to clearly identify the preferred access link.
+^|G |For data or metadata deletions, the `+links+` array property SHALL provide at least one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
 |===
+//req11

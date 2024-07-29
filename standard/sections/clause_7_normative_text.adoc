@@ -116,6 +116,7 @@ The <<data_id>> is retained to ensure traceability and consistency of the same r
 ----
 
 include::../requirements/core/REQ_id.adoc[]
+include::../recommendations/core/PER_metadata_id.adoc[]
 
 ==== Conformance
 

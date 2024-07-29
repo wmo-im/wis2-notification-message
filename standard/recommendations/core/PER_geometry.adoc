@@ -1,6 +1,6 @@
 [[per_core_geometry]]
 [width="90%",cols="2,6a"]
 |===
-^|*Permission {counter:rec-id}* |*/per/core/geometry*
+^|*Permission {counter:per-id}* |*/per/core/geometry*
 ^|A |The `+geometry+` property MAY provide a third element (height) as per clause 4 of the GeoJSON specification.
 |===

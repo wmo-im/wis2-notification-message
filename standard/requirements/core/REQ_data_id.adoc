@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/data_id*
-^|A |A WNM `SHALL` provide a `+properties.data_id+` property.
+^|A |A WNM SHALL provide a `+properties.data_id+` property.
 ^|B | The `+properties.data_id+` property SHALL be unique within the scope of the relevant dataset.
 |===
 //req8

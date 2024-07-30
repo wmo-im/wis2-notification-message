@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/identifier*
-^|A |The `+id+` property shall be a Universally Unique Identifier (UUID).
+^|A |The `+id+` property SHALL be a Universally Unique Identifier (UUID).
 |===
 //req3

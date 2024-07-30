@@ -2,11 +2,11 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/pubtime*
-^|A |A WNM shall provide a `+properties.pubtime+` property.
-^|B |The `+properties.pubtime+` property shall be in RFC3339 format.
-^|C |The `+properties.pubtime+` property shall be in UTC timezone.
+^|A |A WNM SHALL provide a `+properties.pubtime+` property.
+^|B |The `+properties.pubtime+` property SHALL be in RFC3339 format.
+^|C |The `+properties.pubtime+` property SHALL be in UTC timezone.
 ^|D |The `+properties.pubtime+` property SHALL be set to the current time by the original publisher of the notification.
-^|E |The `+properties.pubtime+` property shall be set to the current time also for notifications about updates or deletions.
-^|F |The `+properties.pubtime+` property shall not be modified by any intermediaries.
+^|E |The `+properties.pubtime+` property SHALL be set to the current time also for notifications about updates or deletions.
+^|F |The `+properties.pubtime+` property SHALL NOT be modified by any intermediaries.
 |===
 //req7

@@ -30,7 +30,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``version``
 |**Required** (one of ``conformsTo`` or ``version``)
-|*DEPRECATED.**  Please use ``conformsTo`` (see <<_1_5_conformance>>)
+|*DEPRECATED*  Please use ``conformsTo`` (see <<_1_5_conformance>>)
 
 |``geometry``
 |**Required**
@@ -126,7 +126,7 @@ include::../requirements/core/REQ_conformance.adoc[]
 
 ==== 1.6 Version
 
-*DEPRECATED.*  Please use `conformsTo`.
+*DEPRECATED*  Please use `conformsTo`.
 
 The ``version`` property provides the version of WNM that the message conforms to.
 

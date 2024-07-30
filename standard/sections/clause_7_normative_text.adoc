@@ -19,7 +19,6 @@ The table below provides an overview of the set of properties that may be includ
 |``id``
 |**Required**
 |A universally unique identifier (UUID) of the message (see <<_1_4_identifier>>)
-
 |``type``
 |**Required**
 |A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_1_3_geojson_compliance>>)

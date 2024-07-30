@@ -1,7 +1,6 @@
 [[rc_core]]
 [cols="1,4",width="90%"]
 |===
-
 |URI|http://wis.wmo.int/spec/wnm/1/req/core
 |Target type |Notification metadata
 |Dependency |The JavaScript Object Notation (JSON) Data Interchange Format (link:https://datatracker.ietf.org/doc/html/rfc8259[IETF RFC8259 (2017)])

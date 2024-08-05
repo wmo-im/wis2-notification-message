@@ -1,20 +1,14 @@
-== The WIS2 Notification Message Encoding
+== WIS2 Notification Message
+Note: This section of working draft document is the same as Appendix E in the https://library.wmo.int/idurl/4/68731[_Manual on the WMO Information System_] (WMO-No. 1060), Volume II
 
-A WIS2 Notification Message (WNM) provides descriptive information about data or metadata made available through WIS 2.0. The standard notification message format ensures that the WIS2 ecosystem (data publisher, data user, and global services) is a robust, effective, and unified data exchange platform for weather, climate, and water.
+The WIS2 Notification Message (WNM) is an extension of the OGC API - Features standard  and shall be encoded in GeoJSON. The normative provisions in this standard are denoted by the base URI (``http://wis.wmo.int/spec/wnm/1``) and requirements are denoted by partial URIs relative to this base. Property names, values and examples are represented with ``shaded`` text in this document.
 
-WIS2 Notification Message documents are provided as MQP payloads by WIS2 nodes, Global Broker services, as well as Replay API services.
-
-A WNM provides notification metadata about data or metadata published to WIS2, including when the data was published, its spatial and temporal characteristics, and where to access and download.
-
-WIS2 Notification Message is an extension of the OGC API - Features standard [3] and shall be encoded in GeoJSON (RFC7946 [4]).
-
-=== Requirements Class "Core"
-
-==== Overview
-
-This Core Requirements Class provides requirements for a WIS2 Notification Message.
+:sectnums!:
+=== 1. Requirements Class "Core"
 
 include::../requirements/requirements_class_core.adoc[]
+
+==== 1.1 Overview
 
 The table below provides an overview of the set of properties that may be included in a WNM.
 
@@ -23,93 +17,90 @@ The table below provides an overview of the set of properties that may be includ
 |Property|Requirement|Description
 
 |``id``
-|**required**
-|A universally unique identifier of the message (see <<_identifier>>)
-
+|**Required**
+|A universally unique identifier (UUID) of the message (see <<_1_4_identifier>>)
 |``type``
-|**required**
-|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_geojson_compliance>>)
+|**Required**
+|A fixed value denoting the record as a GeoJSON ``Feature`` (see <<_1_3_geojson_compliance>>)
 
 
 |``conformsTo``
-|**required** (one of ``conformsTo`` or ``version``)
-|The version of WNM associated that the record conforms to (see <<_conformance_2>>.
+|**Required** (one of ``conformsTo`` or ``version``)
+|The version of WNM associated that the record conforms to (see <<_1_5_conformance>>).
 
 |``version``
-|**required** (one of ``conformsTo`` or ``version``)
-|*DEPRECATED.  Please use ``conformsTo`` (see <<_conformance_2>>)*
+|**Required** (one of ``conformsTo`` or ``version``)
+|*DEPRECATED*  Please use ``conformsTo`` (see <<_1_5_conformance>>)
 
 |``geometry``
-|**required**
-|Geospatial location associated with the data or metadata (see <<_geometry>>)
+|**Required**
+|Geospatial location associated with the data or metadata (see <<_1_7_geometry>>)
 
 |``properties.pubtime``
-|**required**
-|The date and time of when the notification was published, in RFC3339 format (see <<_properties_publication_time>>), UTC
+|**Required**
+|The date and time of when the notification was published, in RFC3339 format, UTC (see <<_1_8_properties_publication_time>>)
 
 |``properties.data_id``
-|**required**
-|Unique identifier of the data as defined by the data producer (see <<data_id>>)
+|**Required**
+|Unique identifier of the data as defined by the data producer (see <<_1_9_properties_data_identification>>)
 
 |``properties.metadata_id``
-|optional
-|Identifier for associated discovery metadata record to which the notification applies (see <<metadata_id>>)
+|Optional
+|Identifier for associated discovery metadata record to which the notification applies (see <<_1_10_properties_metadata_identification>>)
 
 |``properties.producer``
-|optional
-|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_properties_producer>>)
+|Optional
+|Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_1_11_properties_producer>>)
 
 |``properties.datetime``
-|optional
-|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format (see <<_properties_temporal_description>>), UTC
+|Optional
+|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <<_1_12_properties_temporal_description>>)
 
 |``properties.start_datetime``
-|optional
-|Identifies the start date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
+|Optional
+|Identifies the start date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.end_datetime``
-|optional
-|Identifies the end date and time of the data being published, in RFC3339 format (see <<_properties_temporal_description>>)
+|Optional
+|Identifies the end date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.cache``
-|optional
-|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_properties_cache>>)
+|Optional
+|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_13_properties_cache>>)
 
 |``properties.integrity``
-|optional
-|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_properties_integrity>>)
+|Optional
+|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_14_properties_integrity>>)
 
 |``properties.content``
-|optional
-|Used to embed small products inline within the message (see <<_properties_content>>)
+|Optional
+|Used to embed small products inline within the message (see <<_1_15_properties_content>>)
 
 |``links``
-|**required**
-|Online linkages for data retrieval or additional resources associated with the dataset (see <<_links>>)
+|**Required**
+|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_16_links>>)
 
 |===
 
+==== 1.2 Message size
 
-==== Message size
-
-The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<Properties / Content>>).
+The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<_1_15_properties_content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
-==== GeoJSON compliance
+==== 1.3 GeoJSON compliance
 
 The WIS2 Notification Message schema is based on _GeoJSON_ (RFC7946) and its associated information model.  Compliant messages are therefore compliant with _GeoJSON_.
 
 include::../requirements/core/REQ_validation.adoc[]
 
-==== Identifier
+==== 1.4 Identifier
 
-A universally unique identifier of the message using the UUID standard (RFC4122). The identifier is generated by the originator of the message.
-It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers.
-It remains the same throughout the lifetime of the message in the WIS2 ecosystem.
+A universally unique identifier of the message using the UUID standard (link:https://datatracker.ietf.org/doc/html/rfc4122[RFC4122]). The identifier is generated by the originator of the message. It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers. It remains the same throughout the lifetime of the message in the WIS2 ecosystem.
 
-The <<data_id>> is retained to ensure traceability and consistency of the same resource.
+The ``data_id`` is retained to ensure traceability and consistency of the same resource (see <<_1_9_properties_data_identification>>).
 
+Example: 
 [source,json]
 ----
 "id": "31e9d66a-cd83-4174-9429-b932f1abe1be"
@@ -118,12 +109,12 @@ The <<data_id>> is retained to ensure traceability and consistency of the same r
 include::../requirements/core/REQ_id.adoc[]
 include::../recommendations/core/PER_metadata_id.adoc[]
 
-==== Conformance
+==== 1.5 Conformance
 
 The `+conformsTo+` property to identifies the version of the WNM standard that the notification conforms to. Conformance identification is valuable for version
 detection and handling of content.
 
-.Example
+.Example:
 
 [source,json]
 ----
@@ -134,15 +125,15 @@ detection and handling of content.
 
 include::../requirements/core/REQ_conformance.adoc[]
 
-==== Version
+==== 1.6 Version
 
-*DEPRECATED.  Please use `conformsTo`.*
+*DEPRECATED*  Please use `conformsTo`.
 
 The ``version`` property provides the version of WNM that the message conforms to.
 
 include::../requirements/core/REQ_version.adoc[]
 
-==== Geometry
+==== 1.7 Geometry
 
 The type of geometry in a notification message may be ``Point`` or ``Polygon``. It can also be type ``null`` if the geometry cannot be derived.
 
@@ -212,9 +203,9 @@ The type of geometry in a notification message may be ``Point`` or ``Polygon``. 
 include::../requirements/core/REQ_geometry.adoc[]
 include::../recommendations/core/PER_geometry.adoc[]
 
-==== Properties / Publication Time
+==== 1.8 Properties / Publication time
 
-The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the UTC timezone (``Z``). 
+The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the Coordinated Universal Time (UTC) timezone (``Z``). 
 
 The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.  
 
@@ -235,10 +226,11 @@ An update with newer ``pubtime`` and identical ``datetime`` indicates a newer ve
 
 include::../requirements/core/REQ_pubtime.adoc[]
 
-[[data_id]]
-==== Properties / Data Identification
+==== 1.9 Properties / Data identification
 
 The ``data_id`` property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.
+
+Example:
 
 [source,json]
 ----
@@ -253,10 +245,12 @@ include::../requirements/core/REQ_data_id.adoc[]
 include::../recommendations/core/REC_data_id.adoc[]
 include::../recommendations/core/PER_data_id.adoc[]
 
-[[metadata_id]]
-==== Properties / Metadata identification
+
+==== 1.10 Properties / Metadata identification
 
 The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
+
+Example:
 
 [source,json]
 ----
@@ -269,9 +263,11 @@ The ``metadata_id`` property uniquely identifies the associated discovery metada
 
 include::../recommendations/core/REC_metadata_id.adoc[]
 
-==== Properties / Producer
+==== 1.11 Properties / Producer
 
 The ``producer`` property identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
+
+Example:
 
 [source,json]
 ----
@@ -284,16 +280,12 @@ The ``producer`` property identifies the provider that initially captured and pr
 
 include::../recommendations/core/REC_producer.adoc[]
 
-==== Properties / Temporal description 
+==== 1.12 Properties / Temporal description 
 
 The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed).
 When a data or metadata is updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.
 
-The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period).
-
-All dates and times are encoded in RFC3339 format with the UTC timezone (``Z``). 
-
-A ``null`` value can also be used if a temporal description of the data cannot be derived.
+The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period). All dates and times are encoded in RFC3339 format with the UTC timezone (``Z``). A ``null`` value can also be used if a temporal description of the data cannot be derived.
 
 .Example: Temporal instant
 [source,json]
@@ -327,9 +319,9 @@ A ``null`` value can also be used if a temporal description of the data cannot b
 
 include::../requirements/core/REQ_temporal.adoc[]
 
-==== Properties / Cache
+==== 1.13 Properties / Cache
 
-Core data, by default, is cached by Global Cache services as described in the Guide to the WMO Information System (WMO-NO 1061).
+Core data, by default, is cached by Global Cache services as described in the _Guide to WIS_, Volume II.
 
 However, a data producer can use the ``properties.cache`` value to request Global Cache services to not cache their ``core`` data granule.
 
@@ -344,7 +336,7 @@ However, a data producer can use the ``properties.cache`` value to request Globa
 
 include::../recommendations/core/PER_cache.adoc[]
 
-==== Properties / Integrity
+==== 1.14 Properties / Integrity
 
 For data verification, it is recommended to include data integrity information via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
@@ -353,6 +345,8 @@ The ``method`` property provides a format of the hashing method used to enable a
 are ``sha256``, ``sha384``, ``sha512``, ``sha3-256``, ``sha3-384``, and ``sha3-512``.
 
 The ``value`` property provides the result of the hashing method in base64 encoding.
+
+Example:
 
 [source,json]
 ----
@@ -368,15 +362,17 @@ The ``value`` property provides the result of the hashing method in base64 encod
 
 include::../recommendations/core/REC_integrity.adoc[]
 
-==== Properties / Content
+==== 1.15 Properties / Content
 
 The ``content`` property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4096 bytes.
 
-The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``), the ``gzip`` encoding means that the data are compressed using algorithm defined in RFC1952 and consequently converted to text using Base64 encoding.
+The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``Base64``, or ``gzip``), the ``gzip`` encoding means that the data are compressed using algorithm defined in link:https://datatracker.ietf.org/doc/html/rfc1952[RFC1952] and consequently converted to text using Base64 encoding.
 
 The ``value`` property provides the data in accordance with the ``encoding`` property.
 
-The ``size`` property provides the size, in bytes, of the data in its original unencoded form, therefore this value shall not be directly compared with the aforementioned size limit.
+The ``size`` property provides the size, in bytes, of the data in its original unencoded form, therefore this value shall not be directly compared with the size limit.
+
+Example: 
 
 [source,json]
 ----
@@ -395,18 +391,17 @@ include::../requirements/core/REQ_content.adoc[]
 include::../recommendations/core/REC_content.adoc[]
 include::../recommendations/core/PER_content.adoc[]
 
-==== Links
+==== 1.16 Links
 
 The ``links`` array property consists of one or more objects providing URLs to access data.
 
 Each link object provides:
 
-* an ``href`` property with a fully qualified link to access the data
-* a ``rel`` property providing an IANA link relation footnote:[https://www.iana.org/assignments/link-relations/link-relations.xhtml] or WCMP2
- defined extensionsfootnote:[https://github.com/wmo-im/wcmp2-codelists/blob/main/codelists/link-type.csv] describing the relationship between the link and the message
-* a ``type`` property providing the media type of the data
-* a ``length`` property providing the length (in bytes) indicating the size of the data
-* a ``security`` property providing a description of the access control mechanism applied (i.e., for recommended data)
+* An ``href`` property with a fully qualified link to access the data
+* A ``rel`` property providing an link:https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA link relation] or link:http://codes.wmo.int/wis/link-type[WIS link type] describing the relationship between the link and the message
+* A ``type`` property providing the media type of the data
+* A ``length`` property providing the length (in bytes) indicating the size of the data
+* A ``security`` property providing a description of the access control mechanism applied (for example, recommended data with restrictions).
  
 Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.  
 
@@ -416,7 +411,7 @@ Links are used to communicate new data or metadata notifications.  Links can als
 "links": [{
   "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
   "rel": "canonical",
-  "type": "application/x-bufr"
+  "type": "application/bufr"
 }]
 ----
 
@@ -426,7 +421,7 @@ Links are used to communicate new data or metadata notifications.  Links can als
 "links": [{
   "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
   "rel": "canonical",
-  "type": "application/x-bufr"
+  "type": "application/bufr"
 }, {
   "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
   "rel": "item",
@@ -438,9 +433,9 @@ include::../requirements/core/REQ_links.adoc[]
 include::../recommendations/core/REC_links.adoc[]
 include::../recommendations/core/PER_links.adoc[]
 
-===== Access control
+===== 1.16.1 Access control
 
-For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic Authentication for a given data access service.
+For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.
 
 .Example: Access controlled link
 [source,json]
@@ -460,9 +455,11 @@ For recommended data, WNM links may also provide links to resources that impleme
 }]
 ----
 
-==== Additional properties
+==== 1.17 Additional properties
 
 A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.
+
+Example:
 
 [source,json]
 ----
@@ -479,3 +476,10 @@ A WIS2 Notification Message can be extended as required for organizational purpo
 ----
 
 include::../recommendations/core/PER_additional_properties.adoc[]
+
+== 2. WIS2 notification message resources
+=== 2.1 WMO Codes Registry
+•	http://codes.wmo.int/wis/link-type 
+
+=== 2.2	WMO schemas server
+Validation, examples and other resources are published at https://schemas.wmo.int/wnm.

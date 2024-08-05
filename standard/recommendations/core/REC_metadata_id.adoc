@@ -4,3 +4,4 @@
 ^|*Recommendation {counter:rec-id}* |*/rec/core/metadata_id*
 ^|A |A WNM SHOULD provide a `+properties.metadata_id+` property that identifies the associated WCMP2 dataset discovery metadata record. See requirement for metadata identification in WCMP2.
 |===
+//rec2

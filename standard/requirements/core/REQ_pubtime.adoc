@@ -9,3 +9,4 @@
 ^|E |The `+properties.pubtime+` property SHALL be set to the current time also for notifications about updates or deletions.
 ^|F |The `+properties.pubtime+` property SHALL NOT be modified by any intermediaries.
 |===
+//req7

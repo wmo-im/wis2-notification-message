@@ -4,3 +4,4 @@
 ^|*Requirement {counter:req-id}* |*/req/core/message_size*
 ^|A |A WNM message SHALL NOT exceed 8192 bytes.
 |===
+//req1

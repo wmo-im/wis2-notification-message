@@ -10,3 +10,4 @@
 ^|F |For data or metadata update notifications, the `+links+` array property SHALL provide at least one link with a link relation of `update` to clearly identify the preferred access link.
 ^|G |For data or metadata deletions, the `+links+` array property SHALL provide at least one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
 |===
+//req11

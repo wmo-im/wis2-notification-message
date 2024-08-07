@@ -4,3 +4,4 @@
 ^|*Permission {counter:per-id}* |*/per/core/data_id*
 ^|A |The `+properties.data_id+` property MAY contain a valid WIS2 topic, without the channel and version.
 |===
+//per2

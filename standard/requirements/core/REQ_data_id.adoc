@@ -5,3 +5,4 @@
 ^|A |A WNM SHALL provide a `+properties.data_id+` property.
 ^|B | The `+properties.data_id+` property SHALL be unique within the scope of the relevant dataset.
 |===
+//req8

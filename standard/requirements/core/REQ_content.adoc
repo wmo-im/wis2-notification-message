@@ -2,5 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/content*
-^|A |For data whose resulting size in the encoded form is greater than 4096 bytes, notifications SHALL NOT provide inline via `+properties.content.value+`. Note that the the encoding may both enlarge the data size, for example when binary data, e.g BUFR, is Base64 encoded, as well as reduce the size, for example when XML data are compressed with `gzip`.
+^|A |For data whose resulting size in the encoded form is greater than 4096 bytes, notifications SHALL NOT provide inline via ``properties.content.value``. Note that the encoding may both enlarge the data size (for example, when binary data, such as BUFR, is Base64 encoded), as well as reduce the size (for example, when XML data are compressed with gzip).
 |===
+//req10

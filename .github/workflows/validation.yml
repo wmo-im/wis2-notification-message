@@ -25,7 +25,12 @@ jobs:
     - name: Install requirements 📦
       run: |
         python3 -m pip install --upgrade pip
-        pip3 install check-jsonschema
-    - name: Validate examples
+        pip3 install check-jsonschema pywis-pubsub
+        pywis-pubsub schema sync
+    - name: Run JSON Schema validation
       run: |
+        check-jsonschema --check-metaschema schemas/wis2-notification-message-bundled.json
         for e in examples/*.json; do check-jsonschema --schemafile schemas/wis2-notification-message-bundled.json $e; done
+    - name: Run pywis-pubsub ETS validation
+      run: |
+        for e in examples/*.json; do pywis-pubsub ets validate $e; done

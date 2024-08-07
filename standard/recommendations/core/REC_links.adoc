@@ -6,3 +6,4 @@
 ^|B |The ``link`` property SHOULD provide a `length` property to communicate the size of a given data download in advance of a data download workflow when the size of the data is known or can be easily derived.
 ^|C |The link relation of ``deletion`` SHOULD NOT be used for communicating a rolling data archive.
 |===
+//rec6

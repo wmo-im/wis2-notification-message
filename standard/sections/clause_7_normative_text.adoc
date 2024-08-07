@@ -102,7 +102,6 @@ Example:
 ----
 
 include::../requirements/core/REQ_id.adoc[]
-include::../recommendations/core/PER_metadata_id.adoc[]
 
 ==== 1.5 Version
 The ``version`` property provides the version of WNM that the message conforms to.

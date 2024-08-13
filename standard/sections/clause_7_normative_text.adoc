@@ -107,7 +107,6 @@ Example:
 ----
 
 include::../requirements/core/REQ_id.adoc[]
-include::../recommendations/core/PER_metadata_id.adoc[]
 
 ==== 1.5 Conformance
 
@@ -262,6 +261,8 @@ Example:
 ----
 
 include::../recommendations/core/REC_metadata_id.adoc[]
+include::../recommendations/core/PER_metadata_id.adoc[]
+
 
 ==== 1.11 Properties / Producer
 

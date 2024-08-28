@@ -38,6 +38,9 @@ include automated workflow via GitHub Actions.
 # install the check-jsonschema Python package
 pip3 install check-jsonschema
 
-# validate a WWIS2 Notification Message on the command line
+# validate a WIS2 Notification Message on the command line using JSON Schema
 check-jsonschema --schemafile schemas/wis2-notification-message-bundled.json examples/example1.json
+
+# validate a WIS2 Notification Message against the WNM ETS for full compliance
+pywis-pubsub ets validate examples/example1.json
 ```

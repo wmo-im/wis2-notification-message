@@ -113,6 +113,8 @@ include::../requirements/core/REQ_id.adoc[]
 The `+conformsTo+` property to identifies the version of the WNM standard that the notification conforms to. Conformance identification is valuable for version
 detection and handling of content.
 
+NOTE: that `+conformsTo+` replaces `+version+`.  For the deprecation period, only one (but not both) of `+conformsTo+` or `+version+` are permitted.
+
 .Example:
 
 [source,json]
@@ -129,6 +131,8 @@ include::../requirements/core/REQ_conformance.adoc[]
 *DEPRECATED*  Please use `conformsTo`.
 
 The ``version`` property provides the version of WNM that the message conforms to.
+
+NOTE: that `+conformsTo+` replaces `+version+`.  For the deprecation period, only one (but not both) of `+conformsTo+` or `+version+` are permitted.
 
 include::../requirements/core/REQ_version.adoc[]
 

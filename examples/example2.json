@@ -46,7 +46,7 @@
         {
             "href": "https://example.org/data/nwp/92c557ef-d28e-4713-91af-2e2e7be6f8ab.grib",
             "rel": "canonical",
-            "type": "application/x-grib2"
+            "type": "application/grib"
         }
     ]
 }

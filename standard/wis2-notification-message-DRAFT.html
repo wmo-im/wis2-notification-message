@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-08-29</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2024-10-17</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.0.0</p></td>
@@ -967,10 +967,10 @@ messages.</p>
 <h2 id="_wis2_notification_message"><a class="anchor" href="#_wis2_notification_message"></a>7. WIS2 Notification Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Note: This section of working draft document is the same as Appendix E in the <a href="https://library.wmo.int/idurl/4/68731"><em>Manual on the WMO Information System</em></a> (WMO-No. 1060), Volume II</p>
+<p>Note: This section of working draft document is the same as Appendix E in the <a href="https://library.wmo.int/idurl/4/68731"><em>Manual on the WMO Information System</em></a> (WMO-No. 1060), Volume II.</p>
 </div>
 <div class="paragraph">
-<p>The WIS2 Notification Message (WNM) is an extension of the OGC API - Features standard  and shall be encoded in GeoJSON. The normative provisions in this standard are denoted by the base URI (<code><a href="http://wis.wmo.int/spec/wnm/1" class="bare">http://wis.wmo.int/spec/wnm/1</a></code>) and requirements are denoted by partial URIs relative to this base. Property names, values and examples are represented with <code>shaded</code> text in this document.</p>
+<p>The WIS2 Notification Message (WNM) is an extension of the Open Geospatial Consortium <em>OGC API - Features</em> standard and shall be encoded in GeoJSON. The normative provisions in the WIS2 Notification Message are denoted by the base URI (<code><a href="http://wis.wmo.int/spec/wnm/1" class="bare">http://wis.wmo.int/spec/wnm/1</a></code>) and requirements are denoted by partial URIs relative to this base. Property names, values and examples are represented with <code>shaded</code> text in this document.</p>
 </div>
 <div class="sect2">
 <h3 id="_1_requirements_class_core"><a class="anchor" href="#_1_requirements_class_core"></a>1. Requirements Class "Core"</h3>
@@ -1005,7 +1005,7 @@ messages.</p>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">OGC API – Features – Part 1: Core corrigendum (<a href="https://docs.opengeospatial.org/is/17-069r4/17-069r4.html">OGC: OGC 17-069r</a>)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Pre-conditions</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Preconditions</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The record conforms to GeoJSON (RFC7946)</p></td>
 </tr>
 </tbody>
@@ -1058,7 +1058,7 @@ messages.</p>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.pubtime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date and time of when the notification was published, in RFC3339 format, UTC (see <a href="#_1_8_properties_publication_time">1.8 Properties / Publication time</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">The date and time when the notification was published, in RFC3339 format, Coordinated Universal Time (UTC) (see <a href="#_1_8_properties_publication_time">1.8 Properties / Publication time</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.data_id</code></p></td>
@@ -1133,7 +1133,7 @@ messages.</p>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM message SHALL NOT exceed 8192 bytes.</p>
+<p>A WNM message SHALL NOT exceed 8 192 bytes.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1180,7 +1180,7 @@ messages.</p>
 <div class="sect3">
 <h4 id="_1_4_identifier"><a class="anchor" href="#_1_4_identifier"></a>1.4 Identifier</h4>
 <div class="paragraph">
-<p>A universally unique identifier of the message using the UUID standard (<a href="https://datatracker.ietf.org/doc/html/rfc4122">RFC4122</a>). The identifier is generated by the originator of the message. It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers. It remains the same throughout the lifetime of the message in the WIS2 ecosystem.</p>
+<p>A universally unique identifier of the message is generated by the originator of the message, using the UUID standard (<a href="https://datatracker.ietf.org/doc/html/rfc4122">RFC4122</a>). It provides the anti-loop feature that is needed to ensure that the message will be seen once by all Global Brokers. It remains the same throughout the lifetime of the message in the WIS2 ecosystem.</p>
 </div>
 <div class="paragraph">
 <p>The <code>data_id</code> is retained to ensure traceability and consistency of the same resource (see <a href="#_1_9_properties_data_identification">1.9 Properties / Data identification</a>).</p>
@@ -1217,7 +1217,7 @@ messages.</p>
 <div class="sect3">
 <h4 id="_1_5_conformance"><a class="anchor" href="#_1_5_conformance"></a>1.5 Conformance</h4>
 <div class="paragraph">
-<p>The <code>conformsTo</code> property to identifies the version of the WNM standard that the notification conforms to. Conformance identification is valuable for version
+<p>The <code>conformsTo</code> property to identifies the version of the WNM standard to which the notification conforms. Conformance identification is valuable for version
 detection and handling of content.</p>
 </div>
 <div class="listingblock">
@@ -1407,18 +1407,21 @@ detection and handling of content.</p>
 <div class="sect3">
 <h4 id="_1_8_properties_publication_time"><a class="anchor" href="#_1_8_properties_publication_time"></a>1.8 Properties / Publication time</h4>
 <div class="paragraph">
-<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format with the Coordinated Universal Time (UTC) timezone (<code>Z</code>).</p>
+<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
-<p>The publication date/time is critical for subscribers to prevent message loss in providing awareness of how far behind the publisher they may be.</p>
+<p>The publication date/time is critical for subscribers. It prevents message loss by providing awareness among subscribers about how far behind the publisher they may be.</p>
 </div>
 <div class="paragraph">
 <p>The <code>pubtime</code> property is also valuable for change detection as part of updates and deletion notifications.</p>
 </div>
 <div class="paragraph">
-<p>Ensuring <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows.
+<p>Ensuring that <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows.
 For example, an out-of-date <code>pubtime</code> can lead to errors for clients when managing updates or deletions in their local copies of data.
-An update with newer <code>pubtime</code> and identical <code>datetime</code> indicates a newer version of the data or metadata.</p>
+An update with a newer <code>pubtime</code> and identical <code>datetime</code> indicates a newer version of the data or metadata.</p>
+</div>
+<div class="paragraph">
+<p><em>Example:</em></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1456,7 +1459,7 @@ An update with newer <code>pubtime</code> and identical <code>datetime</code> in
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>properties.pubtime</code> property SHALL be in UTC timezone.</p>
+<p>The <code>properties.pubtime</code> property SHALL be in UTC.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1567,7 +1570,7 @@ An update with newer <code>pubtime</code> and identical <code>datetime</code> in
 <div class="sect3">
 <h4 id="_1_10_properties_metadata_identification"><a class="anchor" href="#_1_10_properties_metadata_identification"></a>1.10 Properties / Metadata identification</h4>
 <div class="paragraph">
-<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WCMP2 dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
+<p>The <code>metadata_id</code> property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WMO Core Metadata Profile (WCMP) dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1596,7 +1599,7 @@ An update with newer <code>pubtime</code> and identical <code>datetime</code> in
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property that identifies the associated WCMP2 dataset discovery metadata record. See requirement for metadata identification in WCMP2.</p>
+<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property that identifies the associated WCMP dataset discovery metadata record. See requirement for metadata identification in WCMP (Appendix F, 1.4 Identifier).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1664,10 +1667,10 @@ An update with newer <code>pubtime</code> and identical <code>datetime</code> in
 <h4 id="_1_12_properties_temporal_description"><a class="anchor" href="#_1_12_properties_temporal_description"></a>1.12 Properties / Temporal description</h4>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).
-When a data or metadata is updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.</p>
+When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.</p>
 </div>
 <div class="paragraph">
-<p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (for example, the start and end times of an NWP forecasting period). All dates and times are encoded in RFC3339 format with the UTC timezone (<code>Z</code>). A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
+<p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (for example, the start and end times of an NWP forecasting period). All dates and times are encoded in RFC3339 format using UTC (<code>Z</code>). A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example: Temporal instant</div>
@@ -1726,7 +1729,7 @@ When a data or metadata is updated or deleted, this value should identify the or
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The temporal description SHALL be in the UTC timezone.</p>
+<p>The temporal description SHALL be in UTC.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1741,7 +1744,7 @@ When a data or metadata is updated or deleted, this value should identify the or
 <div class="sect3">
 <h4 id="_1_13_properties_cache"><a class="anchor" href="#_1_13_properties_cache"></a>1.13 Properties / Cache</h4>
 <div class="paragraph">
-<p>Core data, by default, is cached by Global Cache services as described in the <em>Guide to WIS</em>, Volume II.</p>
+<p>Core data, by default, is cached by Global Cache services, as described in the <em>Guide to WIS</em>, Volume II.</p>
 </div>
 <div class="paragraph">
 <p>However, a data producer can use the <code>properties.cache</code> value to request Global Cache services to not cache their <code>core</code> data granule.</p>
@@ -1770,7 +1773,7 @@ When a data or metadata is updated or deleted, this value should identify the or
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM MAY specify whether the data should be cached via the <code>properties.cache</code> property.</p>
+<p>A WNM MAY specify, via the <code>properties.cache</code> property, whether the data should be cached .</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1779,7 +1782,7 @@ When a data or metadata is updated or deleted, this value should identify the or
 <div class="sect3">
 <h4 id="_1_14_properties_integrity"><a class="anchor" href="#_1_14_properties_integrity"></a>1.14 Properties / Integrity</h4>
 <div class="paragraph">
-<p>For data verification, it is recommended to include data integrity information via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
+<p>For data verification, it is recommended that data integrity information to be included via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
 </div>
 <div class="paragraph">
@@ -1828,19 +1831,19 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_1_15_properties_content"><a class="anchor" href="#_1_15_properties_content"></a>1.15 Properties / Content</h4>
 <div class="paragraph">
-<p>The <code>content</code> property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4096 bytes.</p>
+<p>The <code>content</code> property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.</p>
 </div>
 <div class="paragraph">
-<p>The <code>encoding</code> property provides the character encoding of the data (<code>UTF-8</code>, <code>Base64</code>, or <code>gzip</code>), the <code>gzip</code> encoding means that the data are compressed using algorithm defined in <a href="https://datatracker.ietf.org/doc/html/rfc1952">RFC1952</a> and consequently converted to text using Base64 encoding.</p>
+<p>The <code>encoding</code> property provides the character encoding of the data (<code>UTF-8</code>, <code>base64</code> or <code>gzip</code>). The <code>gzip</code> encoding means that the data are compressed using the algorithm defined in <a href="https://datatracker.ietf.org/doc/html/rfc1952">RFC1952</a> and consequently converted to text using Base64 encoding.</p>
 </div>
 <div class="paragraph">
 <p>The <code>value</code> property provides the data in accordance with the <code>encoding</code> property.</p>
 </div>
 <div class="paragraph">
-<p>The <code>size</code> property provides the size, in bytes, of the data in its original unencoded form, therefore this value shall not be directly compared with the size limit.</p>
+<p>The <code>size</code> property provides the size, in bytes, of the data in its original unencoded form, and therefore this value shall not be directly compared with the size limit.</p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p><em>Example</em>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1870,7 +1873,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data whose resulting size in the encoded form is greater than 4096 bytes, notifications SHALL NOT provide inline via <code>properties.content.value</code>. Note that the encoding may both enlarge the data size (for example, when binary data, such as BUFR, is Base64 encoded), as well as reduce the size (for example, when XML data are compressed with gzip).</p>
+<p>For data whose resulting size in the encoded form is greater than 4 096 bytes, notifications SHALL NOT provide the data inline via <code>properties.content.value</code>. Note that the encoding may either enlarge the data size (for example, when binary data, such as BUFR, is Base64 encoded), or reduce the size (for example, when XML data are compressed with gzip).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1890,7 +1893,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>content</code> property, consisting of an <code>encoding</code> property (either <code>utf-8</code>, <code>base64</code>, or <code>gzip</code>), a <code>value</code> property of the data, as well as a <code>size</code> property with the length of the data.</p>
+<p>A WNM SHOULD provide the <code>content</code> property, consisting of an <code>encoding</code> property (either <code>utf-8</code>, <code>base64</code> or <code>gzip</code>), a <code>value</code> property of the data and a <code>size</code> property with the length of the data.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1910,7 +1913,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data whose resulting size (after possible compression) is less than 4096 bytes, notifications MAY provide the data inline via <code>properties.content.value</code>.</p>
+<p>For data whose resulting size (after possible compression) is less than 4 096 bytes, notifications MAY provide the data inline via <code>properties.content.value</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1927,16 +1930,16 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="ulist">
 <ul>
 <li>
-<p>An <code>href</code> property with a fully qualified link to access the data</p>
+<p>An <code>href</code> property with a fully qualified link to access the data;</p>
 </li>
 <li>
-<p>A <code>rel</code> property providing an <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA link relation</a> or <a href="http://codes.wmo.int/wis/link-type">WIS link type</a> describing the relationship between the link and the message</p>
+<p>A <code>rel</code> property providing an <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA link relation</a> or <a href="http://codes.wmo.int/wis/link-type">WIS link type</a> describing the relationship between the link and the message;</p>
 </li>
 <li>
-<p>A <code>type</code> property providing the media type of the data</p>
+<p>A <code>type</code> property providing the media type of the data;</p>
 </li>
 <li>
-<p>A <code>length</code> property providing the length (in bytes) indicating the size of the data</p>
+<p>A <code>length</code> property providing the length (in bytes) indicating the size of the data;</p>
 </li>
 <li>
 <p>A <code>security</code> property providing a description of the access control mechanism applied (for example, recommended data with restrictions).</p>
@@ -1944,7 +1947,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </ul>
 </div>
 <div class="paragraph">
-<p>Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata has been deleted or invalidated.</p>
+<p>Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata have been deleted or invalidated.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example: Canonical link</div>
@@ -2053,7 +2056,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The <code>link</code> property SHOULD provide a <code>length</code> property to communicate the size of a given data download in advance of a data download workflow when the size of the data is known or can be easily derived.</p>
+<p>The <code>links</code> array property SHOULD provide a <code>length</code> property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2087,7 +2090,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect4">
 <h5 id="_1_16_1_access_control"><a class="anchor" href="#_1_16_1_access_control"></a>1.16.1 Access control</h5>
 <div class="paragraph">
-<p>For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.</p>
+<p>For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example: Access controlled link</div>
@@ -2112,7 +2115,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect3">
 <h4 id="_1_17_additional_properties"><a class="anchor" href="#_1_17_additional_properties"></a>1.17 Additional properties</h4>
 <div class="paragraph">
-<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not break compliance with this specification.</p>
+<p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not render a notification non-compliant with the provisions of this specification.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -2171,7 +2174,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <div class="sect2">
 <h3 id="_2_2wmo_schemas_server"><a class="anchor" href="#_2_2wmo_schemas_server"></a>2.2	WMO schemas server</h3>
 <div class="paragraph">
-<p>Validation, examples and other resources are published at <a href="https://schemas.wmo.int/wnm" class="bare">https://schemas.wmo.int/wnm</a>.</p>
+<p>Validation schemas, examples and other resources are published at <a href="https://schemas.wmo.int/wnm" class="bare">https://schemas.wmo.int/wnm</a>.</p>
 </div>
 </div>
 </div>
@@ -2876,7 +2879,7 @@ example:
         {
             "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
             "rel": "canonical",
-            "type": "application/x-bufr"
+            "type": "application/bufr"
         },
         {
             "href": "https://example.org/oapi/collections/my-dataset/items/my-data-granule",
@@ -2938,7 +2941,7 @@ example:
         {
             "href": "https://example.org/data/nwp/92c557ef-d28e-4713-91af-2e2e7be6f8ab.grib",
             "rel": "canonical",
-            "type": "application/x-grib2"
+            "type": "application/grib"
         }
     ]
 }</code></pre>
@@ -3118,7 +3121,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-08-29 12:06:10 UTC
+Last updated 2024-10-17 15:17:18 UTC
 </div>
 </div>
 </body>

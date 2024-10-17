@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/content*
-^|A |For data whose resulting size (after possible compression) is less than 4096 bytes, notifications MAY provide the data inline via `+properties.content.value+`.
+^|A |For data whose resulting size (after possible compression) is less than 4 096 bytes, notifications MAY provide the data inline via `+properties.content.value+`.
 |===
 //per4

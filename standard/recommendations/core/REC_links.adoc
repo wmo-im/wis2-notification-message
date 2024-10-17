@@ -3,7 +3,7 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/links*
 ^|A |A WNM SHOULD provide links using secure protocols such as HTTPS and SFTP, with HTTPS being the preferred option.
-^|B |The ``link`` property SHOULD provide a `length` property to communicate the size of a given data download in advance of a data download workflow when the size of the data is known or can be easily derived.
+^|B |The ``links`` array property SHOULD provide a `length` property to communicate the size of a given data download in advance of a data download workflow, when the size of the data is known or can be easily derived.
 ^|C |The link relation of ``deletion`` SHOULD NOT be used for communicating a rolling data archive.
 |===
 //rec6

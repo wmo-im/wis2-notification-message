@@ -2,6 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/cache*
-^|A |A WNM MAY specify whether the data should be cached via the `properties.cache` property.
+^|A |A WNM MAY specify, via the `properties.cache` property, whether the data should be cached .
 |===
 //per3

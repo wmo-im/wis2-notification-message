@@ -4,7 +4,7 @@
 ^|*Requirement {counter:req-id}* |*/req/core/temporal*
 ^|A |A WNM SHALL provide a temporal description by either a `+properties.datetime+` property or both the ``properties.start_datetime`` and ``properties.end_datetime`` properties.
 ^|B |The temporal description SHALL be in RFC3339 format.
-^|C |The temporal description SHALL be in the UTC timezone.
+^|C |The temporal description SHALL be in UTC.
 ^|D |The temporal description SHALL be set to ``null`` (using only `+properties.datetime+`) when a temporal description cannot be derived.
 |===
 //req9

@@ -9,8 +9,8 @@ on:
     - 'kpi/**'
 
 env:
-  SPEC_FILE_BASENAME: wis2-notification-message-DRAFT
-  KPI_FILE_BASENAME: wis2-notification-message-kpi-DRAFT
+  SPEC_FILE_BASENAME: wis2-notification-message-APPROVED
+  KPI_FILE_BASENAME: wis2-notification-message-kpi-APPROVED
 
 jobs:
   build-wis2-notification-message:

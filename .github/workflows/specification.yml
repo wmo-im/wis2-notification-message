@@ -9,7 +9,7 @@ on:
     - 'kpi/**'
 
 env:
-  SPEC_FILE_BASENAME: wis2-notification-message-DRAFT
+  SPEC_FILE_BASENAME: wis2-notification-message-STABLE
   KPI_FILE_BASENAME: wis2-notification-message-kpi-DRAFT
 
 jobs:

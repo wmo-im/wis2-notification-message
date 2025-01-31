@@ -1,3 +1,8 @@
+---
+name: WMO amendment proposal
+about: Proposals for amendments to this specification
+---
+
 > Note: sections marked with * are required.
 
 # Overview of proposal*

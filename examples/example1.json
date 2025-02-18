@@ -24,7 +24,8 @@
             "encoding": "utf-8",
             "value": "encoded bytes from the file",
             "size": 457
-        }
+        },
+        "cache-duration": "PT6H"
     },
     "links": [
         {

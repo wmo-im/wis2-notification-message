@@ -11,3 +11,4 @@
 * IANA: Link Relation Types (2020) footnote:[https://www.iana.org/assignments/link-relations/link-relations.xml]
 * [[json-schema]] IETF: JSON Schema (2022) footnote:[https://json-schema.org]
 * [[wis2-topic-hierarchy]] WMO: WIS2 Topic Hierarchy (2022) footnote:[https://github.com/wmo-im/wis2-topic-hierarchy]
+* [[iso8601]] ISO 8601-1:2019: Date and time — Representations for information interchange (2019) footnote:[https://www.iso.org/standard/70907.html]

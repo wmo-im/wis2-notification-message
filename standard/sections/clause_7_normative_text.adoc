@@ -72,23 +72,27 @@ The table below provides an overview of the set of properties that may be includ
 |Optional
 |Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_14_properties_cache>>)
 
+|``properties.cache-duration``
+|Optional
+|Time period for which a data granule should be cached (default is 24 hours) (see <<_1_15_properties_cache_duration>>)
+
 |``properties.integrity``
 |Optional
-|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_15_properties_integrity>>)
+|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_16_properties_integrity>>)
 
 |``properties.content``
 |Optional
-|Used to embed small products inline within the message (see <<_1_16_properties_content>>)
+|Used to embed small products inline within the message (see <<_1_17_properties_content>>)
 
 |``links``
 |**Required**
-|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_17_links>>)
+|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_18_links>>)
 
 |===
 
 ==== 1.2 Message size
 
-The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<_1_16_properties_content>>).
+The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<_1_17_properties_content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
@@ -363,7 +367,22 @@ However, a data producer can use the ``properties.cache`` value to request Globa
 
 include::../recommendations/core/PER_cache.adoc[]
 
-==== 1.15 Properties / Integrity
+==== 1.15 Properties / Cache duration
+
+By default, cached data is stored for a period of 24 hours.   A data producer can use the ``properties.cache-duration`` value to specify that data should be cached for a period other than 24 hours.
+
+.Example: Specifying data to be cached for a 6 hour period
+[source,json]
+----
+"properties": {
+  "cache-duration": "PT6H",
+  ...
+}
+----
+
+include::../recommendations/core/PER_cache-duration.adoc[]
+
+==== 1.16 Properties / Integrity
 
 For data verification, it is recommended that data integrity information to be included via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
@@ -389,7 +408,7 @@ Example:
 
 include::../recommendations/core/REC_integrity.adoc[]
 
-==== 1.16 Properties / Content
+==== 1.17 Properties / Content
 
 The ``content`` property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.
 
@@ -418,7 +437,7 @@ include::../requirements/core/REQ_content.adoc[]
 include::../recommendations/core/REC_content.adoc[]
 include::../recommendations/core/PER_content.adoc[]
 
-==== 1.17 Links
+==== 1.18 Links
 
 The ``links`` array property consists of one or more objects providing URLs to access data.
 
@@ -460,7 +479,7 @@ include::../requirements/core/REQ_links.adoc[]
 include::../recommendations/core/REC_links.adoc[]
 include::../recommendations/core/PER_links.adoc[]
 
-===== 1.17.1 Access control
+===== 1.18.1 Access control
 
 For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.
 
@@ -482,7 +501,7 @@ For recommended data, WNM links may also provide links to resources that impleme
 }]
 ----
 
-==== 1.18 Additional properties
+==== 1.19 Additional properties
 
 A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not render a notification non-compliant with the provisions of this specification.
 

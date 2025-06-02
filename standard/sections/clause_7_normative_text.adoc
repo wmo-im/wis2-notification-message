@@ -369,7 +369,7 @@ include::../recommendations/core/PER_cache.adoc[]
 
 ==== 1.15 Properties / Cache duration
 
-By default, cached data is stored for a period of 24 hours.   A data producer can use the ``properties.cache-duration`` value to specify that data should be cached for a period other than 24 hours.
+By default, cached data is stored for a period of 24 hours.   A data producer can use the ``properties.cache-duration`` value to request that data be cached for a period other than 24 hours.
 
 .Example: Specifying data to be cached for a 6 hour period
 [source,json]

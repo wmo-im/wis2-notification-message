@@ -12,11 +12,11 @@ All requirements and conformance tests that appear in this document are denoted 
 
 Examples provided in this specification are encoded as GeoJSON.
 
-Complete examples can be found at https://schemas.wmo.int/wnm/1.0.0/examples
+Complete examples can be found at https://schemas.wmo.int/wnm/1.1.0/examples
 
 === Schemas
 
-The WIS2 Notification Message schema can be found at https://schemas.wmo.int/wnm/1.0.0/schemas/wis2-notification-message-bundled.json
+The WIS2 Notification Message schema can be found at https://schemas.wmo.int/wnm/1.1.0/schemas/wis2-notification-message-bundled.json
 
 === Schema representation
 

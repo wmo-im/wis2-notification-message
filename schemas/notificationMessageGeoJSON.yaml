@@ -78,6 +78,11 @@ properties:
           notification with an unmodified canonical link (which points back to the endpoint as specified by the data producer).
           The notification is always published by the Global Cache regardless to the `cache` topic.
         default: true
+      cache-duration:
+        type: string
+        description: Time period for which a data granule should be cached (default is 24 hours).
+        pattern: "^P(([0-9]+Y)?([0-9]+M)?([0-9]+W)?([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\.?[0-9]+)?S)?))?$"
+        default: PT24H
       integrity:
         type: object
         description: Specifies a checksum to be applied to the data to ensure that the download is accurate.

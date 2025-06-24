@@ -1,0 +1,7 @@
+[[per_core_cache-duration]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/core/cache-duration*
+^|A |A WNM MAY specify, via the `properties.cache-duration` property, whether a resource should be cached for a specific time period, in ISO 8601 duration format.
+|===
+//per3

@@ -39,5 +39,5 @@ find . -name "???.adoc" -exec asciidoc-link-check -p -c asciidoc-link-check-conf
 ## Conventions
 
 - Fixed values to always use:
-  - WNM schema: https://schemas.wmo.int/wnm/1.0.0/schemas/wis2-notification-message-bundled.json
+  - WNM schema: https://schemas.wmo.int/wnm/1.1.0/schemas/wis2-notification-message-bundled.json
 - always fence JSON snippets, single element names as code

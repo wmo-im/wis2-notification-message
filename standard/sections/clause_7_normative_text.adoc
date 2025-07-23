@@ -52,43 +52,39 @@ The table below provides an overview of the set of properties that may be includ
 |Optional
 |Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <<_1_11_properties_producer>>)
 
-|``properties.global-cache``
-|Optional
-|Centre identifier of Global Cache Service producing the notification (see <<_1_12_properties_global_cache>>)
-
 |``properties.datetime``
 |Optional
-|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <<_1_13_properties_temporal_description>>)
+|Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <<_1_12_properties_temporal_description>>)
 
 |``properties.start_datetime``
 |Optional
-|Identifies the start date and time of the data being published, in RFC3339 format (see <<_1_13_properties_temporal_description>>)
+|Identifies the start date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.end_datetime``
 |Optional
-|Identifies the end date and time of the data being published, in RFC3339 format (see <<_1_13_properties_temporal_description>>)
+|Identifies the end date and time of the data being published, in RFC3339 format (see <<_1_12_properties_temporal_description>>)
 
 |``properties.cache``
 |Optional
-|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_14_properties_cache>>)
+|Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_13_properties_cache>>)
 
 |``properties.integrity``
 |Optional
-|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_15_properties_integrity>>)
+|Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_14_properties_integrity>>)
 
 |``properties.content``
 |Optional
-|Used to embed small products inline within the message (see <<_1_16_properties_content>>)
+|Used to embed small products inline within the message (see <<_1_15_properties_content>>)
 
 |``links``
 |**Required**
-|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_17_links>>)
+|Online linkages for data retrieval or additional resources associated with the dataset (see <<_1_16_links>>)
 
 |===
 
 ==== 1.2 Message size
 
-The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<_1_16_properties_content>>).
+The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <<_1_15_properties_content>>).
 
 include::../requirements/core/REQ_message_size.adoc[]
 
@@ -290,24 +286,7 @@ Example:
 
 include::../recommendations/core/REC_producer.adoc[]
 
-==== 1.12 Properties / Global Cache
-
-The ``global-cache`` property identifies the centre identifier of the Global Cache Service producing the message.
-
-Example:
-
-[source,json]
-----
-"properties": {
-  ...
-  "global-cache": "de-dwd-global-cache"
-  ...
-}
-----
-
-include::../requirements/core/REQ_global-cache.adoc[]
-
-==== 1.13 Properties / Temporal description
+==== 1.12 Properties / Temporal description 
 
 The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed).
 When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.
@@ -346,7 +325,7 @@ The ``start_datetime`` and ``end_datetime`` properties identify a temporal exten
 
 include::../requirements/core/REQ_temporal.adoc[]
 
-==== 1.14 Properties / Cache
+==== 1.13 Properties / Cache
 
 Core data, by default, is cached by Global Cache services, as described in the _Guide to WIS_, Volume II.
 
@@ -363,7 +342,7 @@ However, a data producer can use the ``properties.cache`` value to request Globa
 
 include::../recommendations/core/PER_cache.adoc[]
 
-==== 1.15 Properties / Integrity
+==== 1.14 Properties / Integrity
 
 For data verification, it is recommended that data integrity information to be included via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
@@ -389,7 +368,7 @@ Example:
 
 include::../recommendations/core/REC_integrity.adoc[]
 
-==== 1.16 Properties / Content
+==== 1.15 Properties / Content
 
 The ``content`` property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.
 
@@ -418,7 +397,7 @@ include::../requirements/core/REQ_content.adoc[]
 include::../recommendations/core/REC_content.adoc[]
 include::../recommendations/core/PER_content.adoc[]
 
-==== 1.17 Links
+==== 1.16 Links
 
 The ``links`` array property consists of one or more objects providing URLs to access data.
 
@@ -460,7 +439,7 @@ include::../requirements/core/REQ_links.adoc[]
 include::../recommendations/core/REC_links.adoc[]
 include::../recommendations/core/PER_links.adoc[]
 
-===== 1.17.1 Access control
+===== 1.16.1 Access control
 
 For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.
 
@@ -482,7 +461,7 @@ For recommended data, WNM links may also provide links to resources that impleme
 }]
 ----
 
-==== 1.18 Additional properties
+==== 1.17 Additional properties
 
 A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not render a notification non-compliant with the provisions of this specification.
 

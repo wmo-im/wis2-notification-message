@@ -1,7 +1,0 @@
-[[req_core_global-cache]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/core/global-cache*
-^|A |When a notification is produced by a Global Cache Service, a WNM SHALL provide a `+properties.global-cache+` property.
-|===
-//req8

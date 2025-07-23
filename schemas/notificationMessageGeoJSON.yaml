@@ -55,7 +55,7 @@ properties:
       source:
         type: string
         description: |
-          Centre identifier of Global Cache Service producing the notification.
+          Centre identifier of the WIS2 Global Cache or WIS2 Node producing the notification.
       datetime:
         type:
           - string

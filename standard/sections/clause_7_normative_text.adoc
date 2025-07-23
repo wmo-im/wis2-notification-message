@@ -54,7 +54,7 @@ The table below provides an overview of the set of properties that may be includ
 
 |``properties.source``
 |Optional
-|Centre identifier of Global Cache Service producing the notification (see <<_1_12_properties_source>>)
+|Centre identifier of the WIS2 Global Cache or WIS2 Node producing the notification (see <<_1_12_properties_source>>)
 
 |``properties.datetime``
 |Optional
@@ -292,7 +292,7 @@ include::../recommendations/core/REC_producer.adoc[]
 
 ==== 1.12 Properties / Source
 
-The ``source`` property identifies the centre identifier of the Global Cache Service producing the message.
+The ``source`` property identifies the centre identifier of the Global Cache Service or WIS2 Node producing the notification.
 
 Example:
 

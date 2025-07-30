@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/links*
-^|A |A WNM `+links+` array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).
+^|A |A WNM `+links+` array property MAY provide link objects which reference APIs or web-accessible folders (WAF).
 ^|B |In addition to one of the links required for WIS2 data and/or metadata publication, the links array property MAY provide additional link objects as necessary.
 |===
 //per 6

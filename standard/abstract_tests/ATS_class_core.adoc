@@ -42,6 +42,10 @@ include::./core/ATS_test_data_id.adoc[]
 
 include::./core/ATS_test_temporal.adoc[]
 
+==== Properties / Global Cache
+
+This requirement is not applicable to ATS testing.
+
 ==== Links
 
 include::./core/ATS_test_links.adoc[]

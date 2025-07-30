@@ -206,7 +206,7 @@ The type of geometry in a notification message may be ``Point`` or ``Polygon``. 
 include::../requirements/core/REQ_geometry.adoc[]
 include::../recommendations/core/PER_geometry.adoc[]
 
-==== 1.8 Properties / Publication time
+==== 1.8 Properties/Publication time
 
 The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (``Z``). 
 
@@ -230,7 +230,7 @@ _Example:_
 
 include::../requirements/core/REQ_pubtime.adoc[]
 
-==== 1.9 Properties / Data identification
+==== 1.9 Properties/Data identification
 
 The ``data_id`` property uniquely identifies the data described by the notification and is defined by the data producer. A data producer may use an identification scheme of their choice.
 
@@ -250,7 +250,7 @@ include::../recommendations/core/REC_data_id.adoc[]
 include::../recommendations/core/PER_data_id.adoc[]
 
 
-==== 1.10 Properties / Metadata identification
+==== 1.10 Properties/Metadata identification
 
 The ``metadata_id`` property uniquely identifies the associated discovery metadata record. This property is an important linkage between a WMO Core Metadata Profile (WCMP) dataset discovery metadata record and the related data notifications. The inclusion of this property allows a subscriber to consult additional documentation of the dataset and understand the access control applied to the data.
 
@@ -269,7 +269,7 @@ include::../recommendations/core/REC_metadata_id.adoc[]
 include::../recommendations/core/PER_metadata_id.adoc[]
 
 
-==== 1.11 Properties / Producer
+==== 1.11 Properties/Producer
 
 The ``producer`` property identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
 
@@ -286,7 +286,7 @@ Example:
 
 include::../recommendations/core/REC_producer.adoc[]
 
-==== 1.12 Properties / Temporal description 
+==== 1.12 Properties/Temporal description 
 
 The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed).
 When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.
@@ -325,7 +325,7 @@ The ``start_datetime`` and ``end_datetime`` properties identify a temporal exten
 
 include::../requirements/core/REQ_temporal.adoc[]
 
-==== 1.13 Properties / Cache
+==== 1.13 Properties/Cache
 
 Core data, by default, is cached by Global Cache services, as described in the _Guide to WIS_, Volume II.
 
@@ -342,7 +342,7 @@ However, a data producer can use the ``properties.cache`` value to request Globa
 
 include::../recommendations/core/PER_cache.adoc[]
 
-==== 1.14 Properties / Integrity
+==== 1.14 Properties/Integrity
 
 For data verification, it is recommended that data integrity information to be included via the ``integrity`` property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.
@@ -368,11 +368,11 @@ Example:
 
 include::../recommendations/core/REC_integrity.adoc[]
 
-==== 1.15 Properties / Content
+==== 1.15 Properties/Content
 
 The ``content`` property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.
 
-The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``base64`` or ``gzip``). The ``gzip`` encoding means that the data are compressed using the algorithm defined in link:https://datatracker.ietf.org/doc/html/rfc1952[RFC1952] and consequently converted to text using Base64 encoding.
+The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``base64`` or ``gzip``). The ``gzip`` encoding means that the data are compressed using the algorithm defined in link:https://datatracker.ietf.org/doc/html/rfc1952[RFC1952] and consequently converted to text using base64 encoding.
 
 The ``value`` property provides the data in accordance with the ``encoding`` property.
 
@@ -441,9 +441,9 @@ include::../recommendations/core/PER_links.adoc[]
 
 ===== 1.16.1 Access control
 
-For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.
+For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP basic authentication for a given data access service.
 
-.Example: Access controlled link
+.Example: Access-controlled link
 [source,json]
 ----
 "links": [{

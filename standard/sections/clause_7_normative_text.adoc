@@ -481,22 +481,11 @@ Example:
 }
 ----
 
-Example, based on WCMP2 client-side filtering:
-
-[source,json]
-----
-"properties": {
-  ...
-  "wigos_station_identifier": "0-20000-0-71628"
-  ...
-}
-----
-
 include::../recommendations/core/PER_additional_properties.adoc[]
 
 == 2. WIS2 notification message resources
 === 2.1 WMO Codes Registry
-• http://codes.wmo.int/wis/link-type 
+•	http://codes.wmo.int/wis/link-type 
 
-=== 2.2 WMO schemas server
+=== 2.2	WMO schemas server
 Validation schemas, examples and other resources are published at https://schemas.wmo.int/wnm.

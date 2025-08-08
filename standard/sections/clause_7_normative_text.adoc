@@ -372,7 +372,7 @@ include::../recommendations/core/REC_integrity.adoc[]
 
 The ``content`` property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.
 
-The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``base64`` or ``gzip``). The ``gzip`` encoding means that the data are compressed using the algorithm defined in link:https://datatracker.ietf.org/doc/html/rfc1952[RFC1952] and consequently converted to text using base64 encoding.
+The ``encoding`` property provides the character encoding of the data (``UTF-8``, ``base64`` or ``gzip``). The ``gzip`` encoding means that the data are compressed using the algorithm defined in link:https://datatracker.ietf.org/doc/html/rfc1952[RFC1952] and consequently converted to text using Base64 encoding.
 
 The ``value`` property provides the data in accordance with the ``encoding`` property.
 
@@ -441,7 +441,7 @@ include::../recommendations/core/PER_links.adoc[]
 
 ===== 1.16.1 Access control
 
-For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP basic authentication for a given data access service.
+For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic Authentication for a given data access service.
 
 .Example: Access-controlled link
 [source,json]

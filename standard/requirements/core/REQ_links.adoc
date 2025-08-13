@@ -6,9 +6,10 @@
 ^|B |The `+links+` array property SHALL contain at least one link with, at a minimum, the `+href+` and `+rel+` properties.
 ^|C |The links for core data SHALL NOT require further action in order to download the resource.
 ^|D |The links SHALL be HTTP, HTTPS, FTP or SFTP.
-^|E |For new data and metadata notifications, the `+links+` array property SHALL provide at least one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
-^|F |For data or metadata update notifications, the `+links+` array property SHALL provide at least one link with a link relation of `update` to clearly identify the preferred access link.
-^|G |For data or metadata deletions, the `+links+` array property SHALL provide at least one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
+^|E |For new data and metadata notifications, the `+links+` array property SHALL provide exactly one link with an IANA link relation of `canonical` to clearly identify the preferred access link.
+^|F |For data or metadata update notifications, the `+links+` array property SHALL provide exactly one link with a link relation of `update` to clearly identify the preferred access link.
+^|G |For data or metadata deletions, the `+links+` array property SHALL provide exactly one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
 ^|H |For metadata deletions, the `properties.metadata_id` property SHALL be specified to support deletion of a WCMP2 record from the Global Discovery Catalogue.
+^|I |The links array property SHALL contain **only one** link with a link relation value of `+canonical+`, `+update+`, or `+deletion+`.  These link relations SHALL NOT be combined within a single notification.
 |===
 //req11

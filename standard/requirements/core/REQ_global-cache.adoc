@@ -4,4 +4,4 @@
 ^|*Requirement {counter:req-id}* |*/req/core/global-cache*
 ^|A |When a notification is produced by a Global Cache Service, a WNM SHALL provide a `+properties.global-cache+` property.
 |===
-//req8
+//req 9

@@ -1,4 +1,4 @@
-name: build specification and KPIs
+name: build specification
 
 on:
   push:
@@ -6,11 +6,9 @@ on:
     - main
     paths:
     - 'standard/**'
-    - 'kpi/**'
 
 env:
   SPEC_FILE_BASENAME: wis2-notification-message-STABLE
-  KPI_FILE_BASENAME: wis2-notification-message-kpi-DRAFT
 
 jobs:
   build-wis2-notification-message:
@@ -31,13 +29,6 @@ jobs:
           && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.docx \
           && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.pdf index.adoc \
           && cd ..
-      - name: build KPIs
-        run: |
-          cd kpi \
-          && asciidoctor --trace -o /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.html index.adoc \
-          && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.docx \
-          && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/kpi/${KPI_FILE_BASENAME}.pdf index.adoc \
-          && cd ..
       - name: checkout gh-pages branch
         uses: actions/checkout@master
         with:
@@ -47,7 +38,7 @@ jobs:
           git checkout gh-pages
           git config --global user.email "tomkralidis@gmail.com"
           git config --global user.name "Tom Kralidis"
-          rm -rf standard kpi
+          rm -rf standard
           mv -f /tmp/wis2-notification-message/* .
           git add .
           git commit -am "update WNM build"

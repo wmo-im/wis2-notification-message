@@ -1,3 +1,0 @@
-== Key performance indicators
-
-include::core/metadata_id.adoc[]

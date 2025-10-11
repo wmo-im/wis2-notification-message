@@ -208,7 +208,7 @@ include::../recommendations/core/PER_geometry.adoc[]
 
 ==== 1.8 Properties / Publication time
 
-The ``pubtime`` property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (``Z``). 
+The ``pubtime`` property identifies the date/time when the notification was posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (``Z``).
 
 The publication date/time is critical for subscribers. It prevents message loss by providing awareness among subscribers about how far behind the publisher they may be.  
 
@@ -216,7 +216,7 @@ The ``pubtime`` property is also valuable for change detection as part of update
 
 Ensuring that ``pubtime`` is properly managed for updates and deletions is important for data and metadata download workflows.
 For example, an out-of-date ``pubtime`` can lead to errors for clients when managing updates or deletions in their local copies of data.
-An update with a newer ``pubtime`` and identical ``datetime`` indicates a newer version of the data or metadata.
+An update with a newer ``pubtime``, identical ``data_id`` and a link with ``rel=update`` indicates a newer version of the data or metadata.
 
 _Example:_
 [source,json]
@@ -226,6 +226,38 @@ _Example:_
   "pubtime": "2022-03-20T04:50:18.314854383Z"
   ...
 }
+----
+
+_Example:_ using ``pubtime``, ``data_id`` and a link ``rel=update`` to provide a data/metadata notification: initial notification
+[source,json]
+----
+"properties": {
+  ...
+  "pubtime": "2022-03-20T04:50:18.314854383Z"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
+  ...
+},
+"links": [{
+  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+  "rel": "canonical",
+  "type": "application/bufr"
+}]
+----
+
+_Example:_ using ``pubtime``, ``data_id`` and a link ``rel=update`` to provide a data/metadata notification: update notification
+[source,json]
+----
+"properties": {
+  ...
+  "pubtime": "2022-03-21T03:14:44.234524524Z"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
+  ...
+},
+"links": [{
+  "href": "https://example.org/data/4Pubsub/61156c54-dadf-4cb3-8b04-1fdcb472036d.bufr4",
+  "rel": "update",
+  "type": "application/bufr"
+}]
 ----
 
 include::../requirements/core/REQ_pubtime.adoc[]
@@ -289,7 +321,6 @@ include::../recommendations/core/REC_producer.adoc[]
 ==== 1.12 Properties / Temporal description 
 
 The ``datetime`` property identifies the date and time of the data (for example, when a measurement was observed).
-When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.
 
 The ``start_datetime`` and ``end_datetime`` properties identify a temporal extent (for example, the start and end times of an NWP forecasting period). All dates and times are encoded in RFC3339 format using UTC (``Z``). A ``null`` value can also be used if a temporal description of the data cannot be derived.
 

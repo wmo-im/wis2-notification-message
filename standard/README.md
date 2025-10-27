@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the report and provides instructions for managing the document.
+This directory contains and provides instructions for managing the document.
 
 ### Dependencies
 
@@ -25,10 +25,7 @@ asciidoctor --trace -o wis2-notification-message.html index.adoc
 asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o wis2-notification-message.pdf index.adoc
 # create Word document
 asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output wis2-notification-message.docx
-```
-
 # check links
-```bash
 find . -name "*.adoc" -exec asciidoc-link-check -p -c asciidoc-link-check-config.json {} \;
 ```
 

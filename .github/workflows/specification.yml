@@ -4,8 +4,8 @@ on:
   push:
     branches:
     - main
-    paths:
-    - 'standard/**'
+#    paths:
+#    - 'standard/**'
 
 env:
   SPEC_FILE_BASENAME: wis2-notification-message-STABLE
@@ -25,7 +25,7 @@ jobs:
       - name: build specification
         run: |
           cd standard \
-          && asciidoctor --trace -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.html index.adoc \
+          && asciidoctor --trace -a stylesheet=css/wmo-asciidoc.css -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.html index.adoc \
           && asciidoctor --trace --backend docbook --out-file - index.adoc | pandoc --from docbook --to docx --output /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.docx \
           && asciidoctor --trace -r asciidoctor-pdf --trace -b pdf -o /tmp/wis2-notification-message/standard/${SPEC_FILE_BASENAME}.pdf index.adoc \
           && cd ..

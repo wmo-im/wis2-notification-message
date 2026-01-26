@@ -6,3 +6,5 @@
 * [[SDWBP]] W3C/OGC: Spatial Data on the Web Best Practices, W3C Working Group Note 28 September 2017, https://www.w3.org/TR/sdw-bp
 * [[DWBP]] W3C: Data on the Web Best Practices, W3C Recommendation 31 January 2017, https://www.w3.org/TR/dwbp
 * [[link-relations]] IANA: Link Relation Types, https://www.iana.org/assignments/link-relations/link-relations.xml
+* [[ISO8601]] ISO8601: Date and time — Representations for information interchange, https://www.iso.org/standard/70907.html
+* [[WGS84]] NIMA: Department of Defense World Geodetic System 1984: Its Definition and Relationships with Local Geodetic Systems", Third Edition 1984, https://apps.dtic.mil/sti/citations/ADA280358

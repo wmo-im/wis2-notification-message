@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<meta name="copyright" content="Copyright © 2024-2025 World Meteorological Organization (WMO)">
+<meta name="copyright" content="Copyright © 2024-2026 World Meteorological Organization (WMO)">
 <title>WMO WIS2 Notification Message Encoding</title>
 <style>
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
@@ -96,10 +96,10 @@ body {
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2026-01-20</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2026-02-13</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.1.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.2.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document status: STABLE</p></td>
@@ -117,7 +117,7 @@ body {
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Commission for Observation, Infrastructure and Information Systems (INFCOM)<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright © 2024-2025 World Meteorological Organization (WMO)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright © 2024-2026 World Meteorological Organization (WMO)</p></td>
 </tr>
 </tbody>
 </table>
@@ -171,12 +171,13 @@ body {
 <li><a href="#_1_9_properties_data_identification">1.9 Properties / Data identification</a></li>
 <li><a href="#_1_10_properties_metadata_identification">1.10 Properties / Metadata identification</a></li>
 <li><a href="#_1_11_properties_producer">1.11 Properties / Producer</a></li>
-<li><a href="#_1_12_properties_temporal_description">1.12 Properties / Temporal description</a></li>
-<li><a href="#_1_13_properties_cache">1.13 Properties / Cache</a></li>
-<li><a href="#_1_14_properties_integrity">1.14 Properties / Integrity</a></li>
-<li><a href="#_1_15_properties_content">1.15 Properties / Content</a></li>
-<li><a href="#_1_16_links">1.16 Links</a></li>
-<li><a href="#_1_17_additional_properties">1.17 Additional properties</a></li>
+<li><a href="#_1_12_properties_global_cache">1.12 Properties / Global Cache</a></li>
+<li><a href="#_1_13_properties_temporal_description">1.13 Properties / Temporal description</a></li>
+<li><a href="#_1_14_properties_cache">1.14 Properties / Cache</a></li>
+<li><a href="#_1_15_properties_integrity">1.15 Properties / Integrity</a></li>
+<li><a href="#_1_16_properties_content">1.16 Properties / Content</a></li>
+<li><a href="#_1_17_links">1.17 Links</a></li>
+<li><a href="#_1_18_additional_properties">1.18 Additional properties</a></li>
 </ul>
 </li>
 </ul>
@@ -184,7 +185,7 @@ body {
 <li><a href="#_2_wis2_notification_message_resources">2. WIS2 notification message resources</a>
 <ul class="sectlevel2">
 <li><a href="#_2_1_wmo_codes_registry">2.1 WMO Codes Registry</a></li>
-<li><a href="#_2_2wmo_schemas_server">2.2	WMO schemas server</a></li>
+<li><a href="#_2_2_wmo_schemas_server">2.2 WMO schemas server</a></li>
 </ul>
 </li>
 <li><a href="#_conformance_class_abstract_test_suite_normative">Annex A: Conformance Class Abstract Test Suite (Normative)</a>
@@ -200,6 +201,7 @@ body {
 <li><a href="#_properties_publication_time">Properties / Publication Time</a></li>
 <li><a href="#_properties_data_identification">Properties / Data Identification</a></li>
 <li><a href="#_properties_temporal_description">Properties / Temporal description</a></li>
+<li><a href="#_properties_global_cache">Properties / Global Cache</a></li>
 <li><a href="#_links">Links</a></li>
 </ul>
 </li>
@@ -330,7 +332,7 @@ of providing MQP services.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a id="ogcapi-features"></a> OGC: OGC 17-069r, OGC API - Features - Part 1: Core 1.0.1 (2022) <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup></p>
+<p><a id="ogcapi-features"></a> OGC: OGC 17-069r4, OGC API - Features - Part 1: Core 1.0.1 (2022) <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup></p>
 </li>
 <li>
 <p><a id="rfc7946"></a> IETF: RFC-7946 The GeoJSON Format (2016) <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup></p>
@@ -720,39 +722,44 @@ messages.</p>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members (see <a href="#_1_11_properties_producer">1.11 Properties / Producer</a>)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.global-cache</code></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Centre identifier of Global Cache Service producing the notification (see <a href="#_1_12_properties_global_cache">1.12 Properties / Global Cache</a>)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <a href="#_1_12_properties_temporal_description">1.12 Properties / Temporal description</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <a href="#_1_13_properties_temporal_description">1.13 Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.start_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date and time of the data being published, in RFC3339 format (see <a href="#_1_12_properties_temporal_description">1.12 Properties / Temporal description</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the start date and time of the data being published, in RFC3339 format (see <a href="#_1_13_properties_temporal_description">1.13 Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.end_datetime</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date and time of the data being published, in RFC3339 format (see <a href="#_1_12_properties_temporal_description">1.12 Properties / Temporal description</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Identifies the end date and time of the data being published, in RFC3339 format (see <a href="#_1_13_properties_temporal_description">1.13 Properties / Temporal description</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.cache</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Indicates whether the data in the notification should be cached (if not specified, the default value is <code>true</code>) (see <a href="#_1_13_properties_cache">1.13 Properties / Cache</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Indicates whether the data in the notification should be cached (if not specified, the default value is <code>true</code>) (see <a href="#_1_14_properties_cache">1.14 Properties / Cache</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.integrity</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Specifies a checksum to be applied to the data to ensure that the download is accurate (see <a href="#_1_14_properties_integrity">1.14 Properties / Integrity</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Specifies a checksum to be applied to the data to ensure that the download is accurate (see <a href="#_1_15_properties_integrity">1.15 Properties / Integrity</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>properties.content</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Used to embed small products inline within the message (see <a href="#_1_15_properties_content">1.15 Properties / Content</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Used to embed small products inline within the message (see <a href="#_1_16_properties_content">1.16 Properties / Content</a>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>links</code></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Required</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Online linkages for data retrieval or additional resources associated with the dataset (see <a href="#_1_16_links">1.16 Links</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Online linkages for data retrieval or additional resources associated with the dataset (see <a href="#_1_17_links">1.17 Links</a>)</p></td>
 </tr>
 </tbody>
 </table>
@@ -760,7 +767,7 @@ messages.</p>
 <div class="sect3">
 <h4 id="_1_2_message_size"><a class="anchor" href="#_1_2_message_size"></a>1.2 Message size</h4>
 <div class="paragraph">
-<p>The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <a href="#_1_15_properties_content">1.15 Properties / Content</a>).</p>
+<p>The WIS2 Notification Message allows for the transmission of messages in a compact manner and includes the ability to embed content inline as required (see <a href="#_1_16_properties_content">1.16 Properties / Content</a>).</p>
 </div>
 <table id="req_core_message_size" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1267,7 +1274,7 @@ An update with a newer <code>pubtime</code> and identical <code>datetime</code> 
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property that identifies the associated WCMP dataset discovery metadata record. See requirement for metadata identification in WCMP (Appendix F, 1.4 Identifier).</p>
+<p>A WNM SHOULD provide a <code>properties.metadata_id</code> property, which is a string, identifying the associated WCMP dataset discovery metadata record. See requirement for metadata identification in WCMP (Appendix F, 1.4 Identifier).</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1332,7 +1339,45 @@ An update with a newer <code>pubtime</code> and identical <code>datetime</code> 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_1_12_properties_temporal_description"><a class="anchor" href="#_1_12_properties_temporal_description"></a>1.12 Properties / Temporal description</h4>
+<h4 id="_1_12_properties_global_cache"><a class="anchor" href="#_1_12_properties_global_cache"></a>1.12 Properties / Global Cache</h4>
+<div class="paragraph">
+<p>The <code>global-cache</code> property identifies the centre identifier of the Global Cache Service producing the message.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "global-cache": "de-dwd-global-cache"
+  ...
+}</code></pre>
+</div>
+</div>
+<table id="req_core_global-cache" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/core/global-cache</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>When a notification is produced by a Global Cache Service, a WNM SHALL provide a <code>properties.global-cache</code> property.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_1_13_properties_temporal_description"><a class="anchor" href="#_1_13_properties_temporal_description"></a>1.13 Properties / Temporal description</h4>
 <div class="paragraph">
 <p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).
 When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.</p>
@@ -1377,7 +1422,7 @@ When data or metadata are updated or deleted, this value should identify the ori
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 9</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/temporal</strong></p>
 </div></div></td>
@@ -1410,7 +1455,7 @@ When data or metadata are updated or deleted, this value should identify the ori
 </table>
 </div>
 <div class="sect3">
-<h4 id="_1_13_properties_cache"><a class="anchor" href="#_1_13_properties_cache"></a>1.13 Properties / Cache</h4>
+<h4 id="_1_14_properties_cache"><a class="anchor" href="#_1_14_properties_cache"></a>1.14 Properties / Cache</h4>
 <div class="paragraph">
 <p>Core data, by default, is cached by Global Cache services, as described in the <em>Guide to WIS</em>, Volume II.</p>
 </div>
@@ -1448,7 +1493,7 @@ When data or metadata are updated or deleted, this value should identify the ori
 </table>
 </div>
 <div class="sect3">
-<h4 id="_1_14_properties_integrity"><a class="anchor" href="#_1_14_properties_integrity"></a>1.14 Properties / Integrity</h4>
+<h4 id="_1_15_properties_integrity"><a class="anchor" href="#_1_15_properties_integrity"></a>1.15 Properties / Integrity</h4>
 <div class="paragraph">
 <p>For data verification, it is recommended that data integrity information to be included via the <code>integrity</code> property.  Providing this information will allow data consumers to ensure
 that a given data granule has not been corrupted during download.</p>
@@ -1497,7 +1542,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </table>
 </div>
 <div class="sect3">
-<h4 id="_1_15_properties_content"><a class="anchor" href="#_1_15_properties_content"></a>1.15 Properties / Content</h4>
+<h4 id="_1_16_properties_content"><a class="anchor" href="#_1_16_properties_content"></a>1.16 Properties / Content</h4>
 <div class="paragraph">
 <p>The <code>content</code> property allows for the inclusion of data in the notification message when the length of the data, once encoded, is smaller than 4 096 bytes.</p>
 </div>
@@ -1533,7 +1578,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 10</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/content</strong></p>
 </div></div></td>
@@ -1588,7 +1633,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </table>
 </div>
 <div class="sect3">
-<h4 id="_1_16_links"><a class="anchor" href="#_1_16_links"></a>1.16 Links</h4>
+<h4 id="_1_17_links"><a class="anchor" href="#_1_17_links"></a>1.17 Links</h4>
 <div class="paragraph">
 <p>The <code>links</code> array property consists of one or more objects providing URLs to access data.</p>
 </div>
@@ -1648,7 +1693,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 11</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 12</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/core/links</strong></p>
 </div></div></td>
@@ -1680,25 +1725,31 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">E</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For new data and metadata notifications, the <code>links</code> array property SHALL provide at least one link with an IANA link relation of <code>canonical</code> to clearly identify the preferred access link.</p>
+<p>For new data and metadata notifications, the <code>links</code> array property SHALL provide exactly one link with an IANA link relation of <code>canonical</code> to clearly identify the preferred access link.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">F</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata update notifications, the <code>links</code> array property SHALL provide at least one link with a link relation of <code>update</code> to clearly identify the preferred access link.</p>
+<p>For data or metadata update notifications, the <code>links</code> array property SHALL provide exactly one link with a link relation of <code>update</code> to clearly identify the preferred access link.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>For data or metadata deletions, the <code>links</code> array property SHALL provide at least one link with a link relation of <code>deletion</code> to clearly identify data which has been deleted or removed.</p>
+<p>For data or metadata deletions, the <code>links</code> array property SHALL provide exactly one link with a link relation of <code>deletion</code> to clearly identify data which has been deleted or removed.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">H</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p>For metadata deletions, the <code>properties.metadata_id</code> property SHALL be specified to support deletion of a WCMP2 record from the Global Discovery Catalogue.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">I</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The links array property SHALL contain <strong>only one</strong> link with a link relation value of <code>canonical</code>, <code>update</code>, or <code>deletion</code>.  These link relations SHALL NOT be combined within a single notification.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1753,10 +1804,16 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 <p>A WNM <code>links</code> array property MAY provide link objects which reference APIs or Web Accessible Folders (WAF).</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>In addition to one of the links required for WIS2 data and/or metadata publication, the links array property MAY provide additional link objects as necessary.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_1_16_1_access_control"><a class="anchor" href="#_1_16_1_access_control"></a>1.16.1 Access control</h5>
+<h5 id="_1_17_1_access_control"><a class="anchor" href="#_1_17_1_access_control"></a>1.17.1 Access control</h5>
 <div class="paragraph">
 <p>For recommended data, WNM links may also provide links to resources that implement access control in support of authentication and authorization. In secure data use cases, a user needs to be able to detect access-controlled data as part of data discovery and evaluation. The example demonstrates how to express access control using HTTP Basic authentication for a given data access service.</p>
 </div>
@@ -1781,7 +1838,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
-<h4 id="_1_17_additional_properties"><a class="anchor" href="#_1_17_additional_properties"></a>1.17 Additional properties</h4>
+<h4 id="_1_18_additional_properties"><a class="anchor" href="#_1_18_additional_properties"></a>1.18 Additional properties</h4>
 <div class="paragraph">
 <p>A WIS2 Notification Message can be extended as required for organizational purposes by adding properties (of any type) in the message. Additional properties do not render a notification non-compliant with the provisions of this specification.</p>
 </div>
@@ -1798,6 +1855,18 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
       "error 2"
     ]
   }
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example, based on WCMP2 client-side filtering:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "wigos_station_identifier": "0-20000-0-71628"
   ...
 }</code></pre>
 </div>
@@ -1840,7 +1909,7 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_2wmo_schemas_server"><a class="anchor" href="#_2_2wmo_schemas_server"></a>2.2	WMO schemas server</h3>
+<h3 id="_2_2_wmo_schemas_server"><a class="anchor" href="#_2_2_wmo_schemas_server"></a>2.2 WMO schemas server</h3>
 <div class="paragraph">
 <p>Validation schemas, examples and other resources are published at <a href="https://schemas.wmo.int/wnm" class="bare">https://schemas.wmo.int/wnm</a>.</p>
 </div>
@@ -2256,6 +2325,12 @@ are <code>sha256</code>, <code>sha384</code>, <code>sha512</code>, <code>sha3-25
 </div>
 </div>
 <div class="sect3">
+<h4 id="_properties_global_cache"><a class="anchor" href="#_properties_global_cache"></a>Properties / Global Cache</h4>
+<div class="paragraph">
+<p>This requirement is not applicable to ATS testing.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_links"><a class="anchor" href="#_links"></a>Links</h4>
 <div id="ats_core_links" class="exampleblock">
 <div class="content">
@@ -2386,6 +2461,10 @@ properties:
         type: string
         description: |
           Identifies the provider that initially captured and processed the source data, in support of data distribution on behalf of other Members.
+      global-cache:
+        type: string
+        description: |
+          Centre identifier of Global Cache Service producing the notification.
       datetime:
         type:
           - string
@@ -2684,6 +2763,12 @@ example:
 <li>
 <p><a id="link-relations"></a> IANA: Link Relation Types, <a href="https://www.iana.org/assignments/link-relations/link-relations.xml" class="bare">https://www.iana.org/assignments/link-relations/link-relations.xml</a></p>
 </li>
+<li>
+<p><a id="ISO8601"></a> ISO8601: Date and time — Representations for information interchange, <a href="https://www.iso.org/standard/70907.html" class="bare">https://www.iso.org/standard/70907.html</a></p>
+</li>
+<li>
+<p><a id="WGS84"></a> NIMA: Department of Defense World Geodetic System 1984: Its Definition and Relationships with Local Geodetic Systems", Third Edition 1984, <a href="https://apps.dtic.mil/sti/citations/ADA280358" class="bare">https://apps.dtic.mil/sti/citations/ADA280358</a></p>
+</li>
 </ul>
 </div>
 </div>
@@ -2703,18 +2788,32 @@ example:
 <tr>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Date</th>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Release</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Editor</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Proposed by</th>
 <th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Primary clauses modified</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Description</th>
+<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Approved by</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">2022-12-05</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Template</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Tom Kralidis</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">all</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">update from TT-Protocols/ET-W2AT</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">June 2024</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.0.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ET-Metadata</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Clause 7</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">EC-78</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">November 2024</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.1.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ET-Metadata</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Clause 7 (See <a href="https://github.com/wmo-im/wis2-notification-message/milestone/5?closed=1">GitHub</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Fast-track 2024-2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">February 2026</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.2.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ET-Metadata</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Clause 7 (See <a href="https://github.com/wmo-im/wis2-notification-message/milestone/8?closed=1">GitHub</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Fast-track 2025-2</p></td>
 </tr>
 </tbody>
 </table>
@@ -2789,7 +2888,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-20 18:56:36 UTC
+Last updated 2026-02-09 17:23:42 UTC
 </div>
 </div>
 </body>

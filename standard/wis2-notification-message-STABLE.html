@@ -96,10 +96,10 @@ body {
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">World Meteorological Organization</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2026-02-13</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Date: 2026-06-15</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.2.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Version: 1.3.0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Document status: STABLE</p></td>
@@ -1085,7 +1085,7 @@ that <code>conformsTo</code> replaces <code>version</code>.  For the deprecation
 <div class="sect3">
 <h4 id="_1_8_properties_publication_time"><a class="anchor" href="#_1_8_properties_publication_time"></a>1.8 Properties / Publication time</h4>
 <div class="paragraph">
-<p>The <code>pubtime</code> property identifies the date/time when the notification was first posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (<code>Z</code>).</p>
+<p>The <code>pubtime</code> property identifies the date/time when the notification was posted or published by the originator. The date/time is encoded in RFC3339 format, using UTC (<code>Z</code>).</p>
 </div>
 <div class="paragraph">
 <p>The publication date/time is critical for subscribers. It prevents message loss by providing awareness among subscribers about how far behind the publisher they may be.</p>
@@ -1096,7 +1096,7 @@ that <code>conformsTo</code> replaces <code>version</code>.  For the deprecation
 <div class="paragraph">
 <p>Ensuring that <code>pubtime</code> is properly managed for updates and deletions is important for data and metadata download workflows.
 For example, an out-of-date <code>pubtime</code> can lead to errors for clients when managing updates or deletions in their local copies of data.
-An update with a newer <code>pubtime</code> and identical <code>datetime</code> indicates a newer version of the data or metadata.</p>
+An update with a newer <code>pubtime</code>, identical <code>data_id</code> and a link with <code>rel=update</code> indicates a newer version of the data or metadata.</p>
 </div>
 <div class="paragraph">
 <p><em>Example:</em></p>
@@ -1108,6 +1108,42 @@ An update with a newer <code>pubtime</code> and identical <code>datetime</code> 
   "pubtime": "2022-03-20T04:50:18.314854383Z"
   ...
 }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example:</em> using <code>pubtime</code>, <code>data_id</code> and a link <code>rel=update</code> to provide a data/metadata notification: initial notification</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "pubtime": "2022-03-20T04:50:18.314854383Z"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
+  ...
+},
+"links": [{
+  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
+  "rel": "canonical",
+  "type": "application/bufr"
+}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example:</em> using <code>pubtime</code>, <code>data_id</code> and a link <code>rel=update</code> to provide a data/metadata notification: update notification</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"properties": {
+  ...
+  "pubtime": "2022-03-21T03:14:44.234524524Z"
+  "data_id": "wis2/ma-marocmeteo/data/core/weather/surface-based-observations/synop/WIGOS_0-504-1-60288_20240210T130000"
+  ...
+},
+"links": [{
+  "href": "https://example.org/data/4Pubsub/61156c54-dadf-4cb3-8b04-1fdcb472036d.bufr4",
+  "rel": "update",
+  "type": "application/bufr"
+}]</code></pre>
 </div>
 </div>
 <table id="req_core_pubtime" class="tableblock frame-all grid-all" style="width: 90%;">
@@ -1382,8 +1418,7 @@ An update with a newer <code>pubtime</code> and identical <code>datetime</code> 
 <div class="sect3">
 <h4 id="_1_13_properties_temporal_description"><a class="anchor" href="#_1_13_properties_temporal_description"></a>1.13 Properties / Temporal description</h4>
 <div class="paragraph">
-<p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).
-When data or metadata are updated or deleted, this value should identify the original data or metadata, which can be significantly different from the current time.</p>
+<p>The <code>datetime</code> property identifies the date and time of the data (for example, when a measurement was observed).</p>
 </div>
 <div class="paragraph">
 <p>The <code>start_datetime</code> and <code>end_datetime</code> properties identify a temporal extent (for example, the start and end times of an NWP forecasting period). All dates and times are encoded in RFC3339 format using UTC (<code>Z</code>). A <code>null</code> value can also be used if a temporal description of the data cannot be derived.</p>
@@ -2818,6 +2853,13 @@ example:
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Clause 7 (See <a href="https://github.com/wmo-im/wis2-notification-message/milestone/8?closed=1">GitHub</a>)</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Fast-track 2025-2</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">June 2026</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">1.3.0</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ET-Metadata</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Clause 7 (See <a href="https://github.com/wmo-im/wis2-notification-message/milestone/3?closed=1">GitHub</a>)</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Fast-track 2026-1</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -2891,7 +2933,7 @@ example:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-03-13 12:37:49 UTC
+Last updated 2026-06-17 01:17:19 UTC
 </div>
 </div>
 </body>

@@ -418,6 +418,7 @@ Example:
 }
 ----
 
+include::../requirements/core/REQ_integrity.adoc[]
 include::../recommendations/core/REC_integrity.adoc[]
 
 ==== 1.16 Properties / Content

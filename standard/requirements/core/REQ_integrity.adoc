@@ -1,0 +1,17 @@
+[[req_core_integrity]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/integrity*
+^|A |A WNM ``integrity`` object SHALL provide a ``method`` property of the hashing method, using one of the following values:
+
+* sha256
+* sha384
+* sha512
+* sha3-256
+* sha3-384
+* sha3-512
+
+^|B |A WNM ``integrity`` object SHALL provide a ``value`` property of the result of the hashing, using base64 encoding.
+
+|===
+//req5

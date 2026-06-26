@@ -1,0 +1,6 @@
+[[req_core_metadata_id]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/core/metadata_id*
+^|A |A WNM SHALL provide a `+properties.metadata_id+` property, which is a string, identifying the associated WCMP document, that is, the discovery metadata. See requirement for metadata identification in WCMP (Appendix F, 1.4 Identifier).
+|===

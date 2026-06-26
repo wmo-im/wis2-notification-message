@@ -45,7 +45,7 @@ The table below provides an overview of the set of properties that may be includ
 |Unique identifier of the data as defined by the data producer (see <<_1_9_properties_data_identification>>)
 
 |``properties.metadata_id``
-|Optional
+|**Required**
 |Identifier for associated discovery metadata record to which the notification applies (see <<_1_10_properties_metadata_identification>>)
 
 |``properties.producer``
@@ -301,7 +301,7 @@ Example:
 }
 ----
 
-include::../recommendations/core/REC_metadata_id.adoc[]
+include::../requirements/core/REQ_metadata_id.adoc[]
 include::../recommendations/core/PER_metadata_id.adoc[]
 
 

@@ -9,10 +9,8 @@ test-purpose:: Validate that a WNM has a valid metadata_id.
 =====
 [.component,class=step]
 --
-Check for the existence of an `+metadata_id+` property, which is of type `string`.
+Check for the existence of an `+metadata_id+` property, which is of type `string` and has structure defined in WCMP2 /req/core/identifier.
 --
-
-NOTE: further checking of this property (existence in WIS2 catalogue systems) is not applicable.
 
 =====
 ====

@@ -1,0 +1,19 @@
+[[ats_core_metadata_id]]
+====
+[%metadata]
+label:: /conf/core/metadata_id
+subject:: /req/core/metadata_id
+test-purpose:: Validate that a WNM has a valid metadata_id.
+
+[.component,class=test method]
+=====
+[.component,class=step]
+--
+Check for the existence of an `+metadata_id+` property, which is of type `string`.
+--
+
+NOTE: further checking of this property (existence in WIS2 catalogue systems) is not applicable.
+
+=====
+====
+

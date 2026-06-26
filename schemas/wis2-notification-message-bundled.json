@@ -195,6 +195,7 @@
       "required": [
         "pubtime",
         "data_id"
+        "metadata_id"
       ],
       "oneOf": [
         {

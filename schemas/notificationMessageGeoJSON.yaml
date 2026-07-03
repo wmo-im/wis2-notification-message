@@ -134,6 +134,7 @@ properties:
     required:
       - pubtime
       - data_id
+      - metadata_id
     oneOf:
       - allOf:
         - required:

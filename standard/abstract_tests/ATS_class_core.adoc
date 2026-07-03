@@ -38,6 +38,10 @@ include::./core/ATS_test_pubtime.adoc[]
 
 include::./core/ATS_test_data_id.adoc[]
 
+==== Properties / Metadata Identification
+
+include::./core/ATS_test_metadata_id.adoc[]
+
 ==== Properties / Temporal description
 
 include::./core/ATS_test_temporal.adoc[]

@@ -463,6 +463,8 @@ Each link object provides:
  
 Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata have been deleted or invalidated.  
 
+Note that additional examples can be found in <<_1_8_properties_publication_time>>.
+
 .Example: Canonical link
 [source,json]
 ----
@@ -485,33 +487,6 @@ Links are used to communicate new data or metadata notifications.  Links can als
   "rel": "item",
   "type": "application/json"
 }]
-----
-
-.Example: Initial canonical link and updates
-[source,json]
-----
-"links": [{
-  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab.bufr4",
-  "rel": "canonical",
-  "type": "application/bufr"
-}
-----
-----
-[source,json]
-"links": [{
-  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab_first_update.bufr4",
-  "rel": "update",
-  "type": "application/bufr"
-}
-----
-----
-[source,json]
-"links": [{
-[source,json]
-  "href": "https://example.org/data/4Pubsub/92c557ef-d28e-4713-91af-2e2e7be6f8ab_second_update.bufr4",
-  "rel": "update",
-  "type": "application/bufr"
-}
 ----
 
 include::../requirements/core/REQ_links.adoc[]

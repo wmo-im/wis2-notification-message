@@ -10,6 +10,6 @@
 ^|F |For data or metadata update notifications, the `+links+` array property SHALL provide exactly one link with a link relation of `update` to clearly identify the preferred access link.
 ^|G |For data or metadata deletions, the `+links+` array property SHALL provide exactly one link with a link relation of `deletion` to clearly identify data which has been deleted or removed.
 ^|H |For metadata deletions, the `properties.metadata_id` property SHALL be specified to support deletion of a WCMP2 record from the Global Discovery Catalogue.
-^|I |The links array property SHALL contain **only one** link with a link relation value of `+canonical+`, `+update+`, or `+deletion+`.  These link relations SHALL NOT be combined within a single notification. The `href` property for the link relation value of `canonical` or `update` SHALL uniquely identify the data instance the notification is related to.
+^|I |The links array property SHALL contain **only one** link with a link relation value of `+canonical+`, `+update+`, or `+deletion+`.  These link relations SHALL NOT be combined within a single notification.
 |===
 //req11

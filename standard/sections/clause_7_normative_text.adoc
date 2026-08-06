@@ -461,9 +461,7 @@ Each link object provides:
 * A ``length`` property providing the length (in bytes) indicating the size of the data;
 * A ``security`` property providing a description of the access control mechanism applied (for example, recommended data with restrictions).
  
-Links are used to communicate new data or metadata notifications.  Different links are provided for new data instances or updates of already provided data.  Links can also communicate when data or metadata have been deleted or invalidated.
-
-Note that additional examples can be found in <<_1_8_properties_publication_time>>.
+Links are used to communicate new data or metadata notifications.  Links can also communicate when data or metadata have been deleted or invalidated.  
 
 .Example: Canonical link
 [source,json]

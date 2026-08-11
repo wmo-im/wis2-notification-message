@@ -73,7 +73,7 @@ The table below provides an overview of the set of properties that may be includ
 |Indicates whether the data in the notification should be cached (if not specified, the default value is `true`) (see <<_1_14_properties_cache>>)
 
 |``properties.integrity``
-|Optional
+|**Required**
 |Specifies a checksum to be applied to the data to ensure that the download is accurate (see <<_1_15_properties_integrity>>)
 
 |``properties.content``

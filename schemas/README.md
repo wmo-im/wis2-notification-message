@@ -41,6 +41,6 @@ pip3 install check-jsonschema
 # validate a WIS2 Notification Message on the command line using JSON Schema
 check-jsonschema --schemafile schemas/wis2-notification-message-bundled.json examples/example1.json
 
-# validate a WIS2 Notification Message against the WNM ETS for full compliance
+# validate a WIS2 Notification Message against the WNM ETS for full compliance using pywis-pubsub
 pywis-pubsub ets validate examples/example1.json
 ```

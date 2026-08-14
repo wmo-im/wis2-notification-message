@@ -33,4 +33,4 @@ jobs:
         for e in examples/*.json; do check-jsonschema --schemafile schemas/wis2-notification-message-bundled.json $e; done
     - name: Run pywis-pubsub ETS validation
       run: |
-        for e in examples/*.json; do pywis-pubsub ets validate $e; done
+        for e in examples/*.json; do pywis-pubsub wnm ets validate $e; done

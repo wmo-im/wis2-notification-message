@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.wmo.int/wnm/1.1.0/schemas/wis2-notification-message-bundled.json",
+  "$id": "https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/schemas/notificationMessageGeoJSON.yaml",
   "title": "WIS2 Notification Message Encoding",
   "description": "WIS2 Notification Message Encoding",
   "type": "object",
@@ -15,11 +15,6 @@
       "contains": {
         "const": "http://wis.wmo.int/spec/wnm/1/conf/core"
       }
-    },
-    "version": {
-      "type": "string",
-      "description": "DEPRECATED, please use `conformsTo`.",
-      "const": "v04"
     },
     "type": {
       "type": "string",
@@ -43,9 +38,7 @@
           "properties": {
             "type": {
               "type": "string",
-              "enum": [
-                "Point"
-              ]
+              "const": "Point"
             },
             "coordinates": {
               "type": "array",
@@ -65,9 +58,7 @@
           "properties": {
             "type": {
               "type": "string",
-              "enum": [
-                "Polygon"
-              ]
+              "const": "Polygon"
             },
             "coordinates": {
               "type": "array",
@@ -266,7 +257,7 @@
                   "href": {
                     "type": "string",
                     "description": "The URI of the link target.",
-                    "example": "http://data.example.com/buildings/123"
+                    "example": "https://data.example.com/buildings/123"
                   }
                 }
               }
@@ -295,31 +286,19 @@
       }
     }
   },
-  "oneOf": [
-    {
-      "required": [
-        "id",
-        "conformsTo",
-        "type",
-        "geometry",
-        "properties",
-        "links"
-      ]
-    },
-    {
-      "required": [
-        "id",
-        "version",
-        "type",
-        "geometry",
-        "properties",
-        "links"
-      ]
-    }
+  "required": [
+    "id",
+    "conformsTo",
+    "type",
+    "geometry",
+    "properties",
+    "links"
   ],
   "example": {
     "id": "31e9d66a-cd83-4174-9429-b932f1abe1be",
-    "version": "v04",
+    "conformsTo": [
+      "http://wis.wmo.int/spec/wnm/1/conf/core"
+    ],
     "type": "Feature",
     "geometry": {
       "type": "Point",
@@ -329,7 +308,7 @@
       ]
     },
     "properties": {
-      "pubtime": "2022-03-20T04:50:18.314854383Z",
+      "pubtime": "2022-03-20T04:50:18Z",
       "datetime": "2022-03-20T04:45:00Z",
       "integrity": {
         "method": "sha512",

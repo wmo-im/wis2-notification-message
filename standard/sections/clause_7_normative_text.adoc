@@ -57,15 +57,15 @@ The table below provides an overview of the set of properties that may be includ
 |Centre identifier of Global Cache Service producing the notification (see <<_1_12_properties_global_cache>>)
 
 |``properties.datetime``
-|Optional
+|**Conditional**
 |Identifies the reference date and time of the data instance to which the notification is relayed, in RFC3339 format, UTC (see <<_1_13_properties_temporal_description>>)
 
 |``properties.start_datetime``
-|Optional
+|**Conditional**
 |Identifies the start date and time of the data being published, in RFC3339 format (see <<_1_13_properties_temporal_description>>)
 
 |``properties.end_datetime``
-|Optional
+|**Conditional**
 |Identifies the end date and time of the data being published, in RFC3339 format (see <<_1_13_properties_temporal_description>>)
 
 |``properties.cache``

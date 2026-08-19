@@ -13,10 +13,6 @@ properties:
     type: array
     contains:
       const: http://wis.wmo.int/spec/wnm/1/conf/core
-  version:
-    type: string
-    description: DEPRECATED, please use `conformsTo`.
-    const: v04
   type:
     type: string
     enum:
@@ -134,6 +130,7 @@ properties:
     required:
       - pubtime
       - data_id
+      - metadata_id
     oneOf:
       - allOf:
         - required:
@@ -154,21 +151,13 @@ properties:
               type: object
               $ref: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/3.1.0/schemas/v3.0/schema.yaml#/definitions/Components/properties/securitySchemes
 
-oneOf:
-  - required:
-    - id
-    - conformsTo
-    - type
-    - geometry
-    - properties
-    - links
-  - required:
-    - id
-    - version
-    - type
-    - geometry
-    - properties
-    - links
+required:
+  - id
+  - conformsTo
+  - type
+  - geometry
+  - properties
+  - links
 
 example:
   $ref: https://raw.githubusercontent.com/wmo-im/wis2-notification-message/main/examples/example1.json

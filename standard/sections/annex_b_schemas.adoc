@@ -3,11 +3,11 @@
 :appendix-caption: Annex
 == Schemas (Normative)
 
-NOTE: The schema document will only be published on https://schemas.wmo.int/wnm/1.1.0 once the standard has been approved.
+NOTE: The schema document will only be published on https://schemas.wmo.int/wnm once the standard has been approved.
 
 === WIS2 Notification Message Schema
 
 [source,yaml]
 ----
-include::../../schemas/notificationMessageGeoJSON.yaml[]
+include::../../schemas/wis2-notification-message-bundled.json[]
 ----

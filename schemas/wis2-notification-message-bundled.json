@@ -176,8 +176,7 @@
             },
             "size": {
               "type": "integer",
-              "maximum": 4096,
-              "description": "Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received.\nNote that the limit takes into account the data encoding used, including data compression (for example `gzip`).\n"
+              "description": "Number of bytes contained in the file. Together with the ``integrity`` property, it provides additional assurance that file content was accurately received."
             },
             "value": {
               "type": "string",

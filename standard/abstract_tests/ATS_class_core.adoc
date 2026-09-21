@@ -22,10 +22,6 @@ include::./core/ATS_test_id.adoc[]
 
 include::./core/ATS_test_conformance.adoc[]
 
-==== Version
-
-include::./core/ATS_test_version.adoc[]
-
 ==== Geometry
 
 include::./core/ATS_test_geometry.adoc[]
@@ -38,9 +34,17 @@ include::./core/ATS_test_pubtime.adoc[]
 
 include::./core/ATS_test_data_id.adoc[]
 
+==== Properties / Metadata Identification
+
+include::./core/ATS_test_metadata_id.adoc[]
+
 ==== Properties / Temporal description
 
 include::./core/ATS_test_temporal.adoc[]
+
+==== Properties / Integrity
+
+include::./core/ATS_test_integrity.adoc[]
 
 ==== Properties / Global Cache
 

@@ -1,6 +1,6 @@
 :title: WMO WIS2 Notification Message Encoding
 :titletext: {title}
-:version: 1.3.0
+:version: 1.4.0-draft
 :date: 2026-06-15
 :copyright: Copyright © 2024-2026 World Meteorological Organization (WMO)
 :doctype: book
@@ -21,9 +21,9 @@
 |===
 |{set:cellbgcolor:#FFFFFF}
 |[big]*World Meteorological Organization*
-|Date: 2026-06-15
+|Date: 2026-08-12
 |Version: {version}
-|Document status: STABLE
+|Document status: DRAFT
 |Revision history: see <<_revision_history,Annex E>>
 |Document location: https://wmo-im.github.io/wis2-notification-message/standard/wis2-notification-message-STABLE.html
 |WMO publication location: https://library.wmo.int/idurl/4/68731
